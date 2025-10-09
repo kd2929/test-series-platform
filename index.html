@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Simple JSON Test Runner</title>
+
+<!-- optional icons / fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- MathJax (optional, for math rendering in questions) -->
+<script id="MathJax-script" async
+ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  :root{
+    --primary:#4f46e5; --bg:#f8fafc; --card:#fff;
+    --text:#0f172a; --muted:#64748b;
+  }
+  body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:var(--text);}
+  .wrap{max-width:980px; margin:28px auto; padding:16px;}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .brand{font-weight:800;color:var(--primary);font-size:1.2rem}
+  .controls{display:flex;gap:8px;align-items:center}
+  .btn{background:var(--primary);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+  .btn.secondary{background:white;color:var(--primary);border:1px solid rgba(0,0,0,0.06)}
+  .panel{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+  .question-text{font-size:1.05rem;margin-bottom:14px}
+  .options{display:flex;flex-direction:column;gap:10px}
+  .option{padding:12px 14px;border-radius:10px;border:1px solid #e6edf3;background:#fff;cursor:pointer;position:relative}
+  .option .letter{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;background:#f1f5f9}
+  .option p{margin-left:44px}
+  .option.selected{border-color:var(--primary);box-shadow:0 6px 18px rgba(79,70,229,0.12)}
+  .nav{display:flex;gap:8px;align-items:center;margin-top:16px}
+  .meta{color:var(--muted);font-size:0.9rem}
+  .bottom-fixed{position:fixed;left:0;right:0;bottom:12px;display:flex;justify-content:center;padding:8px;pointer-events:none}
+  .bottom-inner{max-width:980px;width:100%;pointer-events:all;display:flex;gap:8px;justify-content:space-between}
+  .q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));gap:8px}
+  .q-box{height:44px;border-radius:8px;border:1px solid #e6edf3;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .q-box.current{border:2px solid var(--primary)}
+  .q-box.attempted{background:var(--primary);color:white;border-color:var(--primary)}
+  .score-badge{background:#10b981;color:white;padding:8px 12px;border-radius:999px;font-weight:700}
+  .small{font-size:0.9rem;color:var(--muted)}
+  @media(max-width:640px){ .wrap{padding:12px} .question-text{font-size:1rem}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Simple JSON Test Runner</div>
+      <div class="controls">
+        <div class="meta" id="metaSeries">Loading...</div>
+        <button class="btn secondary" id="btnOpenJson">Load JSON (local)</button>
+        <button class="btn" id="btnStart">Start Test</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="panel" id="welcomePanel">
+        <h2 id="testTitle">Welcome — Ready to start</h2>
+        <p class="small" id="testDesc">This test runner loads questions from a JSON file named <strong>CtestL1-12.json</strong> placed alongside this HTML. You can also click "Load JSON (local)" to pick a file.</p>
+
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+          <div class="meta">Questions: <strong id="totalQ">0</strong></div>
+          <div class="meta">Time: <strong id="testTime">—</strong></div>
+          <div class="meta">Marks per Q: <strong id="perQ">+1</strong></div>
+        </div>
+      </div>
+
+      <div id="testArea" style="display:none;margin-top:16px">
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <div>
+              <div id="question-counter" class="meta">Question 0 of 0</div>
+              <div class="question-text" id="questionText">—</div>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Marked for review: <span id="markedCount">0</span></div>
+              <div style="height:8px"></div>
+              <div id="timer" class="small">Time: 00:00</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" id="optionsWrapper" class="options"></div>
+
+          <div class="nav">
+            <button class="btn secondary" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
+            <button class="btn secondary" id="markBtn"><i class="far fa-star"></i> Mark</button>
+            <div style="flex:1"></div>
+            <button class="btn secondary" id="gridBtn"><i class="fas fa-th"></i> Q Grid</button>
+            <button class="btn" id="nextBtn">Next <i class="fas fa-chevron-right" style="margin-left:8px"></i></button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" id="questionsModal" class="panel" hidden>
+          <h4>Questions</h4>
+          <div class="q-grid" id="qGrid"></div>
+        </div>
+
+        <div style="margin-top:12px" id="resultsPanel" class="panel" hidden>
+          <h3>Result</h3>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="score-badge" id="scoreBadge">0</div>
+            <div>
+              <div class="small">Total Questions: <span id="rTotal">0</span></div>
+              <div class="small">Attempted: <span id="rAttempted">0</span></div>
+              <div class="small">Correct: <span id="rCorrect">0</span></div>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn" id="reviewBtn">Review Answers</button>
+            <button class="btn secondary" id="restartBtn">Restart</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="bottom-fixed">
+    <div class="bottom-inner">
+      <div id="liveStatus" class="small">Status: idle</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div class="small">Current: <span id="currentQSmall">0</span></div>
+        <div style="width:8px"></div>
+        <div id="progressSmall" class="small">0 / 0</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/*
+  Simple Test Runner that:
+  - tries to fetch '/CtestL1-12.json' automatically
+  - also supports user file selection (btnOpenJson)
+  - supports common JSON shapes:
+      * items array where each item has: id, question, options (object: a,b,c,d) and answer (letter 'a'/'b' or '1'..)
+      * or items with keys option_1..option_4 and answer numeric string
+*/
+let questions = [];
+let currentIndex = 0;
+let answers = {};        // map questionId -> selected key (letter or number)
+let marked = {};         // map questionId -> true/false
+let submitted = false;
+let timerInterval = null;
+let secondsElapsed = 0;
+const PER_Q_MARK = 1;
+
+const el = id => document.getElementById(id);
+
+async function autoLoadJSON(){
+  // try fetching from same folder (for Vercel / GitHub static)
+  try {
+    const resp = await fetch('CtestL1-12.json', {cache: "no-store"});
+    if(!resp.ok) throw new Error('no json at root');
+    const j = await resp.json();
+    // JSON shape in your file: { status:0, message:'success', data: [ ...questions... ] }
+    if (Array.isArray(j)) {
+      loadQuestions(j);
+    } else if (j && Array.isArray(j.data)) {
+      loadQuestions(j.data);
+    } else {
+      console.warn('unknown JSON shape', j);
+      showStatus('JSON loaded but structure unknown');
+    }
+  } catch(err){
+    showStatus('Auto-load JSON failed. Click "Load JSON (local)" or put CtestL1-12.json next to this file.');
+    console.log(err);
+  }
+}
+
+function loadQuestions(arr){
+  // normalize: each q should have: id, question (html), options as array [{key:'a',text:'...'},...], answer (letter or number)
+  questions = arr.map((q, idx) => {
+    const id = q.id ?? ('q_' + idx);
+    // detect options object (a,b,c...) or option_1..4
+    let opts = [];
+    if (q.options && typeof q.options === 'object') {
+      // prefer keys a,b,c,d order
+      const letters = ['a','b','c','d','e'];
+      for (const L of letters){
+        if (q.options[L] != null) opts.push({key:L, text: q.options[L]});
+      }
+    } else {
+      // try option_1..4
+      for (let i=1;i<=6;i++){
+        const k = 'option_' + i;
+        if (q[k]) opts.push({key:String(i), text: q[k]});
+      }
+      // fallback: keys option1, opt1 etc (rare)
+    }
+    // if still empty, try scan for keys like 'option_1' etc (already attempted)
+    // determine correct answer: could be 'a'/'b' or '1'.. or 'option_1'
+    const answer = (q.answer ?? q.correct_answer ?? '').toString().trim().toLowerCase();
+
+    return {
+      raw: q,
+      id,
+      question: q.question ?? q.question_html ?? q.question_eng ?? 'No question text',
+      options: opts,
+      answer
+    };
+  });
+
+  // update UI meta
+  el('testTitle').textContent = 'Test loaded: ' + (questions[0]?.raw?.series_name ?? 'My Test');
+  el('testDesc').textContent = `Loaded ${questions.length} questions from JSON. Click Start Test.`;
+  el('totalQ').textContent = questions.length;
+  el('metaSeries').textContent = `Questions: ${questions.length}`;
+  el('rTotal').textContent = questions.length;
+  el('perQ').textContent = '+' + PER_Q_MARK;
+  showStatus('JSON loaded: ' + questions.length + ' questions');
+}
+
+function showStatus(txt){ el('liveStatus').textContent = 'Status: ' + txt; }
+
+function startTest(){
+  if (!questions.length) { alert('No questions loaded. Place CtestL1-12.json next to this file or click Load JSON (local).'); return; }
+  currentIndex = 0;
+  answers = {};
+  marked = {};
+  submitted = false;
+  secondsElapsed = 0;
+  el('welcomePanel').style.display = 'none';
+  el('testArea').style.display = 'block';
+  el('resultsPanel').hidden = true;
+  el('questionsModal').hidden = true;
+  updateQuestionUI();
+  generateQGrid();
+  startTimer();
+  showStatus('Test started');
+}
+
+function startTimer(){
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(()=>{
+    secondsElapsed++;
+    el('timer').textContent = 'Time: ' + formatTime(secondsElapsed);
+  }, 1000);
+}
+function stopTimer(){ if (timerInterval) clearInterval(timerInterval); timerInterval = null; }
+
+function formatTime(s){
+  const mm = String(Math.floor(s/60)).padStart(2,'0');
+  const ss = String(s%60).padStart(2,'0');
+  return mm + ':' + ss;
+}
+
+function updateQuestionUI(){
+  const q = questions[currentIndex];
+  if (!q) return;
+  el('question-counter').textContent = `Question ${currentIndex+1} of ${questions.length}`;
+  // inject question HTML safely (we trust data)
+  el('questionText').innerHTML = q.question;
+  // build options
+  const wrapper = el('optionsWrapper');
+  wrapper.innerHTML = '';
+  if (!q.options.length) {
+    wrapper.innerHTML = '<div class="small">No options available for this question.</div>';
+  } else {
+    q.options.forEach(opt=>{
+      const div = document.createElement('div');
+      div.className = 'option';
+      if (answers[q.id] && answers[q.id] == opt.key) div.classList.add('selected');
+      div.innerHTML = `<div class="letter">${opt.key.toUpperCase()}</div><p>${opt.text}</p>`;
+      div.onclick = () => {
+        answers[q.id] = opt.key;
+        // visually update options
+        Array.from(wrapper.children).forEach(c=>c.classList.remove('selected'));
+        div.classList.add('selected');
+        updateProgressSmall();
+        generateQGrid();
+      };
+      wrapper.appendChild(div);
+    });
+  }
+  // mark button state
+  el('markedCount').textContent = Object.values(marked).filter(Boolean).length;
+  el('currentQSmall').textContent = currentIndex+1;
+  el('progressSmall').textContent = `${Object.keys(answers).length} / ${questions.length}`;
+  // run MathJax typeset if needed
+  if (window.MathJax) {
+    try { MathJax.typesetPromise(); } catch(e){ /* ignore */ }
+  }
+}
+
+function nextQuestion(){
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    updateQuestionUI();
+  } else {
+    // last -> submit confirm
+    if (confirm('Are you sure you want to submit the test?')) submitTest();
+  }
+}
+
+function prevQuestion(){
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateQuestionUI();
+  }
+}
+
+function toggleMark(){
+  const q = questions[currentIndex];
+  marked[q.id] = !marked[q.id];
+  el('markBtn').classList.toggle('active', !!marked[q.id]);
+  el('markBtn').innerHTML = marked[q.id] ? '<i class="fas fa-star"></i> Marked' : '<i class="far fa-star"></i> Mark';
+  el('markedCount').textContent = Object.values(marked).filter(Boolean).length;
+  generateQGrid();
+}
+
+function generateQGrid(){
+  const grid = el('qGrid');
+  grid.innerHTML = '';
+  questions.forEach((q, i) => {
+    const box = document.createElement('div');
+    box.className = 'q-box' + (i===currentIndex ? ' current' : '') + (answers[q.id] ? ' attempted' : '');
+    box.textContent = i+1;
+    box.onclick = () => { currentIndex = i; updateQuestionUI(); };
+    grid.appendChild(box);
+  });
+}
+
+function showGridToggle(){
+  const modal = el('questionsModal');
+  modal.hidden = !modal.hidden;
+  if (!modal.hidden) generateQGrid();
+}
+
+function submitTest(){
+  if (submitted) return;
+  submitted = true;
+  stopTimer();
+  // scoring
+  let total = 0, attempted = 0, correct = 0;
+  questions.forEach(q => {
+    const user = answers[q.id];
+    if (user) attempted++;
+    // normalize: q.answer might be 'b' or '2' etc.
+    let correctKey = q.answer ? q.answer.toString().trim().toLowerCase() : '';
+    // if correctKey is numeric as string and our options keys are letters, convert numeric to position letter
+    if (correctKey.match(/^[0-9]+$/)) {
+      // numeric index starting 1
+      const idx = parseInt(correctKey,10)-1;
+      const opt = q.options[idx];
+      if (opt) correctKey = String(opt.key).toLowerCase();
+    }
+    // Some dataset uses 'd' or '4' etc; above handles both.
+    if (user && correctKey && user.toString().toLowerCase() === correctKey.toString().toLowerCase()){
+      total += PER_Q_MARK;
+      correct++;
+    }
+  });
+  // show result
+  el('resultsPanel').hidden = false;
+  el('scoreBadge').textContent = total.toString();
+  el('rTotal').textContent = questions.length;
+  el('rAttempted').textContent = attempted;
+  el('rCorrect').textContent = correct;
+  el('resultsPanel').scrollIntoView({behavior:'smooth'});
+  showStatus('Submitted — score: ' + total);
+  // highlight correct/incorrect in review mode
+  showReview();
+}
+
+function showReview(){
+  // render each question with correct/incorrect highlights in a separate view
+  // For simplicity reuse the same UI but we'll augment option styles
+  // set currentIndex = 0 and navigate; each option will show a green/red border if correct/incorrect
+  // We'll update optionsWrapper to reflect review state:
+  const q = questions[currentIndex];
+  if (!q) return;
+  const wrapper = el('optionsWrapper');
+  wrapper.innerHTML = '';
+  q.options.forEach(opt=>{
+    const div = document.createElement('div');
+    div.className = 'option';
+    const user = answers[q.id];
+    let correctKey = q.answer ? q.answer.toString().trim().toLowerCase() : '';
+    if (correctKey.match(/^[0-9]+$/)) {
+      const idx = parseInt(correctKey,10)-1;
+      const opt2 = q.options[idx];
+      if (opt2) correctKey = String(opt2.key).toLowerCase();
+    }
+    const isCorrect = String(opt.key).toLowerCase() === String(correctKey).toLowerCase();
+    const isUser = user && String(user).toLowerCase() === String(opt.key).toLowerCase();
+    if (isCorrect) div.style.borderColor = '#10b981';
+    if (isUser && !isCorrect) div.style.borderColor = '#ef4444';
+    if (isUser) div.classList.add('selected');
+    div.innerHTML = `<div class="letter">${opt.key.toUpperCase()}</div><p>${opt.text}</p>`;
+    wrapper.appendChild(div);
+  });
+  // show counters
+  el('question-counter').textContent = `Review: Q ${currentIndex+1} of ${questions.length}`;
+  // update grid colours
+  generateQGrid();
+}
+
+function reviewAll(){
+  // switch to review mode and allow moving through questions
+  submitted = true;
+  currentIndex = 0;
+  showReview();
+  el('resultsPanel').hidden = false;
+  el('questionsModal').hidden = true;
+  showStatus('Review mode');
+}
+
+function restart(){
+  stopTimer();
+  submitted = false;
+  answers = {};
+  marked = {};
+  currentIndex = 0;
+  el('welcomePanel').style.display = 'block';
+  el('testArea').style.display = 'none';
+  el('resultsPanel').hidden = true;
+  el('questionsModal').hidden = true;
+  el('testTitle').textContent = 'Ready to start';
+  showStatus('idle');
+}
+
+function handleLocalFile(file){
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const json = JSON.parse(e.target.result);
+      if (Array.isArray(json)) loadQuestions(json);
+      else if (json && Array.isArray(json.data)) loadQuestions(json.data);
+      else alert('Unknown JSON structure — expected array or {data:[...]}');
+    } catch(err){
+      alert('Invalid JSON file');
+      console.error(err);
+    }
+  };
+  reader.readAsText(file);
+}
+
+// wire up buttons
+el('btnStart').addEventListener('click', startTest);
+el('nextBtn').addEventListener('click', () => {
+  if (!submitted) nextQuestion(); else { if (currentIndex < questions.length-1) { currentIndex++; showReview(); } }
+});
+el('prevBtn').addEventListener('click', () => { if (!submitted) prevQuestion(); else if (currentIndex>0){ currentIndex--; showReview(); }});
+el('markBtn').addEventListener('click', toggleMark);
+el('gridBtn').addEventListener('click', showGridToggle);
+el('reviewBtn').addEventListener('click', reviewAll);
+el('restartBtn').addEventListener('click', restart);
+
+// file input via button
+el('btnOpenJson').addEventListener('click', ()=>{
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = '.json,application/json';
+  inp.onchange = (ev) => {
+    const f = ev.target.files[0];
+    if (f) handleLocalFile(f);
+  };
+  inp.click();
+});
+
+// auto attempt to load
+autoLoadJSON();
+showStatus('ready');
+
+</script>
+</body>
+</html>
