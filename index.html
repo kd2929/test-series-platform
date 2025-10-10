@@ -1,467 +1,1083 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Simple JSON Test Runner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="main-title">टेस्ट प्लेटफॉर्म 👑</title>
+    <!-- Bootstrap and Font Awesome remain for styling and icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Hindi (Tiro Devanagari Hindi, Bold) and English (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tiro+Devanagari+Hindi:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- optional icons / fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- MathJax for mathematical notation -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* --- CSS Variables (Light Mode) --- */
+        :root {
+            --primary: #6c5ce7; /* Main Accent - Violet */
+            --primary-light: #a29bfe;
+            --primary-dark: #5649c0;
+            --success: #00b894;
+            --danger: #d63031;
+            --light: #f8f9fa; /* Body Background */
+            --dark: #2d3436; /* Dark Text Color in Light Mode */
+            --gray: #636e72;
+            --light-gray: #dfe6e9; /* Option Border/Hover/Note BG */
+            --card-bg: #ffffff;
+            --text-color: var(--dark); /* Default text color is dark */
+            --timer-bg: var(--light);
+            --timer-text: var(--dark);
+            --input-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            --option-text: var(--dark);
+        }
 
-<!-- MathJax (optional, for math rendering in questions) -->
-<script id="MathJax-script" async
- src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        /* --- Dark Mode Variables --- */
+        body.dark-mode {
+            --primary: #9b59b6; /* Dark Mode Accent - Purple */
+            --primary-light: #b39bce;
+            --primary-dark: #8e44ad;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --light: #1c1c1c; /* Dark Body Background */
+            --dark: #ecf0f1; /* Light Text Color in Dark Mode (Near White) */
+            --gray: #95a5a6;
+            --light-gray: #34495e; /* Option Border/Hover/Note BG */
+            --card-bg: #2d3436; /* Dark Card Background */
+            --text-color: var(--dark); 
+            --timer-bg: var(--light-gray);
+            --timer-text: #ecf0f1;
+            --input-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+            --option-text: var(--dark);
+        }
+        
+        /* FIX: Ensure Hindi text is visible in dark mode by explicitly setting color */
+        body.dark-mode #question-text,
+        body.dark-mode .question-text {
+            color: var(--dark) !important; 
+        }
 
-<style>
-  :root{
-    --primary:#4f46e5; --bg:#f8fafc; --card:#fff;
-    --text:#0f172a; --muted:#64748b;
-  }
-  body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:var(--text);}
-  .wrap{max-width:980px; margin:28px auto; padding:16px;}
-  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-  .brand{font-weight:800;color:var(--primary);font-size:1.2rem}
-  .controls{display:flex;gap:8px;align-items:center}
-  .btn{background:var(--primary);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
-  .btn.secondary{background:white;color:var(--primary);border:1px solid rgba(0,0,0,0.06)}
-  .panel{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
-  .question-text{font-size:1.05rem;margin-bottom:14px}
-  .options{display:flex;flex-direction:column;gap:10px}
-  .option{padding:12px 14px;border-radius:10px;border:1px solid #e6edf3;background:#fff;cursor:pointer;position:relative}
-  .option .letter{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;background:#f1f5f9}
-  .option p{margin-left:44px}
-  .option.selected{border-color:var(--primary);box-shadow:0 6px 18px rgba(79,70,229,0.12)}
-  .nav{display:flex;gap:8px;align-items:center;margin-top:16px}
-  .meta{color:var(--muted);font-size:0.9rem}
-  .bottom-fixed{position:fixed;left:0;right:0;bottom:12px;display:flex;justify-content:center;padding:8px;pointer-events:none}
-  .bottom-inner{max-width:980px;width:100%;pointer-events:all;display:flex;gap:8px;justify-content:space-between}
-  .q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));gap:8px}
-  .q-box{height:44px;border-radius:8px;border:1px solid #e6edf3;display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .q-box.current{border:2px solid var(--primary)}
-  .q-box.attempted{background:var(--primary);color:white;border-color:var(--primary)}
-  .score-badge{background:#10b981;color:white;padding:8px 12px;border-radius:999px;font-weight:700}
-  .small{font-size:0.9rem;color:var(--muted)}
-  @media(max-width:640px){ .wrap{padding:12px} .question-text{font-size:1rem}}
-</style>
+        /* --- Global Styles --- */
+        body {
+            font-family: 'Tiro Devanagari Hindi', 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text-color); 
+            transition: background-color 0.4s, color 0.4s;
+            padding: 20px 0;
+            min-height: 100vh;
+        }
+
+        .container-fluid {
+            max-width: 900px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg);
+            transition: background-color 0.4s, box-shadow 0.4s;
+        }
+        
+        body.dark-mode .card {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- Header Styles --- */
+        .header-card {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 25px; 
+            border-radius: 1.5rem 1.5rem 0 0;
+            display: flex;
+            flex-direction: column; 
+            gap: 10px; 
+        }
+
+        .title-text {
+            font-weight: 700;
+            font-size: 1.6rem; 
+        }
+
+        /* Toggle Buttons */
+        .toggle-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .toggle-btn {
+            background-color: var(--card-bg) !important;
+            border: none;
+            color: var(--text-color) !important; 
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--input-shadow);
+            transition: all 0.2s;
+        }
+        
+        /* Timer Badge */
+        #timer {
+            background-color: var(--timer-bg) !important;
+            color: var(--timer-text) !important;
+            padding: 8px 15px;
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 90px;
+        }
+        
+        /* --- Test Selection Styles --- */
+        .test-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 2px solid var(--light-gray);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: var(--card-bg);
+        }
+        
+        .test-item:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        body.dark-mode .test-item:hover {
+            border-color: var(--primary);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .test-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .test-search {
+            background-color: var(--light-gray);
+            border: none;
+            color: var(--text-color);
+        }
+        
+        body.dark-mode .test-search {
+            background-color: var(--light-gray);
+            border: none;
+            color: var(--dark);
+        }
+        
+        .test-search::placeholder {
+             color: var(--gray);
+        }
+
+        /* --- Question & Option Styles (Compacted) --- */
+        
+        .question-text {
+            color: var(--text-color) !important; 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            line-height: 1.6;
+        }
+        
+        .option-item {
+            border: 2px solid var(--light-gray);
+            padding: 8px 12px; 
+            margin-bottom: 6px; 
+            border-radius: 0.5rem; 
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .option-item:focus-within {
+             outline: 2px solid var(--primary);
+             outline-offset: 2px;
+        }
+
+        .option-item label {
+            font-size: 1.0rem; 
+            font-weight: 700; 
+            line-height: 1.4;
+            margin-bottom: 0;
+            padding: 0;
+            transition: color 0.4s;
+            color: var(--option-text); 
+            width: 100%;
+            cursor: pointer;
+            padding-left: 20px; 
+            display: block; 
+        }
+
+        .option-item:hover {
+            background-color: var(--light-gray);
+        }
+        
+        body.dark-mode .option-item:hover {
+             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .option-item input[type="radio"] {
+            display: none;
+        }
+        
+        /* Submit Button changes (btn-md is used in HTML now) */
+        .btn-primary-custom {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transition: all 0.2s;
+            border-radius: 0.75rem;
+            font-weight: 700;
+        }
+
+        .navigation-btn {
+            background-color: var(--gray);
+            border-color: var(--gray);
+            color: white;
+            border-radius: 50%;
+            width: 50px; 
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* --- Question Dot Styles --- */
+        .question-dots-container {
+            white-space: nowrap; 
+            overflow-x: auto; 
+            padding-bottom: 10px; 
+            justify-content: flex-start !important; 
+        }
+        
+        .question-dot {
+            display: inline-flex;
+            width: 36px; 
+            height: 36px;
+            margin: 4px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid var(--light-gray);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem; 
+            font-weight: 700;
+            color: var(--text-color); 
+            background-color: var(--card-bg); 
+            flex-shrink: 0; 
+        }
+        
+        .dot-attempted { background-color: var(--primary); color: white; border-color: var(--primary-dark); }
+        .dot-current { 
+            border: 3px solid var(--primary-dark); 
+            transform: scale(1.1); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: var(--primary-light);
+            color: var(--dark);
+        }
+        
+        body.dark-mode .dot-current {
+             border: 3px solid var(--primary-light);
+             background-color: var(--primary);
+             color: var(--dark);
+        }
+
+        /* --- Review Mode Styles --- */
+        .correct-answer {
+            background-color: rgba(0, 184, 148, 0.1); 
+            border-color: var(--success);
+        }
+
+        .incorrect-selected {
+            background-color: rgba(214, 48, 49, 0.1); 
+            border-color: var(--danger);
+        }
+        
+        /* Note Style for explanation */
+        .note-block {
+            background-color: var(--light-gray);
+            border-left: 5px solid var(--primary-dark);
+            padding: 12px;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            color: var(--text-color); 
+            font-size: 0.95rem; 
+        }
+
+        /* Fix dark mode for review colors */
+        body.dark-mode .correct-answer {
+            background-color: rgba(46, 204, 113, 0.15); 
+        }
+        body.dark-mode .incorrect-selected {
+            background-color: rgba(231, 76, 60, 0.15); 
+        }
+        body.dark-mode .note-block {
+            background-color: var(--light-gray);
+        }
+        
+        /* --- Modal Styles --- */
+         .modal-custom {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5); 
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-custom.show {
+            display: flex;
+        }
+
+        .modal-content-custom {
+            background-color: var(--card-bg);
+            margin: auto;
+            padding: 30px;
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">Simple JSON Test Runner</div>
-      <div class="controls">
-        <div class="meta" id="metaSeries">Loading...</div>
-        <button class="btn secondary" id="btnOpenJson">Load JSON (local)</button>
-        <button class="btn" id="btnStart">Start Test</button>
-      </div>
-    </header>
 
-    <main>
-      <div class="panel" id="welcomePanel">
-        <h2 id="testTitle">Welcome — Ready to start</h2>
-        <p class="small" id="testDesc">This test runner loads questions from a JSON file named <strong>CtestL1-12.json</strong> placed alongside this HTML. You can also click "Load JSON (local)" to pick a file.</p>
-
-        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-          <div class="meta">Questions: <strong id="totalQ">0</strong></div>
-          <div class="meta">Time: <strong id="testTime">—</strong></div>
-          <div class="meta">Marks per Q: <strong id="perQ">+1</strong></div>
-        </div>
-      </div>
-
-      <div id="testArea" style="display:none;margin-top:16px">
-        <div class="panel">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <div>
-              <div id="question-counter" class="meta">Question 0 of 0</div>
-              <div class="question-text" id="questionText">—</div>
+    <div class="container-fluid">
+        <div class="card my-5">
+            <!-- Header for both states -->
+            <div class="header-card">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center gap-2">
+                        <!-- Back Button (Shown only when test is running) -->
+                        <button id="back-to-selection-btn" class="btn btn-sm text-white" onclick="backToSelection()" style="display: none; background: rgba(255,255,255,0.2); border-radius: 50%;">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <span class="title-text" id="test-title">
+                            <i class="fas fa-list me-2"></i> टेस्ट चुनें
+                        </span>
+                    </div>
+                    
+                    <div class="toggle-group">
+                         <!-- Timer (Shown only when test is running) -->
+                        <span id="timer" class="badge rounded-pill fs-6 shadow-sm" style="display: none;"><i class="fas fa-clock me-1"></i> 10:00</span>
+                         <!-- Dark Mode Toggle Button -->
+                        <button id="dark-mode-toggle" class="toggle-btn" onclick="toggleDarkMode()">
+                            <i class="fas fa-moon"></i> 
+                        </button>
+                        <!-- Language Toggle Button (Globe Icon) -->
+                        <button id="lang-toggle-btn" class="toggle-btn" onclick="toggleLanguage()">
+                            <i class="fas fa-globe"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div style="text-align:right">
-              <div class="small">Marked for review: <span id="markedCount">0</span></div>
-              <div style="height:8px"></div>
-              <div id="timer" class="small">Time: 00:00</div>
+            
+            <div class="card-body p-4 p-md-5">
+                
+                <!-- --- 1. TEST SELECTION UI (Default View) --- -->
+                <div id="test-selection-card">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text test-search"><i class="fas fa-search"></i></span>
+                        <input type="text" id="test-search-input" class="form-control test-search" 
+                               onkeyup="filterTests()" placeholder="टेस्ट नाम से खोजें...">
+                    </div>
+                    
+                    <div id="test-list-container" class="mt-4">
+                        <!-- Test items will be injected here -->
+                    </div>
+                    
+                    <div id="selection-loading-message" class="loading-spinner text-center p-5" style="display: none;">
+                        <i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i>
+                        <p>टेस्ट लोड हो रहा है...</p>
+                    </div>
+                </div>
+
+                <!-- --- 2. QUIZ RUNNING UI (Hidden by default) --- -->
+                <div id="quiz-running-card" style="display:none;">
+                    
+                    <!-- Question Navigation Dots (Scrollable) -->
+                    <div id="question-dots" class="mb-4 d-flex question-dots-container">
+                        <!-- Dots will be injected here -->
+                    </div>
+
+                    <!-- Question and Options -->
+                    <div id="quiz-content">
+                        <div id="loading-message" class="loading-spinner text-center p-5" style="display: none;">
+                            <i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i>
+                            <p>Questions लोड हो रहे हैं...</p>
+                        </div>
+
+                        <div id="question-container" class="mb-5" style="display:none;">
+                            <p class="mb-2 text-muted fw-bold" id="question-number"></p>
+                            <div id="question-text">
+                                <!-- Question content and options will be injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Navigation and Submit Buttons -->
+                        <div class="d-flex justify-content-between align-items-center" id="navigation-controls" style="display:none;">
+                            <button class="btn navigation-btn" id="prev-btn" onclick="prevQuestion()" disabled>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            
+                            <!-- SUBMIT BUTTON CHANGE: Changed btn-lg px-4 to btn-md px-3 -->
+                            <button class="btn btn-md btn-primary-custom px-3 shadow-lg" id="submit-btn" onclick="submitTest()">
+                                <i class="fas fa-paper-plane me-2"></i> टेस्ट सबमिट करें
+                            </button>
+
+                            <button class="btn navigation-btn" id="next-btn" onclick="nextQuestion()">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div> <!-- End of quiz-content -->
+                </div> <!-- End of quiz-running-card -->
+
             </div>
-          </div>
-
-          <div style="margin-top:12px" id="optionsWrapper" class="options"></div>
-
-          <div class="nav">
-            <button class="btn secondary" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
-            <button class="btn secondary" id="markBtn"><i class="far fa-star"></i> Mark</button>
-            <div style="flex:1"></div>
-            <button class="btn secondary" id="gridBtn"><i class="fas fa-th"></i> Q Grid</button>
-            <button class="btn" id="nextBtn">Next <i class="fas fa-chevron-right" style="margin-left:8px"></i></button>
-          </div>
         </div>
-
-        <div style="margin-top:12px" id="questionsModal" class="panel" hidden>
-          <h4>Questions</h4>
-          <div class="q-grid" id="qGrid"></div>
-        </div>
-
-        <div style="margin-top:12px" id="resultsPanel" class="panel" hidden>
-          <h3>Result</h3>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div class="score-badge" id="scoreBadge">0</div>
-            <div>
-              <div class="small">Total Questions: <span id="rTotal">0</span></div>
-              <div class="small">Attempted: <span id="rAttempted">0</span></div>
-              <div class="small">Correct: <span id="rCorrect">0</span></div>
-            </div>
-          </div>
-          <div style="margin-top:12px">
-            <button class="btn" id="reviewBtn">Review Answers</button>
-            <button class="btn secondary" id="restartBtn">Restart</button>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <div class="bottom-fixed">
-    <div class="bottom-inner">
-      <div id="liveStatus" class="small">Status: idle</div>
-      <div style="display:flex;gap:8px;align-items:center">
-        <div class="small">Current: <span id="currentQSmall">0</span></div>
-        <div style="width:8px"></div>
-        <div id="progressSmall" class="small">0 / 0</div>
-      </div>
     </div>
-  </div>
+
+    <!-- Results Modal -->
+    <div id="results-modal" class="modal-custom">
+        <div class="modal-content-custom">
+            <!-- Close button only works in modals, not alerts -->
+            <h4 class="text-center mb-4" style="color: var(--primary-dark);" id="results-title">टेस्ट परिणाम</h4>
+            
+            <table class="table table-bordered rounded-lg shadow-sm">
+                <tr>
+                    <td class="fw-bold" id="score-label">अंतिम स्कोर:</td>
+                    <td id="score-value" class="text-end fw-bold" style="color: var(--primary-dark);"></td>
+                </tr>
+                <tr>
+                    <td id="correct-label">सही उत्तर:</td>
+                    <td id="correct-value" class="text-end" style="color: var(--success);"></td>
+                </tr>
+                <tr>
+                    <td id="incorrect-label">गलत उत्तर:</td>
+                    <td id="incorrect-value" class="text-end" style="color: var(--danger);"></td>
+                </tr>
+                <tr>
+                    <td id="unattempted-label">प्रयास नहीं किए गए:</td>
+                    <td id="unattempted-value" class="text-end"></td>
+                </tr>
+            </table>
+
+            <div class="d-grid mt-4">
+                <button class="btn btn-primary-custom btn-lg" id="review-btn" onclick="reviewTest()">
+                    <i class="fas fa-search me-2"></i> समाधान देखें
+                </button>
+            </div>
+            <div class="d-grid mt-2">
+                 <button class="btn btn-secondary btn-lg" onclick="backToSelection(true)">
+                    <i class="fas fa-home me-2"></i> टेस्ट मेनू
+                </button>
+            </div>
+        </div>
+    </div>
 
 <script>
-/*
-  Simple Test Runner that:
-  - tries to fetch '/CtestL1-12.json' automatically
-  - also supports user file selection (btnOpenJson)
-  - supports common JSON shapes:
-      * items array where each item has: id, question, options (object: a,b,c,d) and answer (letter 'a'/'b' or '1'..)
-      * or items with keys option_1..option_4 and answer numeric string
-*/
-let questions = [];
-let currentIndex = 0;
-let answers = {};        // map questionId -> selected key (letter or number)
-let marked = {};         // map questionId -> true/false
-let submitted = false;
-let timerInterval = null;
-let secondsElapsed = 0;
-const PER_Q_MARK = 1;
-
-const el = id => document.getElementById(id);
-
-async function autoLoadJSON(){
-  // try fetching from same folder (for Vercel / GitHub static)
-  try {
-    const resp = await fetch('CtestL1-12.json', {cache: "no-store"});
-    if(!resp.ok) throw new Error('no json at root');
-    const j = await resp.json();
-    // JSON shape in your file: { status:0, message:'success', data: [ ...questions... ] }
-    if (Array.isArray(j)) {
-      loadQuestions(j);
-    } else if (j && Array.isArray(j.data)) {
-      loadQuestions(j.data);
-    } else {
-      console.warn('unknown JSON shape', j);
-      showStatus('JSON loaded but structure unknown');
-    }
-  } catch(err){
-    showStatus('Auto-load JSON failed. Click "Load JSON (local)" or put CtestL1-12.json next to this file.');
-    console.log(err);
-  }
-}
-
-function loadQuestions(arr){
-  // normalize: each q should have: id, question (html), options as array [{key:'a',text:'...'},...], answer (letter or number)
-  questions = arr.map((q, idx) => {
-    const id = q.id ?? ('q_' + idx);
-    // detect options object (a,b,c...) or option_1..4
-    let opts = [];
-    if (q.options && typeof q.options === 'object') {
-      // prefer keys a,b,c,d order
-      const letters = ['a','b','c','d','e'];
-      for (const L of letters){
-        if (q.options[L] != null) opts.push({key:L, text: q.options[L]});
-      }
-    } else {
-      // try option_1..4
-      for (let i=1;i<=6;i++){
-        const k = 'option_' + i;
-        if (q[k]) opts.push({key:String(i), text: q[k]});
-      }
-      // fallback: keys option1, opt1 etc (rare)
-    }
-    // if still empty, try scan for keys like 'option_1' etc (already attempted)
-    // determine correct answer: could be 'a'/'b' or '1'.. or 'option_1'
-    const answer = (q.answer ?? q.correct_answer ?? '').toString().trim().toLowerCase();
-
-    return {
-      raw: q,
-      id,
-      question: q.question ?? q.question_html ?? q.question_eng ?? 'No question text',
-      options: opts,
-      answer
+    // --- Configuration and Data ---
+    // UPDATED TIMER: 2 hours 30 minutes (9000s) - 10 minutes (600s) = 8400 seconds (2 hours 20 minutes)
+    const TIME_LIMIT_SECONDS = 8400; // 2 hours 20 minutes
+    
+    // Test Manifest (Hardcoded mock list for demonstration based on GitHub structure)
+    // NOTE: For a real application, this list would ideally come from a small, static JSON file or an API.
+    const TEST_MANIFEST = [
+    { id: 'test-1', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 1', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 1', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-1.json' },
+    { id: 'test-2', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 2', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 2', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-2.json' },
+    { id: 'test-3', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 3', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 3', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-3.json' },
+    { id: 'test-4', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 4', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 4', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-4.json' },
+    { id: 'test-5', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 5', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 5', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-5.json' },
+    { id: 'test-6', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 6', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 6', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-6.json' },
+    { id: 'test-7', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 7', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 7', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-7.json' },
+    { id: 'test-8', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 8', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 8', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-8.json' },
+    { id: 'test-9', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 9', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 9', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-9.json' },
+    { id: 'test-10', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 10', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 10', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-10.json' },
+    { id: 'test-11', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 11', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 11', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-11.json' },
+    { id: 'test-12', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 12', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 12', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-12.json' },
+    { id: 'test-13', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 13', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 13', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-13.json' },
+    { id: 'test-14', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 14', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 14', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-14.json' },
+    { id: 'test-15', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 15', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 15', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-15.json' },
+    { id: 'test-16', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 16', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 16', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-16.json' },
+    { id: 'test-17', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 17', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 17', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-17.json' },
+    { id: 'test-18', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 18', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 18', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-18.json' },
+    { id: 'test-19', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 19', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 19', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-19.json' },
+    { id: 'test-20', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 20', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 20', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-20.json' },
+    { id: 'test-21', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 21', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 21', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-21.json' },
+    { id: 'test-22', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 22', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 22', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-22.json' },
+    { id: 'test-23', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 23', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 23', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-23.json' },
+    { id: 'test-24', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 24', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 24', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-24.json' },
+    { id: 'test-25', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 25', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 25', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-25.json' },
+];
+  
+     // Localization Text
+    const TEXT = {
+        hindi: {
+            app_title: 'टेस्ट प्लेटफॉर्म 👑',
+            select_test: 'टेस्ट चुनें',
+            search_placeholder: 'टेस्ट नाम से खोजें...',
+            loading_test: 'टेस्ट लोड हो रहा है...',
+            loading_questions: 'Questions लोड हो रहे हैं...',
+            submit: 'टेस्ट सबमिट करें',
+            submitted: 'सबमिट किया गया',
+            results: 'टेस्ट परिणाम',
+            score: 'अंतिम स्कोर:',
+            correct: 'सही उत्तर:',
+            incorrect: 'गलत उत्तर:',
+            unattempted: 'प्रयास नहीं किए गए:',
+            review: 'समाधान देखें',
+            explanation: 'व्याख्या:',
+            error: 'टेस्ट लोड करने में त्रुटि',
+            no_test_found: 'कोई टेस्ट नहीं मिला।',
+            start_test: 'शुरू करें',
+            back_to_menu: 'टेस्ट मेनू',
+            no_questions_in_file: 'JSON में कोई प्रश्न नहीं मिला (या डेटा संरचना गलत है)!'
+        },
+        english: {
+            app_title: 'Test Platform 👑',
+            select_test: 'Select Test',
+            search_placeholder: 'Search by Test Name...',
+            loading_test: 'Loading test...',
+            loading_questions: 'Loading Questions...',
+            submit: 'Submit Test',
+            submitted: 'Submitted',
+            results: 'Test Results',
+            score: 'Final Score:',
+            correct: 'Correct Answers:',
+            incorrect: 'Incorrect Answers:',
+            unattempted: 'Unattempted:',
+            review: 'Review Solutions',
+            explanation: 'Explanation:',
+            error: 'Error loading test',
+            no_test_found: 'No tests found.',
+            start_test: 'Start',
+            back_to_menu: 'Test Menu',
+            no_questions_in_file: 'No questions found in JSON (or incorrect data structure)!'
+        }
     };
-  });
 
-  // update UI meta
-  el('testTitle').textContent = 'Test loaded: ' + (questions[0]?.raw?.series_name ?? 'My Test');
-  el('testDesc').textContent = `Loaded ${questions.length} questions from JSON. Click Start Test.`;
-  el('totalQ').textContent = questions.length;
-  el('metaSeries').textContent = `Questions: ${questions.length}`;
-  el('rTotal').textContent = questions.length;
-  el('perQ').textContent = '+' + PER_Q_MARK;
-  showStatus('JSON loaded: ' + questions.length + ' questions');
-}
+    // Global state variables
+    let questions = []; 
+    let currentQuestion = 0;
+    let userSelections = []; 
+    let timerInterval;
+    let timeRemaining = TIME_LIMIT_SECONDS;
+    let currentLanguage = 'hindi'; // Default language is Hindi
+    let isDarkMode = false; // Dark Mode state
+    let isTestRunning = false; // New state for UI management
 
-function showStatus(txt){ el('liveStatus').textContent = 'Status: ' + txt; }
+    // --- State Management ---
 
-function startTest(){
-  if (!questions.length) { alert('No questions loaded. Place CtestL1-12.json next to this file or click Load JSON (local).'); return; }
-  currentIndex = 0;
-  answers = {};
-  marked = {};
-  submitted = false;
-  secondsElapsed = 0;
-  el('welcomePanel').style.display = 'none';
-  el('testArea').style.display = 'block';
-  el('resultsPanel').hidden = true;
-  el('questionsModal').hidden = true;
-  updateQuestionUI();
-  generateQGrid();
-  startTimer();
-  showStatus('Test started');
-}
+    function setUIState(running) {
+        isTestRunning = running;
+        const langText = TEXT[currentLanguage];
+        
+        document.getElementById('test-selection-card').style.display = running ? 'none' : 'block';
+        document.getElementById('quiz-running-card').style.display = running ? 'block' : 'none';
+        
+        document.getElementById('back-to-selection-btn').style.display = running ? 'block' : 'none';
+        document.getElementById('timer').style.display = running ? 'flex' : 'none';
 
-function startTimer(){
-  if (timerInterval) clearInterval(timerInterval);
-  timerInterval = setInterval(()=>{
-    secondsElapsed++;
-    el('timer').textContent = 'Time: ' + formatTime(secondsElapsed);
-  }, 1000);
-}
-function stopTimer(){ if (timerInterval) clearInterval(timerInterval); timerInterval = null; }
+        if (!running) {
+            document.getElementById('test-title').innerHTML = `<i class="fas fa-list me-2"></i> ${langText.select_test}`;
+            renderTestSelection(TEST_MANIFEST); // Re-render test list
+        }
+    }
 
-function formatTime(s){
-  const mm = String(Math.floor(s/60)).padStart(2,'0');
-  const ss = String(s%60).padStart(2,'0');
-  return mm + ':' + ss;
-}
+    function backToSelection(fromModal = false) {
+        // Clear quiz state
+        questions = [];
+        userSelections = [];
+        currentQuestion = 0;
+        clearInterval(timerInterval);
+        
+        if (fromModal) {
+            document.getElementById('results-modal').classList.remove('show');
+        }
+        
+        // Reset timer display
+        timeRemaining = TIME_LIMIT_SECONDS;
+        // Initial timer display logic needs to be updated for longer time
+        const initialMinutes = String(Math.floor(TIME_LIMIT_SECONDS / 60)).padStart(2, '0');
+        const initialSeconds = String(TIME_LIMIT_SECONDS % 60).padStart(2, '0');
+        document.getElementById('timer').textContent = `${initialMinutes}:${initialSeconds}`;
 
-function updateQuestionUI(){
-  const q = questions[currentIndex];
-  if (!q) return;
-  el('question-counter').textContent = `Question ${currentIndex+1} of ${questions.length}`;
-  // inject question HTML safely (we trust data)
-  el('questionText').innerHTML = q.question;
-  // build options
-  const wrapper = el('optionsWrapper');
-  wrapper.innerHTML = '';
-  if (!q.options.length) {
-    wrapper.innerHTML = '<div class="small">No options available for this question.</div>';
-  } else {
-    q.options.forEach(opt=>{
-      const div = document.createElement('div');
-      div.className = 'option';
-      if (answers[q.id] && answers[q.id] == opt.key) div.classList.add('selected');
-      div.innerHTML = `<div class="letter">${opt.key.toUpperCase()}</div><p>${opt.text}</p>`;
-      div.onclick = () => {
-        answers[q.id] = opt.key;
-        // visually update options
-        Array.from(wrapper.children).forEach(c=>c.classList.remove('selected'));
-        div.classList.add('selected');
-        updateProgressSmall();
-        generateQGrid();
-      };
-      wrapper.appendChild(div);
+        document.getElementById('timer').style.backgroundColor = ''; 
+        document.getElementById('timer').style.color = '';
+        
+        // Reset submit button state
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${TEXT[currentLanguage].submit}`;
+        submitBtn.style.backgroundColor = 'var(--primary)';
+
+        setUIState(false);
+    }
+    
+    // --- Test Selection Functions ---
+
+    function renderTestSelection(tests) {
+        const container = document.getElementById('test-list-container');
+        container.innerHTML = '';
+        const lang = currentLanguage;
+        const langText = TEXT[lang];
+
+        if (tests.length === 0) {
+            container.innerHTML = `<p class="text-center text-muted p-5">${langText.no_test_found}</p>`;
+            return;
+        }
+
+        tests.forEach(test => {
+            const title = lang === 'hindi' ? test.title_hi : test.title_en;
+            
+            const item = document.createElement('div');
+            item.className = 'test-item shadow-sm';
+            item.onclick = () => selectTest(test.url, title);
+            item.innerHTML = `
+                <div class="d-flex flex-column">
+                    <span class="test-title">${title}</span>
+                    <small class="text-muted">${test.id}</small>
+                </div>
+                <button class="btn btn-sm btn-primary-custom px-3">
+                    <i class="fas fa-play me-1"></i> ${langText.start_test}
+                </button>
+            `;
+            container.appendChild(item);
+        });
+    }
+
+    function filterTests() {
+        const input = document.getElementById('test-search-input').value.toLowerCase();
+        const filteredTests = TEST_MANIFEST.filter(test => {
+            const title = currentLanguage === 'hindi' ? test.title_hi : test.title_en;
+            return title.toLowerCase().includes(input);
+        });
+        renderTestSelection(filteredTests);
+    }
+
+    function selectTest(url, title) {
+        document.getElementById('test-title').innerHTML = `<i class="fas fa-crown me-2"></i> ${title}`;
+        document.getElementById('test-search-input').value = ''; // Clear search bar
+        setUIState(true); // Switch to quiz running state
+        loadQuestions(url);
+    }
+    
+    // --- Utility and Toggle Functions ---
+
+    function processData(rawData) {
+        const data = rawData.data && Array.isArray(rawData.data) ? rawData.data : [];
+
+        return data.map(item => {
+            const optionsHindi = [];
+            const optionsEnglish = [];
+            const optionKeysMap = {}; 
+            
+            const optionKeys = ['a', 'b', 'c', 'd', 'e'].filter(key => item.options && item.options[key] !== null && item.options[key] !== undefined);
+
+            optionKeys.forEach((key, index) => {
+                optionsHindi.push(item.options[key]);
+                optionsEnglish.push(item.options_eng && item.options_eng[key] ? item.options_eng[key] : item.options[key]);
+                optionKeysMap[index] = key;
+            });
+
+            return {
+                id: item.id,
+                question_hindi: item.question || TEXT.hindi.title,
+                question_english: item.question_eng || TEXT.english.title,
+                options_hindi: optionsHindi,
+                options_english: optionsEnglish,
+                correct_key: item.answer, 
+                option_keys_map: optionKeysMap,
+                note: item.solution || '' 
+            };
+        }).filter(q => q.options_hindi.length > 0); 
+    }
+
+    function toggleLanguage() {
+        currentLanguage = (currentLanguage === 'hindi') ? 'english' : 'hindi';
+        updateUIForLanguage();
+        if (isTestRunning && questions.length > 0) {
+            showQuestion(currentQuestion);
+        } else {
+            renderTestSelection(TEST_MANIFEST);
+        }
+    }
+    
+    function toggleDarkMode() {
+        const body = document.body;
+        const icon = document.querySelector('#dark-mode-toggle i');
+        
+        isDarkMode = !isDarkMode;
+        
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun'); 
+        } else {
+            body.classList.remove('dark-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon'); 
+        }
+        
+        if (questions.length > 0) {
+            showQuestion(currentQuestion); // Re-render quiz
+        }
+        if (!isTestRunning) {
+             renderTestSelection(TEST_MANIFEST); // Re-render selection
+        }
+    }
+
+    function updateUIForLanguage() {
+        const langText = TEXT[currentLanguage];
+        
+        // App title in header
+        document.getElementById('main-title').textContent = langText.app_title.replace('👑', '').trim();
+        
+        // Test Selection Screen
+        if (!isTestRunning) {
+             document.getElementById('test-title').innerHTML = `<i class="fas fa-list me-2"></i> ${langText.select_test}`;
+             document.getElementById('test-search-input').placeholder = langText.search_placeholder;
+             renderTestSelection(TEST_MANIFEST); 
+        } else {
+            // Quiz Running Screen
+            const currentTitle = document.getElementById('test-title').textContent.trim();
+            document.getElementById('test-title').innerHTML = `<i class="fas fa-crown me-2"></i> ${currentTitle}`;
+        }
+        
+        // Common UI Texts
+        const submitBtn = document.getElementById('submit-btn');
+        const submitText = submitBtn.disabled ? langText.submitted : langText.submit;
+        submitBtn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${submitText}`;
+        
+        const loadingMessage = document.getElementById('loading-message');
+        if(loadingMessage.style.display !== 'none') {
+             loadingMessage.querySelector('p').textContent = langText.loading_questions;
+        }
+
+        document.getElementById('results-title').textContent = langText.results;
+        document.getElementById('score-label').textContent = langText.score;
+        document.getElementById('correct-label').textContent = langText.correct;
+        document.getElementById('incorrect-label').textContent = langText.incorrect;
+        document.getElementById('unattempted-label').textContent = langText.unattempted;
+        document.getElementById('review-btn').innerHTML = `<i class="fas fa-search me-2"></i> ${langText.review}`;
+        document.querySelector('.modal-content-custom .btn-secondary').innerHTML = `<i class="fas fa-home me-2"></i> ${langText.back_to_menu}`;
+    }
+
+    // --- Core Quiz Functions ---
+
+    function startTimer() {
+        clearInterval(timerInterval);
+        const timerElement = document.getElementById('timer');
+        timeRemaining = TIME_LIMIT_SECONDS; // Reset timer for new test
+
+        timerInterval = setInterval(() => {
+            timeRemaining--;
+
+            // Calculate hours, minutes, and seconds
+            const hours = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
+            const minutes = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
+            const seconds = String(timeRemaining % 60).padStart(2, '0');
+
+            // Format timer display (H:MM:SS if hours > 0, otherwise MM:SS)
+            const timeDisplay = (hours > 0 || timeRemaining >= 3600) ? `${hours}:${minutes}:${seconds}` : `${minutes}:${seconds}`;
+
+            timerElement.innerHTML = `<i class="fas fa-clock me-1"></i> ${timeDisplay}`;
+
+
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitTest();
+            } else if (timeRemaining <= 60) {
+                timerElement.style.backgroundColor = 'var(--danger)'; 
+                timerElement.style.color = 'white';
+            } else {
+                // Reset to default timer styles
+                timerElement.style.backgroundColor = ''; 
+                timerElement.style.color = '';
+            }
+        }, 1000);
+    }
+
+    function updateQuestionDots() {
+        const dotsContainer = document.getElementById('question-dots');
+        dotsContainer.innerHTML = '';
+        const isSubmitted = document.getElementById('submit-btn').disabled;
+
+        questions.forEach((q, index) => {
+            let className = 'dot-unattempted';
+            const userSelectedKey = userSelections[index];
+            
+            if (isSubmitted) {
+                const isCorrect = userSelectedKey === q.correct_key;
+                const isAttempted = userSelectedKey !== null;
+                if (isAttempted) {
+                    className = isCorrect ? 'dot-correct' : 'dot-incorrect';
+                } 
+            } else {
+                className = userSelectedKey !== null ? 'dot-attempted' : 'dot-unattempted';
+            }
+            
+            if (index === currentQuestion) {
+                className += ' dot-current';
+            }
+
+            const dot = document.createElement('span');
+            dot.className = `question-dot ${className}`;
+            dot.title = `Question ${index + 1}`;
+            dot.onclick = () => showQuestion(index);
+            
+            dot.textContent = index + 1;
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function showQuestion(index) {
+        if (questions.length === 0 || index < 0 || index >= questions.length) return;
+        currentQuestion = index;
+
+        const q = questions[index];
+        const langText = TEXT[currentLanguage];
+        const questionNumberElement = document.getElementById('question-number');
+        const questionTextElement = document.getElementById('question-text');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        const isSubmitted = submitBtn.disabled;
+        const isAnswer = isSubmitted; 
+
+        // Dynamic Content Selection
+        const questionText = currentLanguage === 'hindi' ? q.question_hindi : q.question_english;
+        const options = currentLanguage === 'hindi' ? q.options_hindi : q.options_english;
+
+        // Update Question Number
+        questionNumberElement.textContent = `Question ${index + 1} of ${questions.length}`;
+
+        // Navigation button states
+        prevBtn.disabled = index === 0 || isSubmitted;
+        nextBtn.disabled = index === questions.length - 1 || isSubmitted;
+
+        // Option Change Handler 
+        const handleOptionChange = (e) => {
+            if (!isSubmitted) {
+                userSelections[index] = e.target.value;
+                updateQuestionDots();
+            }
+        };
+
+        // Build Question HTML
+        const questionHtml = `
+            <p class="question-text">${questionText}</p>
+            <div id="options-container" class="options-container mt-4">
+                ${options.map((option, i) => {
+                    const optionKey = q.option_keys_map[i];
+                    const isCorrectOption = optionKey === q.correct_key;
+                    const isUserSelected = userSelections[index] === optionKey;
+
+                    let reviewClass = '';
+                    if (isAnswer) {
+                        if (isCorrectOption) {
+                            reviewClass = 'correct-answer';
+                        } else if (isUserSelected) {
+                            reviewClass = 'incorrect-selected';
+                        }
+                    }
+
+                    let reviewIcon = '';
+                    if (isAnswer) {
+                        const iconClass = isCorrectOption ? 'fa-check-circle correct-icon' : (isUserSelected ? 'fa-times-circle incorrect-icon' : '');
+                        reviewIcon = iconClass ? `<i class="fas ${iconClass} ms-2" style="font-size: 1.1rem;"></i>` : '';
+                    }
+
+                    return `
+                        <div class="form-check option-item ${reviewClass}" tabindex="${isAnswer ? '-1' : '0'}">
+                            <input class="form-check-input" type="radio" name="question-${q.id}" id="option-${q.id}-${i}" value="${optionKey}" 
+                                ${isUserSelected ? 'checked' : ''} ${isAnswer ? 'disabled' : ''}>
+                            <label class="form-check-label d-flex justify-content-between align-items-center" for="option-${q.id}-${i}">
+                                <span>${option}</span>
+                                ${reviewIcon}
+                            </label>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+            
+            <!-- Note Section (Only shown after submission) -->
+            ${isAnswer && q.note ? `
+                <div class="note-block shadow-sm">
+                    <strong style="color: var(--primary-dark);"><i class="fas fa-lightbulb me-2"></i> ${langText.explanation}</strong> ${q.note}
+                </div>
+            ` : ''}
+        `;
+
+        // Inject HTML and attach listeners
+        questionTextElement.innerHTML = questionHtml;
+        const radioButtons = questionTextElement.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', handleOptionChange);
+        });
+
+        // MathJax processing
+        MathJax.typesetPromise([questionTextElement]).then(() => {});
+        
+        // Scroll current dot into view
+        const currentDot = document.querySelector('.dot-current');
+        if (currentDot) {
+            currentDot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        
+        updateQuestionDots();
+    }
+
+    function nextQuestion() {
+        showQuestion(currentQuestion + 1);
+    }
+
+    function prevQuestion() {
+        showQuestion(currentQuestion - 1);
+    }
+
+    function calculateResults() {
+        let correctCount = 0;
+        let incorrectCount = 0;
+        
+        questions.forEach((q, index) => {
+            const userSelectedKey = userSelections[index];
+            if (userSelectedKey !== null) {
+                if (userSelectedKey === q.correct_key) {
+                    correctCount++;
+                } else {
+                    incorrectCount++;
+                }
+            }
+        });
+
+        const unattemptedCount = questions.length - correctCount - incorrectCount;
+        const totalScore = (questions.length > 0) ? (correctCount / questions.length) * 100 : 0;
+
+        return { correctCount, incorrectCount, unattemptedCount, totalScore };
+    }
+
+    function submitTest() {
+        clearInterval(timerInterval);
+        const { correctCount, incorrectCount, unattemptedCount, totalScore } = calculateResults();
+        
+        const score = totalScore.toFixed(2);
+
+        document.getElementById('score-value').textContent = score;
+        document.getElementById('correct-value').textContent = correctCount;
+        document.getElementById('incorrect-value').textContent = incorrectCount;
+        document.getElementById('unattempted-value').textContent = unattemptedCount;
+        
+        document.getElementById('results-modal').classList.add('show');
+        
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = true;
+        
+        const langText = TEXT[currentLanguage];
+        submitBtn.innerHTML = `<i class="fas fa-check me-2"></i> ${langText.submitted}`; 
+        submitBtn.style.backgroundColor = 'var(--success)';
+        
+        showQuestion(currentQuestion); // Re-render current question to show solution
+    }
+    
+    function reviewTest() {
+        document.getElementById('results-modal').classList.remove('show');
+        showQuestion(0);
+    }
+    
+    // --- Initialization and Data Loading ---
+
+    async function loadQuestions(testUrl) {
+        const loadingMessage = document.getElementById('loading-message');
+        const questionContainer = document.getElementById('question-container');
+        const navigationControls = document.getElementById('navigation-controls');
+        
+        loadingMessage.innerHTML = `<i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i><p>${TEXT[currentLanguage].loading_questions}</p>`;
+        loadingMessage.style.display = 'block';
+        questionContainer.style.display = 'none';
+        navigationControls.style.display = 'none';
+        
+        try {
+            const response = await fetch(testUrl);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status} ${response.statusText}. JSON फ़ाइल उपलब्ध नहीं है।`);
+            }
+            
+            const data = await response.json();
+            
+            questions = processData(data); 
+            
+            if (questions.length === 0) {
+                 loadingMessage.innerHTML = `<i class="fas fa-exclamation-triangle fa-2x mb-3 text-danger"></i><p>${TEXT[currentLanguage].no_questions_in_file}</p>`;
+                 clearInterval(timerInterval);
+                 return;
+            }
+
+            userSelections = new Array(questions.length).fill(null);
+            currentQuestion = 0; // Start at the first question
+
+            loadingMessage.style.display = 'none';
+            questionContainer.style.display = 'block';
+            navigationControls.style.display = 'flex';
+            
+            startTimer();
+            showQuestion(0);
+
+        } catch (error) {
+            console.error("Error loading questions:", error);
+            clearInterval(timerInterval); 
+            
+            const langText = TEXT[currentLanguage];
+            loadingMessage.innerHTML = `
+                <i class="fas fa-exclamation-circle fa-2x mb-3 text-danger"></i>
+                <p class="fw-bold">${langText.error}:</p>
+                <p style="font-size: 0.9rem;">${error.message}</p>
+                <p class="mt-3 text-muted">कृपया JSON URL की जाँच करें।</p>
+            `;
+            loadingMessage.style.display = 'block';
+            questionContainer.style.display = 'none';
+            navigationControls.style.display = 'none';
+        }
+    }
+
+    // --- Initial Setup and Event Listeners ---
+    
+    window.onload = function() {
+        updateUIForLanguage(); // Set initial language texts
+        setUIState(false); // Start at test selection screen
+    };
+
+    window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('results-modal')) {
+            document.getElementById('results-modal').classList.remove('show');
+        }
     });
-  }
-  // mark button state
-  el('markedCount').textContent = Object.values(marked).filter(Boolean).length;
-  el('currentQSmall').textContent = currentIndex+1;
-  el('progressSmall').textContent = `${Object.keys(answers).length} / ${questions.length}`;
-  // run MathJax typeset if needed
-  if (window.MathJax) {
-    try { MathJax.typesetPromise(); } catch(e){ /* ignore */ }
-  }
-}
-
-function nextQuestion(){
-  if (currentIndex < questions.length - 1) {
-    currentIndex++;
-    updateQuestionUI();
-  } else {
-    // last -> submit confirm
-    if (confirm('Are you sure you want to submit the test?')) submitTest();
-  }
-}
-
-function prevQuestion(){
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateQuestionUI();
-  }
-}
-
-function toggleMark(){
-  const q = questions[currentIndex];
-  marked[q.id] = !marked[q.id];
-  el('markBtn').classList.toggle('active', !!marked[q.id]);
-  el('markBtn').innerHTML = marked[q.id] ? '<i class="fas fa-star"></i> Marked' : '<i class="far fa-star"></i> Mark';
-  el('markedCount').textContent = Object.values(marked).filter(Boolean).length;
-  generateQGrid();
-}
-
-function generateQGrid(){
-  const grid = el('qGrid');
-  grid.innerHTML = '';
-  questions.forEach((q, i) => {
-    const box = document.createElement('div');
-    box.className = 'q-box' + (i===currentIndex ? ' current' : '') + (answers[q.id] ? ' attempted' : '');
-    box.textContent = i+1;
-    box.onclick = () => { currentIndex = i; updateQuestionUI(); };
-    grid.appendChild(box);
-  });
-}
-
-function showGridToggle(){
-  const modal = el('questionsModal');
-  modal.hidden = !modal.hidden;
-  if (!modal.hidden) generateQGrid();
-}
-
-function submitTest(){
-  if (submitted) return;
-  submitted = true;
-  stopTimer();
-  // scoring
-  let total = 0, attempted = 0, correct = 0;
-  questions.forEach(q => {
-    const user = answers[q.id];
-    if (user) attempted++;
-    // normalize: q.answer might be 'b' or '2' etc.
-    let correctKey = q.answer ? q.answer.toString().trim().toLowerCase() : '';
-    // if correctKey is numeric as string and our options keys are letters, convert numeric to position letter
-    if (correctKey.match(/^[0-9]+$/)) {
-      // numeric index starting 1
-      const idx = parseInt(correctKey,10)-1;
-      const opt = q.options[idx];
-      if (opt) correctKey = String(opt.key).toLowerCase();
-    }
-    // Some dataset uses 'd' or '4' etc; above handles both.
-    if (user && correctKey && user.toString().toLowerCase() === correctKey.toString().toLowerCase()){
-      total += PER_Q_MARK;
-      correct++;
-    }
-  });
-  // show result
-  el('resultsPanel').hidden = false;
-  el('scoreBadge').textContent = total.toString();
-  el('rTotal').textContent = questions.length;
-  el('rAttempted').textContent = attempted;
-  el('rCorrect').textContent = correct;
-  el('resultsPanel').scrollIntoView({behavior:'smooth'});
-  showStatus('Submitted — score: ' + total);
-  // highlight correct/incorrect in review mode
-  showReview();
-}
-
-function showReview(){
-  // render each question with correct/incorrect highlights in a separate view
-  // For simplicity reuse the same UI but we'll augment option styles
-  // set currentIndex = 0 and navigate; each option will show a green/red border if correct/incorrect
-  // We'll update optionsWrapper to reflect review state:
-  const q = questions[currentIndex];
-  if (!q) return;
-  const wrapper = el('optionsWrapper');
-  wrapper.innerHTML = '';
-  q.options.forEach(opt=>{
-    const div = document.createElement('div');
-    div.className = 'option';
-    const user = answers[q.id];
-    let correctKey = q.answer ? q.answer.toString().trim().toLowerCase() : '';
-    if (correctKey.match(/^[0-9]+$/)) {
-      const idx = parseInt(correctKey,10)-1;
-      const opt2 = q.options[idx];
-      if (opt2) correctKey = String(opt2.key).toLowerCase();
-    }
-    const isCorrect = String(opt.key).toLowerCase() === String(correctKey).toLowerCase();
-    const isUser = user && String(user).toLowerCase() === String(opt.key).toLowerCase();
-    if (isCorrect) div.style.borderColor = '#10b981';
-    if (isUser && !isCorrect) div.style.borderColor = '#ef4444';
-    if (isUser) div.classList.add('selected');
-    div.innerHTML = `<div class="letter">${opt.key.toUpperCase()}</div><p>${opt.text}</p>`;
-    wrapper.appendChild(div);
-  });
-  // show counters
-  el('question-counter').textContent = `Review: Q ${currentIndex+1} of ${questions.length}`;
-  // update grid colours
-  generateQGrid();
-}
-
-function reviewAll(){
-  // switch to review mode and allow moving through questions
-  submitted = true;
-  currentIndex = 0;
-  showReview();
-  el('resultsPanel').hidden = false;
-  el('questionsModal').hidden = true;
-  showStatus('Review mode');
-}
-
-function restart(){
-  stopTimer();
-  submitted = false;
-  answers = {};
-  marked = {};
-  currentIndex = 0;
-  el('welcomePanel').style.display = 'block';
-  el('testArea').style.display = 'none';
-  el('resultsPanel').hidden = true;
-  el('questionsModal').hidden = true;
-  el('testTitle').textContent = 'Ready to start';
-  showStatus('idle');
-}
-
-function handleLocalFile(file){
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const json = JSON.parse(e.target.result);
-      if (Array.isArray(json)) loadQuestions(json);
-      else if (json && Array.isArray(json.data)) loadQuestions(json.data);
-      else alert('Unknown JSON structure — expected array or {data:[...]}');
-    } catch(err){
-      alert('Invalid JSON file');
-      console.error(err);
-    }
-  };
-  reader.readAsText(file);
-}
-
-// wire up buttons
-el('btnStart').addEventListener('click', startTest);
-el('nextBtn').addEventListener('click', () => {
-  if (!submitted) nextQuestion(); else { if (currentIndex < questions.length-1) { currentIndex++; showReview(); } }
-});
-el('prevBtn').addEventListener('click', () => { if (!submitted) prevQuestion(); else if (currentIndex>0){ currentIndex--; showReview(); }});
-el('markBtn').addEventListener('click', toggleMark);
-el('gridBtn').addEventListener('click', showGridToggle);
-el('reviewBtn').addEventListener('click', reviewAll);
-el('restartBtn').addEventListener('click', restart);
-
-// file input via button
-el('btnOpenJson').addEventListener('click', ()=>{
-  const inp = document.createElement('input');
-  inp.type = 'file'; inp.accept = '.json,application/json';
-  inp.onchange = (ev) => {
-    const f = ev.target.files[0];
-    if (f) handleLocalFile(f);
-  };
-  inp.click();
-});
-
-// auto attempt to load
-autoLoadJSON();
-showStatus('ready');
-
+    
+    document.addEventListener('keydown', function(e) {
+        if (isTestRunning && !document.getElementById('submit-btn').disabled) {
+            if (e.key === 'ArrowLeft') prevQuestion();
+            if (e.key === 'ArrowRight') nextQuestion();
+        }
+    });
 </script>
 </body>
 </html>
