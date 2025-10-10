@@ -1,0 +1,4056 @@
+{
+  "status": 0,
+  "message": "success",
+  "data": [
+    {
+      "id": 422708,
+      "question": "<div style=\"font-size:20px !important\">भारतीय संविधान के अनुच्छेद 155 के तहत राज्य का राज्यपाल............होता है। </div>",
+      "question_eng": "Under Article 155 of the Indian Constitution, the Governor of a state is............",
+      "answer": "c",
+      "options": {
+        "a": "मनोनित ",
+        "b": "निर्वाचित ",
+        "c": "नियुक्ति ",
+        "d": "पदेन ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Nominated ",
+        "b": "Elected",
+        "c": "Appointed ",
+        "d": "Ex-officio",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "optionc",
+      "plus_marks": 2,
+      "minus_marks": 0,
+      "status": "given",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422709,
+      "question": "<div style=\"font-size:20px !important\">विधायकों की अयोग्यता से संबंधित विवाद का निर्णय राज्यपाल किस अनुच्छेद के तहत करता है? </div>",
+      "question_eng": "Under which Article does the Governor decide the dispute related to the disqualification of MLAs?",
+      "answer": "c",
+      "options": {
+        "a": "अनुच्छेद 175 ",
+        "b": "अनुच्छेद 182 ",
+        "c": "अनुच्छेद 192 ",
+        "d": "अनुच्छेद 195 ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Article 175",
+        "b": "Article 182",
+        "c": "Article 192",
+        "d": "Article 195",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "optionc",
+      "plus_marks": 2,
+      "minus_marks": 0,
+      "status": "given",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422710,
+      "question": "<div style=\"font-size:20px !important\">अनुच्छेद 267 के तहत राज्य की आकस्मिक निधि किसके अधीन होती है? </div>",
+      "question_eng": "Under Article 267, the contingency fund of the State is under?",
+      "answer": "b",
+      "options": {
+        "a": "राष्ट्रपति ",
+        "b": "राज्यपाल ",
+        "c": "मुख्यमंत्री ",
+        "d": "मुख्य सचिव ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "President",
+        "b": "Governor",
+        "c": "Chief Minister",
+        "d": "Chief Secretary",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "optionb",
+      "plus_marks": 2,
+      "minus_marks": 0,
+      "status": "given",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422711,
+      "question": "<div style=\"font-size:20px !important\">श्री गुरूमुख निहाल सिंह को कब राजस्थान के पहले राज्यपाल के रूप में नियुक्त किया गया? </div>",
+      "question_eng": "When was Shri Gurumukh Nihal Singh appointed as the first Governor of Rajasthan? ",
+      "answer": "b",
+      "options": {
+        "a": "26 जनवरी 1950 ",
+        "b": "25 अक्टूबर 1956 ",
+        "c": "1 अप्रैल 1952 ",
+        "d": "1 नवम्बर 1956 ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "18289",
+        "b": "20753",
+        "c": "19085",
+        "d": "20760",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422712,
+      "question": "<div style=\"font-size:20px !important\">अनुच्छेद 158(3क) के अनुसार दो या अधिक राज्यों का एक राज्यपाल है तो उसको दिए जाने वाली उपलब्धियाँ और भत्ते किसके द्वारा तय मानकों के हिसाब से राज्य मिलकर प्रदान करते है? </div>",
+      "question_eng": "According to Article 158(3A), if there is one Governor of two or more States, then the emoluments and allowances to be given to him are jointly determined by the States in accordance with the standards determined by whom?",
+      "answer": "a",
+      "options": {
+        "a": "राष्ट्रपति ",
+        "b": "संसद ",
+        "c": "प्रधानमंत्री ",
+        "d": "राज्य विधानमण्डल ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "President",
+        "b": "Parliament",
+        "c": "Prime Minister",
+        "d": "State Legislature",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422713,
+      "question": "<div style=\"font-size:20px !important\">91वें संविधान संशोधन अधिनियम, 2003 के प्रावधानानुसार राजस्थान में मुख्यमंत्री सहित अधिकतम कितने मंत्री हो सकते है?</div>",
+      "question_eng": "According to the provisions of the 91st Constitutional Amendment Act, 2003, what is the maximum number of ministers in Rajasthan including the Chief Minister?",
+      "answer": "b",
+      "options": {
+        "a": "50",
+        "b": "30",
+        "c": "20",
+        "d": "12",
+        "e": null
+      },
+      "options_eng": {
+        "a": "50",
+        "b": "30",
+        "c": "20",
+        "d": "12",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422714,
+      "question": "<div style=\"font-size:20px !important\">मुख्यमंत्री के कर्तव्यों का उल्लेख निम्न में से किस अनुच्छेद में है? </div>",
+      "question_eng": "In which of the following articles are the duties of the Chief Minister mentioned?",
+      "answer": "b",
+      "options": {
+        "a": "अनुच्छेद 166 ",
+        "b": "अनुच्छेद 167 ",
+        "c": "अनुच्छेद 170 ",
+        "d": "अनुच्छेद 171",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Article 166",
+        "b": "Article 167",
+        "c": "Article 170",
+        "d": "Article 171",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422715,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में सर्वाधिक अवधि तक पद धारण करने वाले मुख्यमंत्री कौन है? </div>",
+      "question_eng": "Who is the Chief Minister who held office for the longest period in Rajasthan?",
+      "answer": "b",
+      "options": {
+        "a": "जयनारायण व्यास  ",
+        "b": "मोहनलाल सुखाड़िया ",
+        "c": "अशोक गहलोत ",
+        "d": "भैंरोसिंह शेखावत ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Jayanarayan Vyas ",
+        "b": "Mohanlal Sukhadia",
+        "c": "Ashok Gehlot ",
+        "d": "Bhairon Singh Shekhawat",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422716,
+      "question": "<div style=\"font-size:20px !important\">वर्तमान मुख्यमंत्री श्री भजनलाल शर्मा व्यक्तिशः कौनसे मुख्यमंत्री है? </div>",
+      "question_eng": "Current Chief Minister Shri Bhajanlal Sharma is personally Which Chief Minister?",
+      "answer": "a",
+      "options": {
+        "a": "14वें ",
+        "b": "15वें ",
+        "c": "16वें ",
+        "d": "17वें ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "14th ",
+        "b": "15th",
+        "c": "16th",
+        "d": "17th",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422717,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान की प्रथम विधानसभा में कुल सदस्य संख्या कितनी थी? </div>",
+      "question_eng": "What was the total number of members in the first assembly of Rajasthan?",
+      "answer": "b",
+      "options": {
+        "a": "140",
+        "b": "160",
+        "c": "184",
+        "d": "200",
+        "e": null
+      },
+      "options_eng": {
+        "a": "140",
+        "b": "160",
+        "c": "184",
+        "d": "200",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422718,
+      "question": "<div style=\"font-size:20px !important\">राज्य विधानसभा के संबंध में निम्न कथनों पर विचार कीजिए।<br>A. विधानमण्डल के सदस्यों का निर्वाचन सार्वभौमिक वयस्क मताधिकार के आधार पर होता है।<br>B.  इनका निर्वाचन फर्स्ट पास्ट द पोस्ट सिस्टम से खुली मतदान प्रणाली से होता है।<br>उपर्युक्त में से सत्य कथन/कथनों की पहचान कीजिए- </div>",
+      "question_eng": "Consider the following statements regarding the state assembly.<br>A. The members of the legislature are elected on the basis of universal adult franchise.<br>B. They are elected by first past the post system and open voting system.<br>Identify the true statement/statements from the above-",
+      "answer": "a",
+      "options": {
+        "a": "केवल A",
+        "b": "केवल B",
+        "c": "A व B दोनों",
+        "d": "न तो A न ही B",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only A ",
+        "b": "Only B ",
+        "c": "Both B and C ",
+        "d": "Neither A nor C",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422719,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान विधानसभा के ऐसे अध्यक्ष कौन थे जो राजस्थान के मुख्यमंत्री भी रहे? </div>",
+      "question_eng": "Who was the speaker of Rajasthan assembly who was also the chief minister of Rajasthan?",
+      "answer": "c",
+      "options": {
+        "a": "लक्ष्मण सिंह ",
+        "b": "रामनिवास मिर्धा ",
+        "c": "हीरालाल देवपुरा ",
+        "d": "समर्थलाल मीणा ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Laxman Singh ",
+        "b": "Ramniwas Mirdha",
+        "c": "Hiralal Devpura",
+        "d": "Samarthlal Meena",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422720,
+      "question": "<div style=\"font-size:20px !important\">अनुच्छेद 174 के अनुसार विधानमण्डल के दो सत्रों के बीच अधिकतम कितना अंतराल हो सकता है? </div>",
+      "question_eng": "According to Article 174, what can be the maximum gap between two sessions of the legislature?",
+      "answer": "c",
+      "options": {
+        "a": "2 माह ",
+        "b": "3 माह ",
+        "c": "6 माह ",
+        "d": "1 माह ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "2 months",
+        "b": "3 months",
+        "c": "6 months",
+        "d": "1 month",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422721,
+      "question": "<div style=\"font-size:20px !important\">राज्य विधानमण्डल के संदर्भ में सूची-I का सूची-II से मिलान कीजिए-<br />\n सूची-I     सूची-II<br />\n (प्रावधान)     (अनुच्छेद)<br />\n (A) सदस्यों का कार्यकाल  (i) अनुच्छेद 188 <br />\n (B) सदस्यों की योग्यताएँ  (ii) अनुच्छेद 191 <br />\n (C) सदस्यों की शपथ  (iii) अनुच्छेद 173 <br />\n (D) सदस्यों की अयोग्यताएँ  (iv) अनुच्छेद 172 <br />\n कूट-<br />\n A B C D</div>",
+      "question_eng": "Match List-I with List-II with reference to State Legislature-<br />\n List-I    List-II<br />\n (Provisions)    (Article)<br />\n (A) Tenure of members  (i) Article 188<br />\n (B) Qualifications of members  (ii) Article 191<br />\n (C) Oath of members  (iii) Article 173<br />\n (D) Disqualifications of members  (iv) Article 172<br />\n Code-<br />\n A B C D",
+      "answer": "c",
+      "options": {
+        "a": "iv iii ii i ",
+        "b": "i ii iii iv ",
+        "c": "iv iii i ii ",
+        "d": "ii i iv iii ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "iv iii ii i ",
+        "b": "i ii iii iv ",
+        "c": "iv iii i ii ",
+        "d": "ii i iv iii ",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422722,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान विधानसभा की लोक लेखा समिति का वर्तमान अध्यक्ष कौन है? </div>",
+      "question_eng": "Who is the current chairman of the Public Accounts Committee of Rajasthan Legislative Assembly?",
+      "answer": "a",
+      "options": {
+        "a": "टीकाराम जूली ",
+        "b": "कालीचरण सराफ ",
+        "c": "अर्जुनलाल जीनगर ",
+        "d": "बाबू सिंह राठौड़ ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Tikaram Julie",
+        "b": "Kalicharan Saraf",
+        "c": "Arjunlal Jinagar",
+        "d": "Babu Singh Rathore",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422723,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान की किस विधानसभा के चुनावों में पहली बार नोटा (NOTA) का प्रयोग किया गया?</div>",
+      "question_eng": "NOTA was used for the first time in the elections of which assembly of Rajasthan?",
+      "answer": "b",
+      "options": {
+        "a": "13वीं ",
+        "b": "14वीं ",
+        "c": "15वीं ",
+        "d": "10वीं ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "13th ",
+        "b": "14th",
+        "c": "15th ",
+        "d": "10th",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422724,
+      "question": "<div style=\"font-size:20px !important\">निम्न में से किस संविधान संशोधन अधिनियम द्वारा दो या दो से अधिक राज्यों के लिए एक साझा उच्च न्यायालय का प्रावधान किया गया? </div>",
+      "question_eng": "Which of the following Constitutional Amendment Acts provided for a common High Court for two or more states?",
+      "answer": "b",
+      "options": {
+        "a": "प्रथम संविधान संशोधन ",
+        "b": "7वाँ संविधान संशोधन ",
+        "c": "42वाँ संविधान संशोधन ",
+        "d": "44वाँ संविधान संशोधन ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1st Constitutional Amendment",
+        "b": "7th Constitutional Amendment",
+        "c": "42nd Constitutional Amendment",
+        "d": "44th Constitutional Amendment",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422725,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान उच्च न्यायालय के प्रथम मुख्य न्यायाधीश कौन थे? </div>",
+      "question_eng": "Who was the first Chief Justice of Rajasthan High Court?",
+      "answer": "d",
+      "options": {
+        "a": "के.आर. श्रीराम ",
+        "b": "कैलाश वांचू ",
+        "c": "एस.के. गर्ग ",
+        "d": "के.के. वर्मा ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "K.R. Shriram",
+        "b": "Kailash Wanchoo",
+        "c": "S.K. Garg",
+        "d": "K.K. Verma",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422726,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान उच्च न्यायालय के अधीन कुल कितने न्यायिक पद (Judgeships) है?</div>",
+      "question_eng": "How many judgeships are there in total under Rajasthan High Court?",
+      "answer": "b",
+      "options": {
+        "a": "33",
+        "b": "36",
+        "c": "41",
+        "d": "50",
+        "e": null
+      },
+      "options_eng": {
+        "a": "33",
+        "b": "36",
+        "c": "41",
+        "d": "50",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422727,
+      "question": "<div style=\"font-size:20px !important\">निम्न में से असत्य कथन की पहचान कीजिए- </div>",
+      "question_eng": "Identify the incorrect statement from the following-",
+      "answer": "d",
+      "options": {
+        "a": "राजस्थान शासन सचिवालय का एकीकृत रूप 13 अप्रैल 1949 को अस्तित्व में आया। ",
+        "b": "राज्य के मुख्य सचिव अवशिष्ट वसीयतदार होते है। ",
+        "c": "मुख्य सचिव का चयन राज्य का मुख्यमंत्री करता है। ",
+        "d": "राजस्थान के वर्तमान मुख्य सचिव शिखर अग्रवाल है। ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "The integrated form of Rajasthan Government Secretariat came into existence on 13 April 1949.",
+        "b": "The Chief Secretary of the state is the residuary legatee.",
+        "c": "The Chief Secretary is selected by the Chief Minister of the state.",
+        "d": "The current Chief Secretary of Rajasthan is Shikhar Agarwal.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422728,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान के सर्वाधिक कार्यकाल वाले मुख्य सचिव कौन रहे है? </div>",
+      "question_eng": "Who has been the Chief Secretary of Rajasthan with the longest tenure?",
+      "answer": "b",
+      "options": {
+        "a": "के. राधाकृष्णन ",
+        "b": "भगत सिंह मेहता ",
+        "c": "आर.डी. थापर ",
+        "d": "मोहन मुखर्जी ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "K. Radhakrishnan ",
+        "b": "Bhagat Singh Mehta",
+        "c": "R.D. Thapar ",
+        "d": "Mohan Mukherjee",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422729,
+      "question": "<div style=\"font-size:20px !important\">आपदा प्रबंधन अधिनियम 2005 की किस धारा के अनुसार राज्य सरकार द्वारा जिला कलेक्टर को जिला आपदा प्रबंधन प्राधिकरण का अध्यक्ष निर्धारित किया? </div>",
+      "question_eng": "Under which section of the Disaster Management Act 2005, the State Government has appointed the District Collector as the Chairman of the District Disaster Management Authority?",
+      "answer": "d",
+      "options": {
+        "a": "धारा 2 ",
+        "b": "धारा 18 ",
+        "c": "धारा 21",
+        "d": "धारा 25 ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Section 2",
+        "b": "Section 18",
+        "c": "Section 21",
+        "d": "Section 25",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422730,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान पुलिस सेवा का गठन कब हुआ? </div>",
+      "question_eng": "When was the Rajasthan Police Service formed?",
+      "answer": "a",
+      "options": {
+        "a": "1951 में ",
+        "b": "1956 में ",
+        "c": "1962 में",
+        "d": "1967 में ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "In 1951",
+        "b": "In 1956",
+        "c": "In 1962",
+        "d": "In 1967",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422731,
+      "question": "<div style=\"font-size:20px !important\">विधानसभा चुनाव के लिए चुनाव अधिकारी कौन होता है? </div>",
+      "question_eng": "Who is the Election Officer for the Assembly Elections?",
+      "answer": "b",
+      "options": {
+        "a": "जिला कलेक्टर ",
+        "b": "उपखण्ड अधिकारी ",
+        "c": "तहसीलदार ",
+        "d": "विकास अधिकारी ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "District Collector ",
+        "b": "Subdivision Officer",
+        "c": "Tehsildar ",
+        "d": "Development Officer",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422732,
+      "question": "<div style=\"font-size:20px !important\">देश की पहली त्रिस्तरीय पंचायती राज प्रणाली की शुरूआत कब हुई? </div>",
+      "question_eng": "When was the country's first three-tier Panchayati Raj system started? ",
+      "answer": "b",
+      "options": {
+        "a": "1 अप्रैल 1953 ",
+        "b": "2 अक्टूबर 1959 ",
+        "c": "26 जनवरी 1975 ",
+        "d": "24 अप्रैल 1993 ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "19450",
+        "b": "21825",
+        "c": "27420",
+        "d": "34083",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422733,
+      "question": "<div style=\"font-size:20px !important\">किस संविधान संशोधन अधिनियम द्वारा संविधान में पंचायती राज संस्थाओं हेतु उपबंध किए गए? </div>",
+      "question_eng": "By which Constitutional Amendment Act provisions were made for Panchayati Raj Institutions in the Constitution?",
+      "answer": "b",
+      "options": {
+        "a": "42वें संविधान संशोधन ",
+        "b": "73वें संविधान संशोधन ",
+        "c": "74वें संविधान संशोधन ",
+        "d": "92वें संविधान संशोधन ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "42nd Constitutional Amendment",
+        "b": "73rd Constitutional Amendment",
+        "c": "74th Constitutional Amendment",
+        "d": "92nd Constitutional Amendment",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422734,
+      "question": "<div style=\"font-size:20px !important\">ग्राम सभा की बैठक में गणपूर्ति होती है? </div>",
+      "question_eng": "What is the quorum in the meeting of Gram Sabha?",
+      "answer": "c",
+      "options": {
+        "a": "कुल सदस्यों की एक चौथाई ",
+        "b": "कुल सदस्यों की एक तिहाई ",
+        "c": "कुल सदस्यों का दसवाँ भाग ",
+        "d": "कुल सदस्यों का बीसवाँ भाग ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "One fourth of the total members",
+        "b": "One third of the total members",
+        "c": "One tenth of the total members",
+        "d": "One twentieth of the total members",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422735,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में वर्तमान में कुल कितने नगर निगम है? </div>",
+      "question_eng": "How many Municipal Corporations are there in Rajasthan at present? ",
+      "answer": "b",
+      "options": {
+        "a": "10",
+        "b": "13",
+        "c": "51",
+        "d": "248",
+        "e": null
+      },
+      "options_eng": {
+        "a": "10",
+        "b": "13",
+        "c": "51",
+        "d": "248",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422736,
+      "question": "<div style=\"font-size:20px !important\">भारतीय संविधान का कौनसा अनुच्छेद नगरपालिकाओं की संरचना से संबंधित है? </div>",
+      "question_eng": "Which article of the Indian Constitution deals with the structure of municipalities?",
+      "answer": "c",
+      "options": {
+        "a": "243P",
+        "b": "243Q",
+        "c": "243R",
+        "d": "243S",
+        "e": null
+      },
+      "options_eng": {
+        "a": "243P",
+        "b": "243Q",
+        "c": "243R",
+        "d": "243S",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422737,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान लोक सेवा आयोग में वर्तमान में अध्यक्ष सहित कुल कितने सदस्यों के पद है? </div>",
+      "question_eng": "At present, how many posts of members including the Chairman are there in the Rajasthan Public Service Commission?",
+      "answer": "d",
+      "options": {
+        "a": "7",
+        "b": "8",
+        "c": "10",
+        "d": "11",
+        "e": null
+      },
+      "options_eng": {
+        "a": "7",
+        "b": "8",
+        "c": "10",
+        "d": "11",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422738,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से राजस्थान का कौनसा जिला 80-90 सेमी. औसत वार्षिक वर्षा प्राप्त करता है?</div>",
+      "question_eng": "Which of the following districts of Rajasthan receives 80-90 cm of average annual rainfall?",
+      "answer": "b",
+      "options": {
+        "a": "भीलवाड़ा",
+        "b": "प्रतापगढ़",
+        "c": "अजमेर",
+        "d": "भरतपुर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Bhilwara ",
+        "b": "Pratapgarh",
+        "c": "Ajmer ",
+        "d": "Bharatpur",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422739,
+      "question": "<div style=\"font-size:20px !important\">दक्षिण-पश्चिम मानसून के मौसम में प्राप्त औसत वर्षा की मात्रा के अनुसार राजस्थान के निम्नलिखित जिलों में से कौनसा सही ढंग से अवरोही क्रम में व्यवस्थित है? </div>",
+      "question_eng": "Which of the following districts of Rajasthan are correctly arranged in descending order according to the amount of average rainfall received during the south-west monsoon season?",
+      "answer": "a",
+      "options": {
+        "a": "धौलपुर, दौसा, झुन्झुनूँ",
+        "b": "धौलपुर, झुन्झुनूँ, दौसा",
+        "c": "कोटा, झालावाड़, उदयपुर ",
+        "d": "अलवर, धौलपुर, झुन्झुनूँ ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Dholpur, Dausa, Jhunjhunu",
+        "b": "Dholpur, Jhunjhunu, Dausa",
+        "c": "Kota, Jhalawar, Udaipur",
+        "d": "Alwar, Dholpur, Jhunjhunu",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422740,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान का निम्नलिखित में से कौनसा जिला युग्म स्टेपी जलवायु परिस्थितियों से संबंधित नहीं है?</div>",
+      "question_eng": "Which of the following district pairs of Rajasthan does not belong to the steppe climatic conditions?",
+      "answer": "d",
+      "options": {
+        "a": "पाली-नागौर",
+        "b": "जोधपुर-झुन्झुनूँ",
+        "c": "जालौर-सिरोही ",
+        "d": "जयपुर-अलवर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Pali-Nagaur ",
+        "b": "Jodhpur-Jhunjhunu",
+        "c": "Jalore-Sirohi ",
+        "d": "Jaipur-Alwar",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422741,
+      "question": "<div style=\"font-size:20px !important\">कोपेन के जलवायु वर्गीकरण के अनुसार कौनसे जिलों का युग्म 'उष्ण आर्द्र प्रदेश' में सम्मिलित है?</div>",
+      "question_eng": "According to Koppen's climate classification, which pair of districts is included in the hot humid region?",
+      "answer": "d",
+      "options": {
+        "a": "भीलवाड़ा और बूँदी",
+        "b": "धौलपुर और करौली",
+        "c": "अजमेर और टोंक",
+        "d": "प्रतापगढ़ और बाँसवाड़ा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Bhilwara and Bundi",
+        "b": "Dholpur and Karauli",
+        "c": "Ajmer and Tonk",
+        "d": "Pratapgarh and Banswara",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422742,
+      "question": "<div style=\"font-size:20px !important\">कोपेन के जलवायु वर्गीकरण के आधार पर निम्न में से असुमेलित युग्म है?<br> (वर्णाक्षर) - (अर्थ) </div>",
+      "question_eng": "On the basis of Koppen's climate classification, which of the following is an mismatched pair?<br> (Alphabet) - (Meaning)",
+      "answer": "b",
+      "options": {
+        "a": "A - उष्ण आर्द्र",
+        "b": "s - शीत शुष्क",
+        "c": "W - पूर्ण शुष्क",
+        "d": "g - गंगा तुल्य जलवायु",
+        "e": null
+      },
+      "options_eng": {
+        "a": "A - Hot humid",
+        "b": "s - Cold dry",
+        "c": "W - Completely dry",
+        "d": "g - Ganga like climate",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422743,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित कथनों पर विचार कीजिए-<br>1.  25 सेमी. सम वर्षा रेखा इस प्रदेश की पूर्वी सीमा पर स्थित है।<br>2. इस प्रदेश में वार्षिक तापांतर अधिक रहता है।<br>उपर्युक्त विशेषताएँ किस जलवायु प्रदेश को वर्णित करती है?</div>",
+      "question_eng": "Consider the following statements-<br>1.  25 cm. Isohyte line is situated on the eastern border of this state.<br>2.  Annual temperature difference is high in this state.<br>The above mentioned characteristics describe which <br>climatic region?",
+      "answer": "b",
+      "options": {
+        "a": "उप आर्द्र जलवायु प्रदेश",
+        "b": "शुष्क जलवायु प्रदेश",
+        "c": "अतिआर्द्र जलवायु प्रदेश",
+        "d": "उप आर्द्र जलवायु प्रदेश",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Sub-humid climatic region",
+        "b": "Dry climatic region",
+        "c": "Extremely humid climate regions",
+        "d": "Sub-humid climatic region",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422744,
+      "question": "<div style=\"font-size:20px !important\">आर्थिक समीक्षा 2024-25 के अनुसार राज्य में 1 जून से 30 सितंबर 2024 तक की समयावधि में वास्तविक वर्षा दर्ज की गई?</div>",
+      "question_eng": "According to Economic Review 2024-25, what was the actual rainfall recorded in the state during the period from 1st June to 30th September 2024?",
+      "answer": "c",
+      "options": {
+        "a": "55.57 सेमी.",
+        "b": "58.68 सेमी.",
+        "c": "66.24 सेमी.",
+        "d": "41.74 सेमी.",
+        "e": null
+      },
+      "options_eng": {
+        "a": "55.57 cm. ",
+        "b": "58.68 cm.",
+        "c": "66.24 cm. ",
+        "d": "41.74 cm.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422745,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में मानसून प्रत्यावर्तन ऋतु के संदर्भ में असत्य कथन है-</div>",
+      "question_eng": "The false statement regarding the monsoon retreat season in Rajasthan is-",
+      "answer": "c",
+      "options": {
+        "a": "यह प्रक्रिया शरद्‌ ऋतु के दौरान होती है।",
+        "b": "इस ऋतु में राज्य में वर्षा नहीं होती है।",
+        "c": "इस समय मानसूनी हवाओं की आर्द्रता चरमोत्कर्ष पर होती है।",
+        "d": "इस समय हवाएँ शांत व अत्यंत परिवर्तनशील होती है।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "This process takes place during autumn season.",
+        "b": "There is no rainfall in the state during this season.",
+        "c": "The humidity of monsoon winds is at its peak at this time.",
+        "d": "The winds are calm and highly variable at this time.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422746,
+      "question": "<div style=\"font-size:20px !important\">थॉर्नथ्वेट के अनुसार, दिये गये मानचित्र में छायांकित क्षेत्र किस जलवायु को प्रदर्शित करता है?<br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412398_68a177aec99b2.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "According to Thornthwaite, which climate is represented by the shaded area in the given map?<br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412398_68a177aec99b2.jpg style=\"min-width:320px\">",
+      "answer": "b",
+      "options": {
+        "a": "DA’w ",
+        "b": "CA’w ",
+        "c": "DB’w ",
+        "d": "EA’d",
+        "e": null
+      },
+      "options_eng": {
+        "a": "DA’w ",
+        "b": "CA’w ",
+        "c": "DB’w ",
+        "d": "EA’d",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422747,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में शीतऋतु में होने वाली वर्षा में सहायक है-</div>",
+      "question_eng": "The winter rainfall in Rajasthan is caused by-",
+      "answer": "a",
+      "options": {
+        "a": "पछुवा पवनें",
+        "b": "व्यापारिक पवनें",
+        "c": "लू",
+        "d": "ध्रुवीय हवाएँ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Westerly winds ",
+        "b": "Trade winds",
+        "c": "Loo ",
+        "d": "Polar winds",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422748,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से राजस्थान का न्यूनतम वर्षा परिवर्तनशीलता वाला स्थान है?</div>",
+      "question_eng": "Which of the following places in Rajasthan has minimum rainfall variability?",
+      "answer": "a",
+      "options": {
+        "a": "सिरोही",
+        "b": "जैसलमेर",
+        "c": "श्रीगंगानगर",
+        "d": "चूरू",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Sirohi ",
+        "b": "Jaisalmer",
+        "c": "Sri Ganganagar ",
+        "d": "Churu",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422749,
+      "question": "<div style=\"font-size:20px !important\">BShw राजस्थान के किस जलवायु प्रदेश का प्रतिनिधित्व करता है?</div>",
+      "question_eng": "BShw represents which climatic region of Rajasthan?",
+      "answer": "c",
+      "options": {
+        "a": "उष्णकटिबन्धीय शुष्क",
+        "b": "उष्णकटिबन्धीय आर्द्र",
+        "c": "अर्द्ध शुष्क",
+        "d": "उप-आर्द्र",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Tropical dry ",
+        "b": "Tropical humid",
+        "c": "Semi-arid ",
+        "d": "Sub-humid",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422750,
+      "question": "<div style=\"font-size:20px !important\">दक्षिण पश्चिम मानसून निम्नलिखित में से किस क्षेत्र में पहले आता है?</div>",
+      "question_eng": "In which of the following regions does the South-west monsoon arrive first? ",
+      "answer": "a",
+      "options": {
+        "a": "डूँगरपुर तथा बाँसवाड़ा",
+        "b": "नागौर तथा जोधपुर में",
+        "c": "पाली तथा चूरू में",
+        "d": "गंगानगर तथा हनुमानगढ़ में",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Dungarpur and Banswara",
+        "b": "Nagaur and Jodhpur",
+        "c": "Pali and Churu",
+        "d": "Ganganagar and Hanumangarh",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422751,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में होने वाली कुल वर्षा का कितना अंश जुलाई से सितंबर के मध्य प्राप्त होता है?</div>",
+      "question_eng": "What portion of the total rainfall in Rajasthan is received between July and September?",
+      "answer": "d",
+      "options": {
+        "a": "45-50 प्रतिशत",
+        "b": "60-65 प्रतिशत",
+        "c": "70-75 प्रतिशत",
+        "d": "90-95 प्रतिशत",
+        "e": null
+      },
+      "options_eng": {
+        "a": "45-50% ",
+        "b": "60-65%",
+        "c": "70-75% ",
+        "d": "90-95%",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422752,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में उच्च वायु तीव्रता से न्यूनतम नुकसान वाले जिलों का उपयुक्त समुच्य है-</div>",
+      "question_eng": "The appropriate set of districts in Rajasthan which suffer minimum damage due to high wind intensity is-",
+      "answer": "d",
+      "options": {
+        "a": "गंगानगर-हनुमानगढ़",
+        "b": "जैसलमेर-बाड़मेर",
+        "c": "जयपुर-टोंक",
+        "d": "डूंगरपुर-बाँसवाड़ा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Ganganagar-Hanumangarh ",
+        "b": "Jaisalmer-Barmer",
+        "c": "Jaipur-Tonk ",
+        "d": "Dungarpur-Banswara",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422753,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में जनवरी माह में जैसलमेर जिले से गुजरने वाली वायुदाब रेखा है-</div>",
+      "question_eng": "In Rajasthan, the air pressure line passing through Jaisalmer district in January is-",
+      "answer": "c",
+      "options": {
+        "a": "997 मिलीबार से कम",
+        "b": "1000 मिलीबार से कम",
+        "c": "1018 मिलीबार से अधिक",
+        "d": "1020 मिलीबार से अधिक",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Less than 997 millibar",
+        "b": "Less than 1000 millibar",
+        "c": "More than 1018 millibar",
+        "d": "More than 1020 millibar",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422754,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान मानसून के संदर्भ में निम्नलिखित में से सत्य कथन नहीं है? </div>",
+      "question_eng": "Which of the following is not a true statement in the context of Rajasthan monsoon?",
+      "answer": "c",
+      "options": {
+        "a": "राज्य में अरावली बंगाल की खाड़ी की शाखा के मार्ग में अवरोधक है।",
+        "b": "राज्य में अरब सागरीय शाखा बंगाल की खाड़ी की शाखा की तुलना में अत्यंत कम वर्षा करती है।",
+        "c": "राज्य में पूर्व से पश्चिम की ओर वर्षा की परिवर्तनशीलता कम होती जाती है।",
+        "d": "राज्य में मानसून सामान्यतः मध्य जून में प्रवेश करता है।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Aravali is a barrier in the path of the Bay of Bengal branch in the state.",
+        "b": "The Arabian Sea branch in the state receives very less rainfall as compared to the Bay of Bengal branch.",
+        "c": "The variability of rainfall in the state decreases from east to west.",
+        "d": "The monsoon generally enters the state in mid-June.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422755,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में पूर्वी भाग की तुलना में पश्चिमी भाग में जलवायु की चरम सीमाएँ.......होती है।</div>",
+      "question_eng": "In Rajasthan, the extremes of climate in the western part are more than in the eastern part. ",
+      "answer": "a",
+      "options": {
+        "a": "उच्चतर",
+        "b": "निम्नतर ",
+        "c": "समान",
+        "d": "अप्रत्याशित",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Higher ",
+        "b": "Lower",
+        "c": "Same ",
+        "d": "Unpredictable",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422756,
+      "question": "<div style=\"font-size:20px !important\">कोपेन के जलवायु वर्गीकरण के अनुसार निम्न में से कौन से सही सुमेलित हैं?</div>",
+      "question_eng": "According to Koppen's climate classification, which of the following are correctly matched?",
+      "answer": "d",
+      "options": {
+        "a": "Cwg - सिरोही",
+        "b": "BWhw- बाड़मेर",
+        "c": "BShw- गंगानगर",
+        "d": "Aw- डूंगरपुर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Cwg - Sirohi",
+        "b": "BWhw- Barmer",
+        "c": "BShw- Ganganagar",
+        "d": "Aw- Dungarpur",
+        "e": null
+      },
+      "solution": null,
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422757,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से राजस्थान में न्यूनतम दैनिक तापांतर वाले माह का उपयुक्त युग्म है- </div>",
+      "question_eng": "Which of the following is the appropriate pair of month with minimum daily temperature difference in Rajasthan-",
+      "answer": "c",
+      "options": {
+        "a": "दिसंबर- जनवरी",
+        "b": "मार्च- अप्रैल",
+        "c": "जुलाई- अगस्त",
+        "d": "सितंबर- अक्टूबर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "December - January ",
+        "b": "March - April",
+        "c": "July - August ",
+        "d": "September - October",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422758,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में कम वर्षा होने का प्रमुख कारण है-</div>",
+      "question_eng": "The main reason for less rainfall in Rajasthan is-",
+      "answer": "c",
+      "options": {
+        "a": "समुद्र से दूरी",
+        "b": "मरुस्थल का विस्तार",
+        "c": "अरावली का मानसूनी हवाओं के समानांतर स्थित होना",
+        "d": "वनावरण क्षेत्र में कमी",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Distance from the sea",
+        "b": "Expanse of desert",
+        "c": "The Aravalli is located parallel to the monsoon winds",
+        "d": "Decrease in forest cover area",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422759,
+      "question": "<div style=\"font-size:20px !important\">कथन (A) : दक्षिणी तथा दक्षिणी-पूर्वी राजस्थान बंगाल की खाड़ी की शाखा से बहुत कम वर्षा प्राप्त करता है।<br>कारण (R) : बंगाल की खाड़ी की शाखा अरावली के बिल्कुल समानान्तर स्थित है। </div>",
+      "question_eng": "Statement (A) : Southern and south-eastern Rajasthan receives very less rainfall from the Bay of Bengal branch.<br>Reason (R) : The Bay of Bengal branch lies exactly parallel to the Aravallis.",
+      "answer": "d",
+      "options": {
+        "a": "A तथा R दोनों सत्य है, R, A की पूर्ण व्याख्या है।",
+        "b": "A तथा R दोनों सत्य है, R, A की पूर्ण व्याख्या नहीं है।  ",
+        "c": "A सत्य है तथा R असत्य है।",
+        "d": "A तथा R दोनों असत्य है।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Both A and R are true, R is the complete explanation of A.",
+        "b": "Both A and R are true, R is not the complete explanation of A.",
+        "c": "A is true and R is false.",
+        "d": "Both A and R are false.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422760,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान के कौनसे क्षेत्र से सर्वाधिक लौह-अयस्क उत्पादित किया जाता है- </div>",
+      "question_eng": "From which region of Rajasthan maximum iron ore is produced-",
+      "answer": "c",
+      "options": {
+        "a": "दक्षिणी-पूर्वी ",
+        "b": "दक्षिणी-पश्चिमी ",
+        "c": "उत्तरी-पूर्वी  ",
+        "d": "उत्तरी ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "South-eastern",
+        "b": "South-western",
+        "c": "North-eastern",
+        "d": "Northern",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422761,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान के बजट 2025-26 के प्रावधानों के अनुसार निम्नलिखित में से किस स्थान पर 'इंस्टीट्‌यूट ऑफ माइन्स' की स्थापना किया जाना प्रस्तावित है?</div>",
+      "question_eng": "As per the provisions of Rajasthan budget 2025-26, at which of the following places is it proposed to establish 'Institute of Mines'?",
+      "answer": "c",
+      "options": {
+        "a": "डूंगरपुर",
+        "b": "जोधपुर",
+        "c": "उदयपुर",
+        "d": "कोटा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Dungarpur ",
+        "b": "Jodhpur",
+        "c": "Udaipur ",
+        "d": "Kota",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422762,
+      "question": "<div style=\"font-size:20px !important\">ताँबे की खानें सैनपरी तथा हनोतिया क्रमशः स्थित है-</div>",
+      "question_eng": "Copper mines are located in Sain Pari and Hanotiya are situated respectively in-",
+      "answer": "c",
+      "options": {
+        "a": "कोटा व चित्तौड़गढ़",
+        "b": "झुंझुनूं व भीलवाड़ा",
+        "c": "अलवर व अजमेर",
+        "d": "भीलवाड़ा व पाली",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Kota and Chittorgarh ",
+        "b": "Jhunjhunu and Bhilwara",
+        "c": "Alwar and Ajmer ",
+        "d": "Bhilwara and Pali",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422763,
+      "question": "<div style=\"font-size:20px !important\">भाडख़ा, गूंगा, कसनऊ किस खनिज की खानें हैं?</div>",
+      "question_eng": "Bhadkha, Gunga, Kasnau are mines of which mineral?",
+      "answer": "b",
+      "options": {
+        "a": "गैस",
+        "b": "कोयला",
+        "c": "लौह-अयस्क",
+        "d": "यूरेनियम",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Gas ",
+        "b": "Coal",
+        "c": "Iron-ore ",
+        "d": "Uranium",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422764,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित कथनों पर विचार कीजिए -<br>1.  अजमेर जिले में फेल्सपार के भंडार हैं।<br>2.  अलवर, बाड़मेर व भीलवाड़ा में रॉक फास्फेट के भंडार हैं।<br>3.  सलादीपुरा, सीकर पाइराइट खनन क्षेत्र है। <br>कूटः</div>",
+      "question_eng": "Consider the following statements-<br>1.  There are deposits of feldspar in Ajmer district.<br>2. There are deposits of rock phosphate in Alwar, Barmer and Bhilwara.<br>3.  Saladipura, Sikar is pyrite mining area.<br>Code:",
+      "answer": "d",
+      "options": {
+        "a": "केवल 1 व 2 सत्य है",
+        "b": "1, 2 व 3 सत्य है",
+        "c": "केवल 2 व 3 सत्य है",
+        "d": "केवल 1 व 3 सत्य है",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only 1 and 2 are true",
+        "b": "1, 2 and 3 are true",
+        "c": "Only 2 and 3 are true",
+        "d": "Only 1 and 3 are true",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422765,
+      "question": "<div style=\"font-size:20px !important\">सूची-I को सूची-II के साथ सुमेलित कीजिए एवं नीचे दिये कूट से सही उत्तर का चयन कीजिए-<br />\n सूची-I     सूची-II<br />\n (खनिज) (खनन क्षेत्र)<br />\n (A) कैल्साइट (i) सैनपुरी- जाहिर का खेड़ा<br />\n (B) बैराइट्‌स (ii) तेजा का बास, बेल्का पहाड़<br />\n (C) फ्लोराइट (iii) बिरमानिया, फतेहगढ़<br />\n (D) रॉक फॉस्फेट (iv) चौकरी, चापोली<br />\n कूट-</div>",
+      "question_eng": "Match List-I with List-II and select the correct answer from the code given below-<br />\n List-I      List-II<br />\n (Mineral)      (Mining area)<br />\n (A) Calcite  (i) Sainpuri- Zahir Ka Kheda<br />\n (B) Barytes  (ii) Teja Ka Bas, Belka Pahad<br />\n (C) Fluorite  (iii) Birmania, Fatehgarh<br />\n (D) Rock Phosphate  (iv) Chaukri, Chapoli<br />\n Code-",
+      "answer": "d",
+      "options": {
+        "a": "(A)-(ii), (B)-(iv), (C)-(i), (D)-(iii)",
+        "b": "(A)-(i), (B)-(iii), (C)-(ii), (D)-(iv)",
+        "c": "(A)-(iv), (B)-(ii), (C)-(iii), (D)-(i)",
+        "d": "(A)-(ii), (B)-(i), (C)-(iv), (D)-(iii)",
+        "e": null
+      },
+      "options_eng": {
+        "a": "(A)-(ii), (B)-(iv), (C)-(i), (D)-(iii)",
+        "b": "(A)-(i), (B)-(iii), (C)-(ii), (D)-(iv)",
+        "c": "(A)-(iv), (B)-(ii), (C)-(iii), (D)-(i)",
+        "d": "(A)-(ii), (B)-(i), (C)-(iv), (D)-(iii)",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422766,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से कौनसा राजस्थान में जिप्सम खनन क्षेत्र नहीं है? </div>",
+      "question_eng": "Which of the following is not a gypsum mining area in Rajasthan?",
+      "answer": "b",
+      "options": {
+        "a": "हमीरवाली",
+        "b": "राजमहल",
+        "c": "पार की ढ़ाणी",
+        "d": "गोठ मांगलोद",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Hamirwali ",
+        "b": "Rajmahal",
+        "c": "Paar ki Dhani ",
+        "d": "Goth Mangalod",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422767,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से कौनसा जैसलमेर में प्राकृतिक-गैस भण्डार क्षेत्र नहीं है? </div>",
+      "question_eng": "Which of the following is not a natural gas reserve area in Jaisalmer? ",
+      "answer": "b",
+      "options": {
+        "a": "डांडेवाला",
+        "b": "रोहिल",
+        "c": "चिनेवाला टिब्बा",
+        "d": "कमली ताल",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Dandewala ",
+        "b": "Rohil",
+        "c": "Chinawala Tibba ",
+        "d": "Kamli Tal",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422768,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान संपूर्ण देश का -<br>1. लगभग 22 प्रतिशत अभ्रक उत्पादित करता है।<br>2. शत प्रतिशत सीसा-जस्ता व वॉलेस्टोनाइट उत्पादित करता है।<br>3. लगभग 90 प्रतिशत से अधिक जिप्सम उत्पादित करता है।<br>कूट-</div>",
+      "question_eng": "Rajasthan produces -<br>1. About 22 percent of the country's mica.<br>2. Produces 100 percent of lead-zinc and wollastonite.<br>3. Produces more than 90 percent of gypsum.<br>Code-",
+      "answer": "d",
+      "options": {
+        "a": "केवल 2 व 3 सत्य है",
+        "b": "केवल 1 सत्य है",
+        "c": "केवल 1 व 3 सत्य है",
+        "d": "1, 2 व 3 सत्य है",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only 2 and 3 are true",
+        "b": "Only 1 is true",
+        "c": "Only 1 and 3 are true",
+        "d": "1, 2 and 3 are true",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422769,
+      "question": "<div style=\"font-size:20px !important\">ओरड़ा, देपुरा तथा हटूण्डी खनन क्षेत्र है-  </div>",
+      "question_eng": "Orda, Depura and Hatundi are mining areas for -",
+      "answer": "b",
+      "options": {
+        "a": "मैग्नेसाइट",
+        "b": "घीया पत्थर",
+        "c": "चाइना क्ले",
+        "d": "सिलिका सैन्ड",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Magnesite ",
+        "b": "Gheeya Pathar",
+        "c": "China Clay ",
+        "d": "Silica Sand",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422770,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान खनिज सम्पदा के संदर्भ में निम्नलिखित में से सत्य कथन नहीं है? </div>",
+      "question_eng": "Which of the following is not a true statement with reference to the mineral wealth of Rajasthan?",
+      "answer": "c",
+      "options": {
+        "a": "राज्य वर्तमान में 58 प्रकार के खनिजों का खनन करता है।",
+        "b": "राजस्थान देश में सर्वाधिक खनिज विविधता वाला राज्य है।",
+        "c": "अधात्विक खनिज उत्पादन की दृष्टि से राज्य देश में दूसरे स्थान पर है।",
+        "d": "राज्य में देश की लगभग 19 प्रतिशत खानें स्थित हैं।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "The state currently mines 58 types of minerals. ",
+        "b": "Rajasthan is the state with the highest mineral diversity in the country.",
+        "c": "The state ranks second in the country in terms of non-metallic mineral production.",
+        "d": "About 19 percent of the country's mines are located in the state.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422771,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान का निम्नलिखित में से कौनसा चूना-पत्थर का खनन क्षेत्र नहीं है? </div>",
+      "question_eng": "Which of the following is not a limestone mining area of Rajasthan?",
+      "answer": "d",
+      "options": {
+        "a": "लाखेरी",
+        "b": "भैंसरा ",
+        "c": "साबला-लोहारिया",
+        "d": "नात की नेरी ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Lakheri",
+        "b": "Bhainsara",
+        "c": "Sabla-Loharia",
+        "d": "Naat ki Neri",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422772,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में निम्नलिखित में से कौनसा खनन क्षेत्र डोलोमाइट का नहीं है?</div>",
+      "question_eng": "Which of the following is not a dolomite mining area in Rajasthan?",
+      "answer": "d",
+      "options": {
+        "a": "बिट्ठलदेव",
+        "b": "बाजला-काबरा",
+        "c": "गौरेला-चांदा",
+        "d": "केसरदेसर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Bitthaldev ",
+        "b": "Bajla-Kabra",
+        "c": "Gaurela-Chanda ",
+        "d": "Kesardesar",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422773,
+      "question": "<div style=\"font-size:20px !important\">निम्न को सुमेलित कीजिए तथा नीचे दिए गए कूट से सही उत्तर का चयन कीजिए-<br />\n (खनिज) (क्षेत्र)<br />\n (A) पन्ना (i)  केसरपुरा<br />\n (B) हीरा (ii)  काला-गुमान<br />\n (C) तामड़ा (iii)  टिक्की<br />\n (D) पन्ना (iv)  सरवाड़<br />\n कूट-<br />\n A B C D</div>",
+      "question_eng": "Match the following and choose the correct answer from the code given below-<br />\n (Mineral)       (Region)<br />\n (A) Panna  (i) Kesarpura<br />\n (B) Diamond  (ii) Kala-Gumaan<br />\n (C) Tamra  (iii) Tikki<br />\n (D) Panna  (iv) Sarwad<br />\n Code-<br />\n A B C D",
+      "answer": "a",
+      "options": {
+        "a": "(ii) (i) (iv) (iii)",
+        "b": "(i) (ii) (iii) (iv)",
+        "c": "(iii) (iv) (i) (ii)",
+        "d": "(iv) (iii) (i) (ii)",
+        "e": null
+      },
+      "options_eng": {
+        "a": "(ii) (i) (iv) (iii)",
+        "b": "(i) (ii) (iii) (iv)",
+        "c": "(iii) (iv) (i) (ii)",
+        "d": "(iv) (iii) (i) (ii)",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422774,
+      "question": "<div style=\"font-size:20px !important\">उदयपुर जिले से उत्पादित संगमरमर का प्रकार है-</div>",
+      "question_eng": "The type of marble produced from Udaipur district is-",
+      "answer": "c",
+      "options": {
+        "a": "केल्साइटिक",
+        "b": "पाइरोल्यूसाइट",
+        "c": "डोलोमाइटिक",
+        "d": "मस्कोवाइट",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Calcitic",
+        "b": "Pyrolusite",
+        "c": "Dolomitic",
+        "d": "Muscovite",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422775,
+      "question": "<div style=\"font-size:20px !important\">चन्देरिया स्थित जिंक स्मेल्टर संयंत्र संचालित है-</div>",
+      "question_eng": "Zinc smelter plant located at Chanderia is operated by-",
+      "answer": "c",
+      "options": {
+        "a": "HPCL द्वारा ",
+        "b": "CEERI द्वारा",
+        "c": "वेदांता कम्पनी द्वारा",
+        "d": "राज्य सरकार द्वारा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "HPCL",
+        "b": "CEERI",
+        "c": "Vedanta Company",
+        "d": "State Government",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422776,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में लिग्नाइट भण्डार कहाँ स्थित है?</div>",
+      "question_eng": "Where are lignite reserves located in Rajasthan?",
+      "answer": "a",
+      "options": {
+        "a": "मोकला, मातासुख, पलाना",
+        "b": "कपूरड़ी, सानू, पलाना",
+        "c": "पलाना, मेड़ता रोड़, सानू",
+        "d": "मेड़ता रोड़, अगूचा, पलाना",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Mokla, Matasukh, Palana",
+        "b": "Kapurdi, Sanu, Palana",
+        "c": "Palana, Merta Road, Sanu",
+        "d": "Merta Road, Agucha, Palana",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422777,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित (खनन क्षेत्र - खनिज) में से असुमेलित युग्म की पहचान कीजिए- </div>",
+      "question_eng": "Identify the mismatched pair from the following (Mining Area - Mineral)-",
+      "answer": "b",
+      "options": {
+        "a": "अकवाली और सतकुई - ताँबा",
+        "b": "गुज्जरबाड़ा - मैंगनीज",
+        "c": "जगपुरा-भूकिया- सोना",
+        "d": "बंजारी लक्ष्मी- अभ्रक",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Akwali and Satkui - Copper",
+        "b": "Gujjarbada - Manganese",
+        "c": "Jagpura-Bhukia - Gold",
+        "d": "Banjari Laxmi- Mica",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422778,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान खनिज नीति 2024 कब लागू की गई?</div>",
+      "question_eng": "When was Rajasthan Mineral Policy 2024 implemented?",
+      "answer": "b",
+      "options": {
+        "a": "17 सितंबर",
+        "b": "4  दिसंबर",
+        "c": "2  अक्टूबर",
+        "d": "14  जनवरी",
+        "e": null
+      },
+      "options_eng": {
+        "a": "45917",
+        "b": "45995",
+        "c": "45932",
+        "d": "45671",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422779,
+      "question": "<div style=\"font-size:20px !important\">'कैओलिन' के नाम से किसे जाना जाता है?</div>",
+      "question_eng": "What is known as 'Kaolin'?",
+      "answer": "b",
+      "options": {
+        "a": "फायर क्ले",
+        "b": "चाइना क्ले",
+        "c": "डोलोमाइट",
+        "d": "सिलिका सैण्ड",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Fire Clay ",
+        "b": "China Clay",
+        "c": "Dolomite ",
+        "d": "Silica Sand",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422780,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान में रागेश्र्वरी तथा मंगला तेल कुएं अवस्थित हैं-</div>",
+      "question_eng": "Rageshwari and Mangala oil wells are located in Rajasthan-",
+      "answer": "a",
+      "options": {
+        "a": "बाड़मेर - सांचोर बेसिन में",
+        "b": "बीकानेर - नागौर बेसिन में",
+        "c": "विन्ध्यन बेसिन में",
+        "d": "जैसलमेर बेसिन में",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Barmer-Sanchor Basin",
+        "b": "Bikaner-Nagaur Basin",
+        "c": "Vindhyan Basin",
+        "d": "Jaisalmer Basin",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422781,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से कौनसा एक अधात्विक खनिज नहीं है- </div>",
+      "question_eng": "Which one of the following is not a non-metallic mineral-",
+      "answer": "b",
+      "options": {
+        "a": "यूरेनियम",
+        "b": "टंगस्टन",
+        "c": "कैल्साइट",
+        "d": "बेराइट",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Uranium ",
+        "b": "Tungsten",
+        "c": "Calcite ",
+        "d": "Barite",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422782,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से कौनसा एक गैर-लाभकारी निकाय जो खनन कार्यों से प्रभावित क्षेत्रों तथा व्यक्तियों के हित के लिए कार्य करता है, वह है-</div>",
+      "question_eng": "Which one of the following is a non-profit body that works for the welfare of areas and individuals affected by mining operations?",
+      "answer": "a",
+      "options": {
+        "a": "डिस्ट्रिक्ट मिनरल फाउण्डेशन ट्रस्ट ",
+        "b": "राजस्थान राज्य खनिज अन्वेषण न्यास ",
+        "c": "राजस्थान राज्य खान एवं खनिज लिमिटेड ",
+        "d": "जैट्रो",
+        "e": null
+      },
+      "options_eng": {
+        "a": "District Mineral Foundation Trust",
+        "b": "Rajasthan State Mineral Exploration Trust",
+        "c": "Rajasthan State Mines and Minerals Limited",
+        "d": "JETRO",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422783,
+      "question": "<div style=\"font-size:20px !important\">29 मई को केन्द्रीय कृषि एवं किसान कल्याण राज्य मंत्री भागीरथ चौधरी ने ........... से राजस्थान में राज्य स्तर पर 'विकसित कृषि संकल्प अभियान' का शुभारम्भ किया।</div>",
+      "question_eng": "On 29 May, Union Minister of State for Agriculture and Farmers Welfare Bhagirath Chaudhary launched the 'Vikasit Krishi Sankalp Abhiyan' at the state level in Rajasthan from ...........",
+      "answer": "a",
+      "options": {
+        "a": "रलावता, अजमेर",
+        "b": "राजगढ़, अलवर",
+        "c": "गोविन्दगढ़, जयपुर",
+        "d": "मण्डोर, जोधपुर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Ralavata, Ajmer",
+        "b": "Rajgarh, Alwar",
+        "c": "Govindgarh, Jaipur",
+        "d": "Mandore, Jodhpur",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422784,
+      "question": "<div style=\"font-size:20px !important\">30 अप्रैल, 2025 को राजस्थान सरकार द्वारा 'इलेक्ट्रोथैरपी चिकित्सा पद्धति बोर्ड' का गठन किया गया, निम्नलिखित में से कौन इस बोर्ड का सदस्य नहीं है?</div>",
+      "question_eng": "On April 30, 2025, the 'Electrotherapy Medical System Board' was constituted by the Rajasthan Government, who among the following is not a member of this board?",
+      "answer": "c",
+      "options": {
+        "a": "हेमन्त सेठिया",
+        "b": "कुलदीप वर्मा",
+        "c": "राजीव वर्मा",
+        "d": "गोविन्दलाल सैनी",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Hemant Sethia ",
+        "b": "Kuldeep Verma",
+        "c": "Rajiv Verma ",
+        "d": "Govindlal Saini",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422785,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान के विधायकों के लिए विकास कार्यों की ऑनलाईन अनुशंसा प्रणाली लागू करने हेतु राज्य सरकार के ग्रामीण विकास विभाग द्वारा कौनसा ऐप प्रारम्भ किया गया है?</div>",
+      "question_eng": "Which app has been launched by the Rural Development Department of the State Government to implement the online recommendation system of development works for the MLAs of Rajasthan?",
+      "answer": "c",
+      "options": {
+        "a": "ई-निर्माण मोबाइल ऐप",
+        "b": "ई-काज मोबाइल ऐप",
+        "c": "ई-वर्क मोबाइल ऐप",
+        "d": "ई-विधान मोबाइल ऐप",
+        "e": null
+      },
+      "options_eng": {
+        "a": "E-Nirman Mobile App",
+        "b": "E-Kaj Mobile App",
+        "c": "E-Work Mobile App",
+        "d": "E-Vidhan Mobile App",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422786,
+      "question": "<div style=\"font-size:20px !important\">4 से 15 मई तक बिहार में आयोजित हुए 7वें खेलो इण्डिया यूथ गेम्स के संबंध में निम्नलिखित कथनों पर विचार कीजिए-<br>A. इन खेलों में राजस्थान ने कुल 60 स्वर्ण पदक जीते।<br>B. इन खेलों में राजस्थान की पुरुष बास्केटबॉल टीम ने स्वर्ण पदक जीता।<br>C. इन खेलों में राजस्थान ने सर्वाधिक पदक साइक्लिंग में जीते।<br>उपयुर् में से कौनसा/से कथन सत्य है-</div>",
+      "question_eng": "Consider the following statements regarding the 7th Khelo India Youth Games held in Bihar from 4 to 15 May-<br>A. Rajasthan won a total of 60 gold medals in these games.<br>B. Rajasthan's men's basketball team won the gold medal in these games.<br>C. Rajasthan won the maximum medals in cycling in these games.<br>Which of the above statements is/are correct-",
+      "answer": "d",
+      "options": {
+        "a": "केवल A व B ",
+        "b": "केवल B व C",
+        "c": "केवल C",
+        "d": "केवल A व C",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only A and B ",
+        "b": "Only B and C",
+        "c": "Only C ",
+        "d": "Only A and C",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422787,
+      "question": "<div style=\"font-size:20px !important\">नई दिल्ली में आयोजित 23वीं कुमार सुरेन्द्र सिंह मेमोरियल राइफल शूटिंग चैम्पियनशिप में मनिनी कौशिक ने किस स्पर्द्धा में राष्ट्रीय रिकॉर्ड बनाते हुए स्वर्ण पदक जीता?</div>",
+      "question_eng": "In the 23rd Kumar Surendra Singh Memorial Rifle Shooting Championship held in New Delhi, Maniini Kaushik won the gold medal by making a national record in which event?",
+      "answer": "a",
+      "options": {
+        "a": "50 मीटर राइफल प्रोन",
+        "b": "10 मीटर राइफल",
+        "c": "25 मीटर राइफल प्रोन",
+        "d": "25 मीटर फ्री मिक्सड",
+        "e": null
+      },
+      "options_eng": {
+        "a": "50 meter rifle prone",
+        "b": "10 meter rifle",
+        "c": "25 meter rifle prone",
+        "d": "25 meter free mixed",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422788,
+      "question": "<div style=\"font-size:20px !important\">राजस्थान के किस लोकसभा सदस्य को प्राइम फाउण्डेशन द्वारा 'संसद रत्न अवॉर्ड 2025' प्रदान किया गया?</div>",
+      "question_eng": "Which Lok Sabha member of Rajasthan was awarded the 'Sansad Ratna Award 2025' by Prime Foundation?",
+      "answer": "a",
+      "options": {
+        "a": "पी. पी. चौधरी (पाली)",
+        "b": "लुम्बा राम चौधरी (जालौर-सिरोही)",
+        "c": "भागीरथ चौधरी (अजमेर)",
+        "d": "हनुमान बेनीवाल (नागौर)",
+        "e": null
+      },
+      "options_eng": {
+        "a": "P. P. Choudhary (Pali)",
+        "b": "Lumba Ram Choudhary (Jalore-Sirohi)",
+        "c": "Bhagirath Choudhary (Ajmer)",
+        "d": "Hanuman Beniwal (Nagaur)",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422789,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित युग्मों पर विचार कर असंगत युग्म का चयन कीजिए-<br> (सूची-I) - (सूची-II)</div>",
+      "question_eng": "Consider the following pairs and select the odd pair-<br> (List-I) - (List-II)",
+      "answer": "c",
+      "options": {
+        "a": "देवनारायण कॉरीडार - भीलवाड़ा",
+        "b": "राजस्थान का तीसरा प्रधानमंत्री दिव्याशा केन्द्र - कोटा",
+        "c": "राजस्थान का पहला साइबर सपोर्ट सेन्टर - भरतपुर",
+        "d": "राजस्थान का पहला वन्दे भारत मेंन्टेनेंस डिपो - जोधपुर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Devnarayan Corridor  - Bhilwara",
+        "b": "Rajasthan's third Prime Minister's Divyasha Kendra - Kota",
+        "c": "Rajasthan's first Cyber Support Center - Bharatpur",
+        "d": "Rajasthan's first Vande Bharat Maintenance Depot - Jodhpur",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422790,
+      "question": "<div style=\"font-size:20px !important\">पण्डित दीनदयाल उपाध्याय गरीबी मुक्त गाँव योजना के संबंध में निम्नलिखित कथनों पर विचार कीजिए-<br>A. इस योजना का उद्‌देश्य BPL परिवारों को स्वरोजगार से जोड़कर गरीबी रेखा से ऊपर लाना है।<br>B. इस योजना के प्रथम चरण में राजस्थान के 10 हजार गाँव चिह्नित किए गए हैं।<br>C. इस योजना के अन्तर्गत चिह्नित परिवारों को 31 हजार रुपये की आर्थिक सहायता व आत्मनिर्भर कार्ड वितरित किए जा रहे हैं।<br>सही विकल्प का चयन कीजिए-</div>",
+      "question_eng": "Consider the following statements regarding Pandit Deendayal Upadhyaya Garibi Mukt Gaon Yojana-<br>A. The objective of this scheme is to bring the poor families above the poverty line by linking them with self-employment.<br>B. In the first phase of this scheme, 10 thousand villages of Rajasthan have been identified.<br>C. Under this scheme, financial assistance of Rs. 31 thousand and self-reliance cards are being distributed to the identified families.<br>Choose the correct option-",
+      "answer": "c",
+      "options": {
+        "a": "केवल कथन A व C सही है।",
+        "b": "केवल कथन C सही है।",
+        "c": "केवल कथन A सही है।",
+        "d": "केवल कथन A व B सही है।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only statement A and C are correct.",
+        "b": "Only statement C is correct.",
+        "c": "Only statement A is correct.",
+        "d": "Only statement A and B are correct.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422791,
+      "question": "<div style=\"font-size:20px !important\">26 मई को सुप्रीम कोर्ट कालेजियम ने.............हाईकोर्ट के मुख्य न्यायाधीश.............का तबादला राजस्थान हाइकोर्ट में करने की सिफारिश की थी।<br>उपर्युक्त रिक्त स्थानों हेतु निम्नलिखित विकल्पों में से सही समुह का चयन कीजिए-</div>",
+      "question_eng": "On May 26, the Supreme Court Collegium recommended the transfer of Chief Justice ............. High Court’s ............. to Rajasthan High Court.<br>Select the correct group from the following options for the above blank spaces-",
+      "answer": "a",
+      "options": {
+        "a": "मद्रास, जस्टिस के. आर. श्री राम",
+        "b": "बॉम्बे, जस्टिस विपिन गुप्ता",
+        "c": "मद्रास, जस्टिस के. आर. नारायणन",
+        "d": "दिल्ली, जस्टिस के.आर. श्रीराम",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Madras, Justice K. R. Shriram",
+        "b": "Bombay, Justice Vipin Gupta",
+        "c": "Madras, Justice K. R. Narayanan",
+        "d": "Delhi, Justice K. R. Shriram",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422792,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित कथनों पर विचार कीजिए-<br>A. 23 मई को विधानसभा अध्यक्ष ने अंता (बारां) से विधायक कंवरलाल मीणा की सदस्यता समाप्ति की घोषणा की है।<br>B. नवम्बर 2024 में हुए उप चुनावों में कंवर लाल मीणा भारत आदिवासी पार्टी से विधायक चुने गए थे।<br>उपर्युक्त में से कौनसा/कौनसे कथन सत्य नहीं है-</div>",
+      "question_eng": "Consider the following statements-<br>A. On May 23, the Speaker of the Legislative Assembly has announced the termination of the membership of Kanwar Lal Meena, MLA from Anta (Baran).<br>B. In the by-elections held in November 2024, Kanwar Lal Meena was elected MLA from Bharat Adivasi Party.<br>Which of the above statements is/are not true-",
+      "answer": "b",
+      "options": {
+        "a": "केवल A",
+        "b": "केवल B",
+        "c": "A व B दोनों",
+        "d": "न तो  A न ही  B",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only A ",
+        "b": "Only B",
+        "c": "Both A and B ",
+        "d": "Neither A nor B",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422793,
+      "question": "<div style=\"font-size:20px !important\">राजस्थानी साहित्य का वीर गाथा काल कब से कब तक रहा?</div>",
+      "question_eng": "From when to when did the heroic saga period of Rajasthani literature last?",
+      "answer": "b",
+      "options": {
+        "a": "550 ई. से 950 ई.",
+        "b": "1050 ई. से 1450 ई.",
+        "c": "1650 ई. से 1850 ई.",
+        "d": "1850 ई. से अब तक",
+        "e": null
+      },
+      "options_eng": {
+        "a": "550 AD to 950 AD",
+        "b": "1050 AD to 1450 AD",
+        "c": "1650 AD to 1850 AD",
+        "d": "1850 AD till now",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422794,
+      "question": "<div style=\"font-size:20px !important\">राजस्थानी साहित्य की ख्यात विधा के संबंध में सही कथन है-<br>1. ख्यात वंशावली तथा प्रशस्ति लेखन का विस्तृत रूप है।<br>2. ख्यातों का विस्तृत रूप 18वीं शताब्दी के अन्त में बनना आरंभ हुआ।<br>कूटः</div>",
+      "question_eng": "The correct statement regarding the genre of khayat in Rajasthani literature is-<br>1. Khayat is an extended form of genealogy and eulogy writing.<br>2. The extended form of khayat started being created at the end of the 18th century.<br>Code:",
+      "answer": "a",
+      "options": {
+        "a": "केवल 1",
+        "b": "केवल 2",
+        "c": "1 व 2 दोनों",
+        "d": "न तो 1 व न ही 2",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only 1",
+        "b": "Only 2",
+        "c": "Both 1 and 2",
+        "d": "Neither 1 nor 2",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422795,
+      "question": "<div style=\"font-size:20px !important\">राजस्थानी साहित्य लेखन की ऐसी विधा जिसमें नृत्य, गायन व अभिनय तीनों कलाओं का समावेश मिलता है?</div>",
+      "question_eng": "Which is the genre of Rajasthani literature writing in which all the three arts of dance, singing and acting are included?",
+      "answer": "b",
+      "options": {
+        "a": "चर्चरी",
+        "b": "रास",
+        "c": "सोरठा",
+        "d": "वेलि",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Charchari",
+        "b": "Raas",
+        "c": "Soratha",
+        "d": "Veli",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422796,
+      "question": "<div style=\"font-size:20px !important\">निम्न में से कौनसी एक प्रारंभिक कालीन लौकिक साहित्य की रचना नहीं है?</div>",
+      "question_eng": "Which one of the following is not a composition of early period secular literature?",
+      "answer": "d",
+      "options": {
+        "a": "बीसलदेव रासो",
+        "b": "बसंत विलास",
+        "c": "मलय सुंदरी कथा",
+        "d": "रणमल छंद",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Bisaldev Raso",
+        "b": "Basant Vilas",
+        "c": "Malay Sundari Katha",
+        "d": "Ranmal Chhand",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422797,
+      "question": "<div style=\"font-size:20px !important\">निम्न में से (लेखक-रचना) कौनसा युग्म सही सुमेलित नहीं है?</div>",
+      "question_eng": "Which of the following (author-composition) pairs is not correctly matched?",
+      "answer": "a",
+      "options": {
+        "a": "वज्रसेन सुरि - भरतेश्वर बाहुबली रास",
+        "b": "शालिभद्र सुरि - बुद्धि रास",
+        "c": "कवि असाइत - हंसावली",
+        "d": "चन्द बरदाई - पृथ्वीराज रासौ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Vajrasen Suri  - Bharateshwar Bahubali  - Raas",
+        "b": "Shalibhadra Suri  - Buddhi Raas",
+        "c": "Kavi Asait  - Hansavali",
+        "d": "Chand Bardai  - Prithviraj Rasau",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422798,
+      "question": "<div style=\"font-size:20px !important\">वृद्धि विकास के संबंध में असत्य है-</div>",
+      "question_eng": "Which is false regarding growth & development–",
+      "answer": "d",
+      "options": {
+        "a": "वृद्धि निश्चित आयु पर समाप्त हो जाती है।",
+        "b": "विकास मरने तक जारी रहता है।",
+        "c": "वृद्धि हमेशा विकास को प्रभावित करती है।",
+        "d": "विकास हमेशा वृद्धि को प्रभावित करता है।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Growth ends at a certain age.",
+        "b": "Development continues till death.",
+        "c": "Growth always affects development.",
+        "d": "Development always affects growth.",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422799,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से सत्य है-<br>1. विकास वृद्धि का एक भाग है।<br>2. वृद्धि विकास का एक भाग है।<br>3. वृद्धि के अभाव में विकास दिखाई दे सकता है।<br>4. विकास के अभाव में वृद्धि दिखाई दे सकती है।<br>कूटः</div>",
+      "question_eng": "Which of the following is true-<br>1. Growth is a part of growth.<br>2. Growth is a part of development.<br>3. Development can be seen in the absence of growth.<br>4. Growth can be seen in the absence of development.<br>Code:",
+      "answer": "b",
+      "options": {
+        "a": "1 व 2",
+        "b": "2 व 3",
+        "c": "1 व 4",
+        "d": "2 व 4",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1 and 2",
+        "b": "2 and 3",
+        "c": "1 and 4",
+        "d": "2 and 4",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422800,
+      "question": "<div style=\"font-size:20px !important\">''विकास के फलस्वरूप नवीन विशेषता व नवीन योग्यता दिखाई देती है'' यह कथन किसने दिया है-</div>",
+      "question_eng": "Who said, “New characteristics and new abilities appear as a result of development”-",
+      "answer": "a",
+      "options": {
+        "a": "हरलॉक",
+        "b": "सोरेन्सन",
+        "c": "वुडवर्थ",
+        "d": "स्कीनर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Harlock",
+        "b": "Sorensen",
+        "c": "Woodworth",
+        "d": "Skinner",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422801,
+      "question": "<div style=\"font-size:20px !important\">'क्लीनिक में उपस्थित कुछ माता पिता जो इसलिये परेशान थे कि कुछ के बच्चे घुटनों के बल ही चल रहे थे पैरों पर नहीं चल पा रहे थे वहीं कुछ के बच्चे घुटनों के बल भी नहीं चल पा रहे थे। उन्हें देखकर पीडियाट्रीशियन ने कहा आप चिंता ना करें हर बच्चा पहले सिर पर नियंत्रण करता है, फिर गर्दन पर, फिर घुटनों के बल चलता है और अंत में चलना सिखता है। भले ही समय कम ज्यादा लगे पर यह नॉर्मल प्रोसेस है' यह घटनाक्रम किस-किस सिद्धांत को स्पष्ट करता है-</div>",
+      "question_eng": "Some parents present in the clinic were worried because some of their children were crawling only on their knees and were unable to walk on their feet, while some were unable to walk even on their knees. After looking at them, the pediatrician said, “Don’t worry, every child first controls the head, then the neck, then crawls on his knees and finally learns to walk.” Even if it takes more or less time, but this is a normal process. Which principles does this incident explain-",
+      "answer": "c",
+      "options": {
+        "a": "सामान्य से विशिष्ट, सिैलोकॉडल, व्यक्तिगत भिन्नता",
+        "b": "निरंतरता, प्राक्सिमोडिस्टल, संचयी प्रक्रिया",
+        "c": "व्यक्तिगत भिन्नता, सिैलोकॉडल, समान प्रतिमान",
+        "d": "एकीकरण, सामान्य से विशिष्ट, सिैलोकॉडल",
+        "e": null
+      },
+      "options_eng": {
+        "a": "General to specific, cephalocaudal, individual difference",
+        "b": "Continuity, proximodistal, cumulative process",
+        "c": "Individual difference, cephalocaudal, uniform pattern",
+        "d": "Integration, general to specific, cephalocaudal",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422802,
+      "question": "<div style=\"font-size:20px !important\">राहुल को पहले मम्मी रोटी के निवाले तोड़ कर थाली में देती थी जिन्हें वह सब्जी में लगाकर खा लेता है। अब वह रोटी तोड़ने भी लग गया और निवाला बनाकर खाने भी लग गया। यह प्रगति है-</div>",
+      "question_eng": "Earlier, Rahul's mother used to break bread into pieces and give it to him in the plate which he used to eat by putting it in the vegetable. Now he has started breaking the bread and also making pieces and eating them. This is progress-",
+      "answer": "b",
+      "options": {
+        "a": "सिफेलोकॉडल",
+        "b": "इंटीग्रेशन",
+        "c": "यूनीफॉर्म पैटर्न",
+        "d": "प्रेडिक्टेबल",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Cephalocaudal",
+        "b": "Integration",
+        "c": "Uniform pattern",
+        "d": "Predictable",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422803,
+      "question": "<div style=\"font-size:20px !important\">परिपक्वता और अधिगम का विकास से संबंध देखते हुये किस गणितीय मॉडल से इसे समझ सकते हैं-</div>",
+      "question_eng": "Considering the relation of maturation and learning with development, which mathematical model can be used to understand it-",
+      "answer": "b",
+      "options": {
+        "a": "योग",
+        "b": "गुणा",
+        "c": "भाग",
+        "d": "घटाव",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Addition",
+        "b": "Multiplication",
+        "c": "Division",
+        "d": "Subtraction",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422804,
+      "question": "<div style=\"font-size:20px !important\">उत्तर बाल्यावस्था से संबंधित समूह नहीं है-</div>",
+      "question_eng": "The group not related to post-childhood is-",
+      "answer": "a",
+      "options": {
+        "a": "खेलने की आयु, तीव्र कामुकता, संग्रहण, निरूद्देश्य घूमना",
+        "b": "स्थायी दांत का आना, सामूहिकता, विद्यालय काल, स्मार्ट एज",
+        "c": "संग्रहण, बर्हिमुखता, मिथ्या परिपक्वता, सामर्थ्य का विकास",
+        "d": "समूह काल, गंदी अवस्था, स्मार्ट एज, समलैंगिकता",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Age of play, intense sexuality, collection, aimless wandering",
+        "b": "Appearance of permanent teeth, grouping, school age, smart age",
+        "c": "Collection, extroversion, false maturity, development of competency",
+        "d": "Group age, dirty age, smart age, homosexuality",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422805,
+      "question": "<div style=\"font-size:20px !important\">आसक्ति का विकास होता है-</div>",
+      "question_eng": "Development of attachment takes place-",
+      "answer": "a",
+      "options": {
+        "a": "शैशवावस्था में",
+        "b": "पूर्व बाल्यावस्था में",
+        "c": "उत्तर बाल्यावस्था में",
+        "d": "किशोरावस्था में",
+        "e": null
+      },
+      "options_eng": {
+        "a": "In infancy",
+        "b": "In early childhood",
+        "c": "In late childhood",
+        "d": "In adolescence",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422806,
+      "question": "<div style=\"font-size:20px !important\">पूर्व बाल्यावस्था नहीं है-</div>",
+      "question_eng": "Early childhood is not-",
+      "answer": "d",
+      "options": {
+        "a": "तैयारी की अवस्था",
+        "b": "प्रश्न पूछने की अवस्था",
+        "c": "समूह पूर्व अवस्था",
+        "d": "विद्यालय जाने की अवस्था",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Preparation stage",
+        "b": "Questioning stage",
+        "c": "Pre-group stage",
+        "d": "School going stage",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422807,
+      "question": "<div style=\"font-size:20px !important\">दाँत निकलने की औसत आयु है-</div>",
+      "question_eng": "The average age of teething is-",
+      "answer": "b",
+      "options": {
+        "a": "2-4 माह",
+        "b": "6-8 माह",
+        "c": "10-12 माह",
+        "d": "18-24 माह",
+        "e": null
+      },
+      "options_eng": {
+        "a": "2-4 months",
+        "b": "6-8 months",
+        "c": "10-12 months",
+        "d": "18-24 months",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422808,
+      "question": "<div style=\"font-size:20px !important\">6 साल की नंदिनी अब पेंसिल से छोटे-छोटे अक्षर एक सीधी पंक्ति में लिख सकती है और मार्जिन के अंदर पैराग्राफ को पूरा रख सकती है। यह किसका उदाहरण है?</div>",
+      "question_eng": "6 year old Nandini can now write small letters in a straight line with a pencil and can complete paragraph within margin. This is an example of-",
+      "answer": "a",
+      "options": {
+        "a": "सूक्ष्म गत्यात्मक कौशल",
+        "b": "स्थूल मोटर कौशल",
+        "c": "भावनात्मक विकास",
+        "d": "सामाजिक विकास",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Fine motor skills",
+        "b": "Gross motor skills",
+        "c": "Emotional development",
+        "d": "Social development",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422809,
+      "question": "<div style=\"font-size:20px !important\">अक्कू का फरेरो रोशर्स चॉकलेट देखते ही तुरंत खाने का मन हो गया।<br>यह किस मूल प्रवृत्ति संवेग का उदाहरण है?</div>",
+      "question_eng": "As soon as Akku saw the Ferrero Rochers chocolate, she immediately felt like eating it. This is an example of which emotion?",
+      "answer": "a",
+      "options": {
+        "a": "स्वाद",
+        "b": "स्वामित्व",
+        "c": "विस्मय",
+        "d": "सृजनशीलता",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Taste",
+        "b": "Possessiveness",
+        "c": "Wonder",
+        "d": "Creativity",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422810,
+      "question": "<div style=\"font-size:20px !important\">बाल्यावस्था अनोखा काल है?</div>",
+      "question_eng": "Childhood is a unique period of?",
+      "answer": "b",
+      "options": {
+        "a": "सामाजिक विकास का",
+        "b": "संवेगात्मक विकास का",
+        "c": "शारीरिक विकास का",
+        "d": "सभी आयाम का",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Social development",
+        "b": "Emotional development",
+        "c": "Physical development",
+        "d": "All dimensions",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422811,
+      "question": "<div style=\"font-size:20px !important\">सामाजीकरण आरंभ होता है ?</div>",
+      "question_eng": "Socialization begins in?",
+      "answer": "a",
+      "options": {
+        "a": "परिवार",
+        "b": "स्कूल",
+        "c": "मित्र",
+        "d": "व्यवसाय",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Family",
+        "b": "School",
+        "c": "Friends",
+        "d": "Occupation",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422812,
+      "question": "<div style=\"font-size:20px !important\">ईर्ष्या विकसित होती है</div>",
+      "question_eng": "Jealousy develops",
+      "answer": "b",
+      "options": {
+        "a": "एक वर्ष बाद",
+        "b": "डेढ़ वर्ष बाद",
+        "c": "दो वर्ष बाद",
+        "d": "विद्यालयी जीवन में",
+        "e": null
+      },
+      "options_eng": {
+        "a": "After one year",
+        "b": "After one and half years",
+        "c": "After two years",
+        "d": "In school life",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422813,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412399_68a177af387c4.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412399_68a177af387c4.jpg style=\"min-width:320px\">",
+      "answer": "c",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422814,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412399_68a177afb4ea3.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412399_68a177afb4ea3.jpg style=\"min-width:320px\">",
+      "answer": "d",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422815,
+      "question": "<div style=\"font-size:20px !important\">$$(800\\div64)\\times(1296\\div36)=?$$</div>",
+      "question_eng": "$$(800\\div64)\\times(1296\\div36)=?$$",
+      "answer": "d",
+      "options": {
+        "a": "420",
+        "b": "460",
+        "c": "500",
+        "d": "कोई नहीं",
+        "e": null
+      },
+      "options_eng": {
+        "a": "420",
+        "b": "460",
+        "c": "500",
+        "d": "None",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422816,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412400_68a177b03bbb7.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412400_68a177b03bbb7.jpg style=\"min-width:320px\">",
+      "answer": "d",
+      "options": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "5",
+        "e": null
+      },
+      "options_eng": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "5",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422817,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412400_68a177b0a2e61.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412400_68a177b0a2e61.jpg style=\"min-width:320px\">",
+      "answer": "c",
+      "options": {
+        "a": "1/2",
+        "b": "4",
+        "c": "2",
+        "d": "1/4",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1/2",
+        "b": "4",
+        "c": "2",
+        "d": "1/4",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422818,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412401_68a177b116119.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412401_68a177b116119.jpg style=\"min-width:320px\">",
+      "answer": "d",
+      "options": {
+        "a": "2.15",
+        "b": "2",
+        "c": "3.75",
+        "d": "3",
+        "e": null
+      },
+      "options_eng": {
+        "a": "2.15",
+        "b": "2",
+        "c": "3.75",
+        "d": "3",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422819,
+      "question": "<div style=\"font-size:20px !important\">\\[{[3 - 4{(3 - 4)^{ - 1}}]^{ - 1}}\\]  बराबर है-</div>",
+      "question_eng": "\\[{[3 - 4{(3 - 4)^{ - 1}}]^{ - 1}}\\] is equal to-",
+      "answer": "d",
+      "options": {
+        "a": "7",
+        "b": "-7",
+        "c": "\\[\\frac{1}{7}\\]",
+        "d": "\\[ - \\frac{1}{7}\\]",
+        "e": null
+      },
+      "options_eng": {
+        "a": "7",
+        "b": "-7",
+        "c": "\\[\\frac{1}{7}\\]",
+        "d": "\\[ - \\frac{1}{7}\\]",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422820,
+      "question": "<div style=\"font-size:20px !important\"><br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412401_68a177b17d5be.jpg style=\"min-width:320px\"></div>",
+      "question_eng": "<br><br/><img src=https://cdn-static.kalam.academy/questions/2025-08-17_1755412401_68a177b17d5be.jpg style=\"min-width:320px\">",
+      "answer": "a",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "options_eng": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 1
+    },
+    {
+      "id": 422821,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित भिन्नों को अवरोही क्रम में व्यवस्थित कीजिए- \\[\\frac{3}{5},\\frac{7}{9},\\frac{{11}}{{13}}\\]</div>",
+      "question_eng": "Arrange the following fractions in descending order- \\[\\frac{3}{5},\\frac{7}{9},\\frac{{11}}{{13}}\\]",
+      "answer": "c",
+      "options": {
+        "a": "\\[\\frac{3}{5},\\frac{7}{9},\\frac{{11}}{{13}}\\]",
+        "b": "\\[\\frac{7}{9},\\frac{3}{5},\\frac{{11}}{{13}}\\]",
+        "c": "\\[\\frac{{11}}{{13}},\\frac{7}{9},\\frac{3}{5}\\]",
+        "d": "\\[\\frac{{11}}{{13}},\\frac{3}{5},\\frac{7}{9}\\]",
+        "e": null
+      },
+      "options_eng": {
+        "a": "\\[\\frac{3}{5},\\frac{7}{9},\\frac{{11}}{{13}}\\]",
+        "b": "\\[\\frac{7}{9},\\frac{3}{5},\\frac{{11}}{{13}}\\]",
+        "c": "\\[\\frac{{11}}{{13}},\\frac{7}{9},\\frac{3}{5}\\]",
+        "d": "\\[\\frac{{11}}{{13}},\\frac{3}{5},\\frac{7}{9}\\]",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422822,
+      "question": "<div style=\"font-size:20px !important\">प्रोजेक्ट विधि से कौनसा नियम संबंधित नहीं है?</div>",
+      "question_eng": "Which law is not related to the project method?",
+      "answer": "d",
+      "options": {
+        "a": "तत्परता का नियम",
+        "b": "अभ्यास का नियम",
+        "c": "प्रभाव का नियम",
+        "d": "आनुवांशिकता का नियम",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Law of readiness",
+        "b": "Law of practice",
+        "c": "Law of effect",
+        "d": "Law of heredity",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422823,
+      "question": "<div style=\"font-size:20px !important\">प्रायोजना पद्धति में बालक सीखता है?</div>",
+      "question_eng": "In project method, the child learns?",
+      "answer": "b",
+      "options": {
+        "a": "आर्थिक क्रिया द्वारा",
+        "b": "शारीरिक व मानसिक क्रिया द्वारा",
+        "c": "प्रयोग द्वारा",
+        "d": "अनुसंधान द्वारा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "By economic activity",
+        "b": "By physical and mental activity",
+        "c": "By experiment",
+        "d": "By research",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422824,
+      "question": "<div style=\"font-size:20px !important\">प्रोजेक्ट विधि में एक शिक्षक की भूमिका होती है?<br>a. ज्ञान प्रदाता<br>b. मार्ग दर्शक<br>c. परामर्श दाता<br>d. सहयोगी<br>सही कूट :</div>",
+      "question_eng": "In project method, the role of a teacher is?<br>a. Knowledge provider <br>b. Facilitor <br>c. Advisor<br>d. Co-worker<br>Correct code:",
+      "answer": "b",
+      "options": {
+        "a": "केवल a, b व c",
+        "b": "केवल b, c व d",
+        "c": "केवल b व c",
+        "d": "सभी a, b, c व d",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Only a, b and c",
+        "b": "Only b, c and d",
+        "c": "Only b and c",
+        "d": "All a, b, c and d",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422825,
+      "question": "<div style=\"font-size:20px !important\">प्रयोजना को पूर्ण करने के सोपानों को अव्यवस्थित क्रम में नीचे दिया जा रहा है - <br>A. प्रयोजना की योजना बनाना<br>B. प्रयोजना का चयन<br>C. परिस्थिति देना<br>D. प्रयोजना का निर्णयन<br>E. प्रयोजना का क्रियान्वयन<br>निम्नलिखित में से कौन-से विकल्प में प्रयोजना के सोपानों का सही तार्किक क्रम है?</div>",
+      "question_eng": "The steps in completing a project are given below in a haphazard order-<br>A.  Planning the project<br>B.  Selection of the project<br>C.  Providing the situation<br>D   Deciding on the project<br>E.   Implementation of the project<br>Which of the following options has the correct logical order of the steps in a project?",
+      "answer": "d",
+      "options": {
+        "a": "ABCDE",
+        "b": "BCDEA ",
+        "c": "EBCDA",
+        "d": "CBAED",
+        "e": null
+      },
+      "options_eng": {
+        "a": "ABCDE",
+        "b": "BCDEA ",
+        "c": "EBCDA",
+        "d": "CBAED",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422826,
+      "question": "<div style=\"font-size:20px !important\">''प्रोजेक्ट एक समस्यात्मक कार्य है, जिसका समाधान उसके प्राकृतिक वातावरण में रहते हुए ही किया जाता है।'' प्रोजेक्ट की यह परिभाषा दी थी?</div>",
+      "question_eng": "“A project is a problematic task, which is solved while living in its natural environment.” Who gave this definition of a project?",
+      "answer": "b",
+      "options": {
+        "a": "किलपैट्रिक",
+        "b": "स्टीवेन्सन",
+        "c": "बेनार्ड",
+        "d": "जोन डीवी",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Kilpatrick",
+        "b": "Stevenson",
+        "c": "Benard",
+        "d": "John Dewey",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422827,
+      "question": "<div style=\"font-size:20px !important\">किलपैट्रिक के अनुसार निम्न में से कौनसा एक प्रोजेक्ट का प्रकार नहीं है?</div>",
+      "question_eng": "According to Kilpatrick, which one of the following is not a type of project?",
+      "answer": "c",
+      "options": {
+        "a": "रचनात्मक योजना",
+        "b": "समस्यात्मक योजना",
+        "c": "अधिगम योजना",
+        "d": "रसास्वादन योजना",
+        "e": null
+      },
+      "options_eng": {
+        "a": "Constructive plan",
+        "b": "Problem solving plan",
+        "c": "Learning plan",
+        "d": "Aesthetic plan",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 2,
+      "isRegix": 0
+    },
+    {
+      "id": 422828,
+      "question": "<div style=\"font-size:20px !important\">सूक्ष्म शिक्षण उपागम का उद्देश्य एवं लक्ष्य होता है-</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "विद्यार्थी के व्यवहार में परिवर्तन करना।",
+        "b": "शिक्षक-प्रशिक्षणार्थियों के व्यवहार में परिवर्तन करना।",
+        "c": "संस्था प्रधान के व्यवहार में परिवर्तन करना।",
+        "d": "विकल 1 और 2 दोनों ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422829,
+      "question": "<div style=\"font-size:20px !important\">वर्तनी की विधिवत्‌ शिक्षा का ज्ञान किस स्तर पर हो जाना चाहिए-</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "प्राथमिक स्तर",
+        "b": "उच्च प्राथमिक स्तर",
+        "c": "माध्यमिक स्तर",
+        "d": "उच्च माध्यमिक स्तर",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422830,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से कौनसी अनौपचारिक मौखिक अभिव्यक्ति है?</div>",
+      "question_eng": "",
+      "answer": "d",
+      "options": {
+        "a": "स्वागत-भाषण",
+        "b": "शोक-संवेदना प्रकट करना",
+        "c": "धन्यवाद-ज्ञापन",
+        "d": "उपरोक्त में से कोई नहीं है",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422831,
+      "question": "<div style=\"font-size:20px !important\">रेखीय अभिक्रमित अनुदेश का पद नहीं है?</div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "प्रस्तावना पद",
+        "b": "अभ्यास पद",
+        "c": "उद्देश्य कथन पद",
+        "d": "परीक्षण पद",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422832,
+      "question": "<div style=\"font-size:20px !important\">एफ. जी. फ्रेंच ने संरचनात्मक उपागम के शिक्षण का कौन-सा सिद्धांत नहीं दिया है?</div>",
+      "question_eng": "",
+      "answer": "d",
+      "options": {
+        "a": "वाचन पर बल देना",
+        "b": "भाषायी आदतों का विकास करना",
+        "c": "छात्रों की क्रियाशीलता",
+        "d": "तर्क शक्ति तथा वैज्ञानिक दृष्टिकोण का विकास करना",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422833,
+      "question": "<div style=\"font-size:20px !important\">पाठ्‌य सामग्री के केन्द्रीय भावों तक पहुँचने के लिए अधिक सामग्री कम समय में पढ़ने के लिए किस प्रकार का वाचन किया जाना चाहिए? </div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "द्रुत मौन वाचन ",
+        "b": "सस्वर वाचन ",
+        "c": "अनुकरण वाचन ",
+        "d": "आदर्श वाचन ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422834,
+      "question": "<div style=\"font-size:20px !important\">विश्लेषणात्मक श्रवण का अर्थ है-</div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "श्रुत सामग्री में आनंदानुभूति करना।",
+        "b": "श्रुत सामग्री के मुख्य तत्वों, विचारों, केन्द्रीय भाव को समझना।",
+        "c": "श्रुत सामग्री में प्रस्तुत विचारों पर तुलनात्मक दृष्टि से विचार करना एवं पूर्व अनुभव के आधार पर मूल्यांकन करना एवं निष्कर्ष निकालना।",
+        "d": "श्रुत सामग्री के उचित स्वराघात व गति को ग्रहण करना।",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422835,
+      "question": "<div style=\"font-size:20px !important\">''पार हो गए हैं जो संकट से उन्हें मुबारक, नई जिंदगी।<br>अभी फँसे जो बीच समंदर अब मेरी कश्ती उसी ओर है।''<br>उपर्युक्त पंक्तियों का भाव ग्रहण एवं कारण कार्य का भाव समझना किस प्रकार का पठन है?</div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "सृजनात्मक पठन",
+        "b": "शाब्दिक पठन",
+        "c": "चिन्तनात्मक पठन",
+        "d": "चित्र पठन",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422836,
+      "question": "<div style=\"font-size:20px !important\">वाचन शिक्षण की ध्वन्यात्मक पद्धति किन विधियों के अंतर्गत आती है? </div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "विश्लेषणात्मक विधियाँ",
+        "b": "समाहारक विधियाँ",
+        "c": "संश्लेषणात्मक विधियाँ",
+        "d": "संगति विधियाँ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422837,
+      "question": "<div style=\"font-size:20px !important\">ग्राह्यात्मक कौशल है -  </div>",
+      "question_eng": "",
+      "answer": "d",
+      "options": {
+        "a": "पठन और लेखन कौशल",
+        "b": "श्रवण और लेखन कौशल",
+        "c": "पठन और मौखिक अभिव्यक्ति कौशल",
+        "d": "पठन और श्रवण कौशल",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422838,
+      "question": "<div style=\"font-size:20px !important\">''बोलना मनुष्य को पूर्णता तक पहुँचाता है, लेकिन लिखना आदमी को परम शुद्ध बनाता है।'' लेखन कौशल के सम्बन्ध में यह कथन है</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "अरस्तू",
+        "b": "बेकन",
+        "c": "शेक्सपियर",
+        "d": "रायबर्न",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422839,
+      "question": "<div style=\"font-size:20px !important\">भाषा सीखने का स्वाभाविक मनोवैज्ञानिक क्रम है-</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "सुनना > बोलना > पढ़ना > लिखना",
+        "b": "पढ़ना > लिखना > सुनना > बोलना",
+        "c": "बोलना > सुनना > पढ़ना > लिखना",
+        "d": "सुनना > पढ़ना > बोलना > लिखना ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422840,
+      "question": "<div style=\"font-size:20px !important\">किसी आदर्श लिखावट का जैसा का तैसा अनुकरण करना कहलाता है  - </div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "प्रतिलेख",
+        "b": "श्रुतिलेख",
+        "c": "अनुलेख",
+        "d": "इनमें से कोई नहीं",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422841,
+      "question": "<div style=\"font-size:20px !important\">भाषा शिक्षण में लेखन कौशल के विकास में सबसे अधिक सहायक है - </div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "ओडियो टेप रिकार्डर",
+        "b": "वर्ड प्रोसेसिंग कार्यक्रम",
+        "c": "भाषा प्रयोगशाला",
+        "d": "रेडियो व दूरदर्शन",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422842,
+      "question": "<div style=\"font-size:20px !important\">किस विकल्प में 'बहुवचन' शब्द नहीं है? </div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "भाग्य ",
+        "b": "वर्षा ",
+        "c": "दर्शन ",
+        "d": "होश ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422843,
+      "question": "<div style=\"font-size:20px !important\">'ऋषि निबंध लिखता था।' किस काल का वाक्य है? </div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "पूर्ण भूतकाल ",
+        "b": "सामान्य भूतकाल ",
+        "c": "अपूर्ण भूतकाल ",
+        "d": "आसन्न भूतकाल ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422844,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से 'स्त्रीलिंग' शब्द नहीं है- </div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "सजावट ",
+        "b": "सेकण्ड ",
+        "c": "ब्रह्मपुत्र ",
+        "d": "पूर्णिमा ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422845,
+      "question": "<div style=\"font-size:20px !important\">'मछलियों से तैरा जा रहा था।' किस प्रकार का वाच्य है? </div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "भाववाच्य  ",
+        "b": "कर्मवाच्य ",
+        "c": "कर्त्तृवाच्य ",
+        "d": "उपर्युक्त में से कोई नहीं ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422846,
+      "question": "<div style=\"font-size:20px !important\">'असंभव कार्य करना' के लिए उपयुक्त मुहावरा है- </div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "पीठ दिखाना ",
+        "b": "पानी में आग लगाना ",
+        "c": "प्राण हथेली पर रखना ",
+        "d": "पापड़ बेलना ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422847,
+      "question": "<div style=\"font-size:20px !important\">निम्नलिखित में से किस समूह में सभी 'अविकारी' शब्द हैं ?</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "कम, इधर, अब",
+        "b": "तेज, मीठा, छात्र",
+        "c": "अवश्य, बहुत, सुंदर",
+        "d": "आज, कहाँ, मेरा",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422848,
+      "question": "<div style=\"font-size:20px !important\">'सोनल बजा रही है' में क्रिया है-  </div>",
+      "question_eng": "",
+      "answer": "c",
+      "options": {
+        "a": "संयुक्त क्रिया",
+        "b": "अकर्मक क्रिया",
+        "c": "सकर्मक क्रिया",
+        "d": "पूर्वकालिक क्रिया",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422849,
+      "question": "<div style=\"font-size:20px !important\">अकर्मक क्रिया नहीं है-</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "गिरना",
+        "b": "निकालना",
+        "c": "बिगड़ना",
+        "d": "उड़ना",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422850,
+      "question": "<div style=\"font-size:20px !important\">By the time we reached the station, the train ………. .</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "had left ",
+        "b": "has left ",
+        "c": "left ",
+        "d": "was leaving",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422851,
+      "question": "<div style=\"font-size:20px !important\">He ……in Delhi for five years before moving to Mumbai.</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "had lived ",
+        "b": "has lived ",
+        "c": "lived ",
+        "d": "was living",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422852,
+      "question": "<div style=\"font-size:20px !important\">When I saw Amit yesterday, he …….for the bus.</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "waits ",
+        "b": "waited ",
+        "c": "was waiting",
+        "d": "had waited",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422853,
+      "question": "<div style=\"font-size:20px !important\">The Prime Minister will address the nation after he ……..from the summit.</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "returns ",
+        "b": "returned ",
+        "c": "has returned",
+        "d": "will return",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422854,
+      "question": "<div style=\"font-size:20px !important\">Choose the correct meaning of the Idiom/phrase : Needle in a haystack.</div>",
+      "question_eng": "",
+      "answer": "d",
+      "options": {
+        "a": "Something which is very rare.",
+        "b": "A bad thing in a good place.",
+        "c": "A weak point in a secure system.",
+        "d": "Something difficult to locate.",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422855,
+      "question": "<div style=\"font-size:20px !important\">Choose the correct meaning of the Idiom/phrase: On cloud nine.</div>",
+      "question_eng": "",
+      "answer": "a",
+      "options": {
+        "a": "Blissful or extremely happy",
+        "b": "Not meant to be shared ",
+        "c": "Ready to act.",
+        "d": "In a risky position",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422856,
+      "question": "<div style=\"font-size:20px !important\">Choose the correct meaning of the Idiom/phrase : Once in a blue moon.</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "Something that occurs very often.",
+        "b": "That happens very rarely",
+        "c": "That happens once every day.",
+        "d": "Something which can happen at any moment.",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    },
+    {
+      "id": 422857,
+      "question": "<div style=\"font-size:20px !important\">Choose the correct meaning of the Idiom/phrase : Show one's true colour.</div>",
+      "question_eng": "",
+      "answer": "b",
+      "options": {
+        "a": "To show off one's artistic skills.",
+        "b": "To reveal one's true nature or character.",
+        "c": "To make a beautiful drawing or painting.",
+        "d": "To reveal a secret ",
+        "e": null
+      },
+      "options_eng": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "",
+        "e": null
+      },
+      "solution": "",
+      "user_answer": "",
+      "plus_marks": 0,
+      "minus_marks": 0,
+      "status": "skipped",
+      "language_type": 0,
+      "isRegix": 0
+    }
+  ]
+}
