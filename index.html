@@ -1,1083 +1,1707 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="main-title">टेस्ट प्लेटफॉर्म 👑</title>
-    <!-- Bootstrap and Font Awesome remain for styling and icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts for Hindi (Tiro Devanagari Hindi, Bold) and English (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Tiro+Devanagari+Hindi:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- MathJax for mathematical notation -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>TestBook Pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* --- CSS Variables (Light Mode) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         :root {
-            --primary: #6c5ce7; /* Main Accent - Violet */
-            --primary-light: #a29bfe;
-            --primary-dark: #5649c0;
-            --success: #00b894;
-            --danger: #d63031;
-            --light: #f8f9fa; /* Body Background */
-            --dark: #2d3436; /* Dark Text Color in Light Mode */
-            --gray: #636e72;
-            --light-gray: #dfe6e9; /* Option Border/Hover/Note BG */
-            --card-bg: #ffffff;
-            --text-color: var(--dark); /* Default text color is dark */
-            --timer-bg: var(--light);
-            --timer-text: var(--dark);
-            --input-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-            --option-text: var(--dark);
-        }
-
-        /* --- Dark Mode Variables --- */
-        body.dark-mode {
-            --primary: #9b59b6; /* Dark Mode Accent - Purple */
-            --primary-light: #b39bce;
-            --primary-dark: #8e44ad;
-            --success: #2ecc71;
-            --danger: #e74c3c;
-            --light: #1c1c1c; /* Dark Body Background */
-            --dark: #ecf0f1; /* Light Text Color in Dark Mode (Near White) */
-            --gray: #95a5a6;
-            --light-gray: #34495e; /* Option Border/Hover/Note BG */
-            --card-bg: #2d3436; /* Dark Card Background */
-            --text-color: var(--dark); 
-            --timer-bg: var(--light-gray);
-            --timer-text: #ecf0f1;
-            --input-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-            --option-text: var(--dark);
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary: #06b6d4;
+            --accent: #ec4899;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+            --radius: 12px;
         }
         
-        /* FIX: Ensure Hindi text is visible in dark mode by explicitly setting color */
-        body.dark-mode #question-text,
-        body.dark-mode .question-text {
-            color: var(--dark) !important; 
-        }
-
-        /* --- Global Styles --- */
         body {
-            font-family: 'Tiro Devanagari Hindi', 'Inter', sans-serif;
-            background-color: var(--light);
-            color: var(--text-color); 
-            transition: background-color 0.4s, color 0.4s;
-            padding: 20px 0;
-            min-height: 100vh;
-        }
-
-        .container-fluid {
-            max-width: 900px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 1.5rem;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            background-color: var(--card-bg);
-            transition: background-color 0.4s, box-shadow 0.4s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
         }
         
-        body.dark-mode .card {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        /* --- Header Styles --- */
-        .header-card {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px 25px; 
-            border-radius: 1.5rem 1.5rem 0 0;
-            display: flex;
-            flex-direction: column; 
-            gap: 10px; 
-        }
-
-        .title-text {
-            font-weight: 700;
-            font-size: 1.6rem; 
-        }
-
-        /* Toggle Buttons */
-        .toggle-group {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-        .toggle-btn {
-            background-color: var(--card-bg) !important;
-            border: none;
-            color: var(--text-color) !important; 
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--input-shadow);
-            transition: all 0.2s;
+        .app { display: flex; flex-direction: column; min-height: 100vh; }
+        
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
         }
         
-        /* Timer Badge */
-        #timer {
-            background-color: var(--timer-bg) !important;
-            color: var(--timer-text) !important;
-            padding: 8px 15px;
-            font-weight: 700;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            min-width: 90px;
-        }
-        
-        /* --- Test Selection Styles --- */
-        .test-item {
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
-            margin-bottom: 10px;
-            border: 2px solid var(--light-gray);
-            border-radius: 0.75rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            background-color: var(--card-bg);
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .test-item:hover {
-            border-color: var(--primary-light);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        body.dark-mode .test-item:hover {
-            border-color: var(--primary);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .test-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-color);
+        .header-actions {
+            display: flex;
+            gap: 0.5rem;
         }
         
-        .test-search {
-            background-color: var(--light-gray);
-            border: none;
-            color: var(--text-color);
-        }
-        
-        body.dark-mode .test-search {
-            background-color: var(--light-gray);
-            border: none;
-            color: var(--dark);
-        }
-        
-        .test-search::placeholder {
-             color: var(--gray);
-        }
-
-        /* --- Question & Option Styles (Compacted) --- */
-        
-        .question-text {
-            color: var(--text-color) !important; 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            line-height: 1.6;
-        }
-        
-        .option-item {
-            border: 2px solid var(--light-gray);
-            padding: 8px 12px; 
-            margin-bottom: 6px; 
-            border-radius: 0.5rem; 
+        .btn {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
             cursor: pointer;
             transition: all 0.2s;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
         }
         
-        .option-item:focus-within {
-             outline: 2px solid var(--primary);
-             outline-offset: 2px;
-        }
-
-        .option-item label {
-            font-size: 1.0rem; 
-            font-weight: 700; 
-            line-height: 1.4;
-            margin-bottom: 0;
-            padding: 0;
-            transition: color 0.4s;
-            color: var(--option-text); 
+        .btn:hover { background: var(--primary); color: white; }
+        
+        .main {
+            flex: 1;
+            padding: 0 1rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
-            cursor: pointer;
-            padding-left: 20px; 
-            display: block; 
-        }
-
-        .option-item:hover {
-            background-color: var(--light-gray);
         }
         
-        body.dark-mode .option-item:hover {
-             background-color: rgba(255, 255, 255, 0.1);
+        .search-section {
+            padding: 2rem 0;
+            text-align: center;
         }
-
-        .option-item input[type="radio"] {
+        
+        .search-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .search-subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 3.5rem 1rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            background: var(--surface);
+            transition: border-color 0.2s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .search-btn:hover { background: var(--primary-dark); }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb-item {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+        }
+        
+        .breadcrumb-item:hover, .breadcrumb-item.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .breadcrumb-separator { color: var(--text-light); font-size: 0.75rem; }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.3;
+            flex: 1;
+        }
+        
+        .favorite-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        
+        .favorite-btn:hover, .favorite-btn.active {
+            color: var(--accent);
+        }
+        
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-primary { background: #e0e7ff; color: var(--primary); }
+        .badge-success { background: #d1fae5; color: var(--success); }
+        .badge-warning { background: #fef3c7; color: var(--warning); }
+        
+        .test-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .test-btn:hover { transform: scale(1.02); }
+        
+        .loader {
+            text-align: center;
+            padding: 3rem;
             display: none;
         }
         
-        /* Submit Button changes (btn-md is used in HTML now) */
-        .btn-primary-custom {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            transition: all 0.2s;
-            border-radius: 0.75rem;
-            font-weight: 700;
-        }
-
-        .navigation-btn {
-            background-color: var(--gray);
-            border-color: var(--gray);
-            color: white;
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
             border-radius: 50%;
-            width: 50px; 
-            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .empty {
+            text-align: center;
+            padding: 3rem;
+            display: none;
+        }
+        
+        .empty-icon { font-size: 3rem; color: var(--text-light); margin-bottom: 1rem; }
+        .empty-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .empty-text { color: var(--text-light); }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 0.75rem;
+            display: flex;
+            justify-content: space-around;
+            z-index: 100;
+        }
+        
+        .footer-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+        }
+        
+        .footer-btn:hover, .footer-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: flex-end;
+            z-index: 200;
+            padding: 1rem;
+        }
+        
+        .modal.show { display: flex; }
+        
+        .modal-content {
+            background: var(--surface);
+            border-radius: var(--radius) var(--radius) 0 0;
+            width: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .modal-title { font-size: 1.25rem; font-weight: 700; }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+        
+        .modal-body { padding: 1rem; max-height: 60vh; overflow-y: auto; }
+        
+        .tabs {
+            display: flex;
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            background: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+        
+        .tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .notification {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            z-index: 300;
+            transform: translateX(150%);
+            transition: transform 0.3s;
+        }
+        
+        .notification.show { transform: translateX(0); }
+        .notification.success { background: var(--success); }
+        .notification.error { background: var(--error); }
+        .notification.warning { background: var(--warning); }
+        
+        .profile-section {
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+        
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--bg);
+            padding: 1rem;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            gap: 0.75rem;
         }
         
-        /* --- Question Dot Styles --- */
-        .question-dots-container {
-            white-space: nowrap; 
-            overflow-x: auto; 
-            padding-bottom: 10px; 
-            justify-content: flex-start !important; 
+        .stat-card i {
+            font-size: 1.5rem;
+            color: var(--primary);
         }
         
-        .question-dot {
-            display: inline-flex;
-            width: 36px; 
-            height: 36px;
-            margin: 4px;
-            border-radius: 50%;
+        .stat-card div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-card strong {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .stat-card span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        .profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .profile-btn {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
             cursor: pointer;
             transition: all 0.2s;
-            border: 2px solid var(--light-gray);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem; 
-            font-weight: 700;
-            color: var(--text-color); 
-            background-color: var(--card-bg); 
-            flex-shrink: 0; 
-        }
-        
-        .dot-attempted { background-color: var(--primary); color: white; border-color: var(--primary-dark); }
-        .dot-current { 
-            border: 3px solid var(--primary-dark); 
-            transform: scale(1.1); 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            background-color: var(--primary-light);
-            color: var(--dark);
-        }
-        
-        body.dark-mode .dot-current {
-             border: 3px solid var(--primary-light);
-             background-color: var(--primary);
-             color: var(--dark);
-        }
-
-        /* --- Review Mode Styles --- */
-        .correct-answer {
-            background-color: rgba(0, 184, 148, 0.1); 
-            border-color: var(--success);
-        }
-
-        .incorrect-selected {
-            background-color: rgba(214, 48, 49, 0.1); 
-            border-color: var(--danger);
-        }
-        
-        /* Note Style for explanation */
-        .note-block {
-            background-color: var(--light-gray);
-            border-left: 5px solid var(--primary-dark);
-            padding: 12px;
-            border-radius: 0.5rem;
-            margin-top: 1.5rem;
-            color: var(--text-color); 
-            font-size: 0.95rem; 
-        }
-
-        /* Fix dark mode for review colors */
-        body.dark-mode .correct-answer {
-            background-color: rgba(46, 204, 113, 0.15); 
-        }
-        body.dark-mode .incorrect-selected {
-            background-color: rgba(231, 76, 60, 0.15); 
-        }
-        body.dark-mode .note-block {
-            background-color: var(--light-gray);
-        }
-        
-        /* --- Modal Styles --- */
-         .modal-custom {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5); 
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-custom.show {
             display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .profile-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 640px) {
+            .search-title { font-size: 1.75rem; }
+            .content { grid-template-columns: 1fr; }
+            .modal { align-items: flex-end; }
+            .modal-content { border-radius: var(--radius) var(--radius) 0 0; }
         }
 
-        .modal-content-custom {
-            background-color: var(--card-bg);
-            margin: auto;
-            padding: 30px;
-            border-radius: 1.5rem;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s;
+                /* New GK Quiz Button Styles */
+        .gk-quiz-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Space between icon and text */
+            padding: 0.5rem 1rem; /* Adjust padding as needed */
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem; /* Adjust text size if needed */
         }
+        .gk-quiz-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .gk-quiz-btn i {
+            font-size: 1rem; /* Adjust icon size if needed */
+        }
+        .gk-quiz-text {
+             white-space: nowrap; /* Prevents text wrapping if space is tight */
+        }
+        /*--------------------------*/
     </style>
-</head>
+<style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection"><style></style></head>
 <body>
-
-    <div class="container-fluid">
-        <div class="card my-5">
-            <!-- Header for both states -->
-            <div class="header-card">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <div class="d-flex align-items-center gap-2">
-                        <!-- Back Button (Shown only when test is running) -->
-                        <button id="back-to-selection-btn" class="btn btn-sm text-white" onclick="backToSelection()" style="display: none; background: rgba(255,255,255,0.2); border-radius: 50%;">
-                            <i class="fas fa-arrow-left"></i>
-                        </button>
-                        <span class="title-text" id="test-title">
-                            <i class="fas fa-list me-2"></i> टेस्ट चुनें
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    Mocks Wallah
+                </div>
+                <div class="btn gk-quiz-btn" id="gkQuizBtn">
+                    <i class="fas fa-lightbulb"></i> <!-- Bulb Icon -->
+                    <span class="gk-quiz-text">1M+ GK quiz</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section class="search-section">
+                <h1 class="search-title">Ace Your Tests</h1>
+                <p class="search-subtitle">Practice unlimited mock tests</p>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search tests, series, topics...">
+                    <button class="search-btn" id="searchSubmit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+            
+            <nav class="breadcrumb" id="breadcrumb" style="display: flex;"><a class="breadcrumb-item " href="#">Results</a><span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span><a class="breadcrumb-item " href="#">Rajasthan 3rd Grade (REET Mains) 2025 Test Series</a><span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span><a class="breadcrumb-item active" href="#">Full Test</a></nav>
+            
+            <section class="content" id="content" style="display: grid;"><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Level 1</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            15 paid
                         </span>
                     </div>
-                    
-                    <div class="toggle-group">
-                         <!-- Timer (Shown only when test is running) -->
-                        <span id="timer" class="badge rounded-pill fs-6 shadow-sm" style="display: none;"><i class="fas fa-clock me-1"></i> 10:00</span>
-                         <!-- Dark Mode Toggle Button -->
-                        <button id="dark-mode-toggle" class="toggle-btn" onclick="toggleDarkMode()">
-                            <i class="fas fa-moon"></i> 
-                        </button>
-                        <!-- Language Toggle Button (Globe Icon) -->
-                        <button id="lang-toggle-btn" class="toggle-btn" onclick="toggleLanguage()">
-                            <i class="fas fa-globe"></i>
-                        </button>
+                </div><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Maths &amp; Science</h3>
                     </div>
-                </div>
-            </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            20 paid
+                        </span>
+                    </div>
+                </div><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Social Studies</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            20 paid
+                        </span>
+                    </div>
+                </div><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Hindi</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            20 paid
+                        </span>
+                    </div>
+                </div><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">English</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            15 paid
+                        </span>
+                    </div>
+                </div><div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Sanskrit</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            0 free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            10 paid
+                        </span>
+                    </div>
+                </div></section>
             
-            <div class="card-body p-4 p-md-5">
+            <div class="empty" id="emptyState" style="display: none;">
+                <i class="fas fa-search empty-icon"></i>
+                <h3 class="empty-title">No Results Found</h3>
+                <p class="empty-text">Try different keywords</p>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <button class="footer-btn" id="homeBtn">
+                <i class="fas fa-home"></i>
+                Home
+            </button>
+            <button class="footer-btn" id="recentBtn">
+                <i class="fas fa-clock"></i>
+                Recent
+            </button>
+            <button class="footer-btn" id="testsBtn">
+                <i class="fas fa-vial"></i>
+                TG Tests
+            </button>
+            <button class="footer-btn" id="favoritesBtn">
+                <i class="fas fa-heart"></i>
+                Favorites
+            </button>
+            <button class="footer-btn" id="profileBtn">
+                <i class="fas fa-user"></i>
+                Profile
+            </button>
+        </footer>
+    </div>
+    
+    <div class="modal" id="recentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Recent Activity</h3>
+                <button class="close-btn" onclick="closeModal('recentModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('recent','searches')">Searches</button>
+                    <button class="tab" onclick="switchTab('recent','tests')">Tests</button>
+                </div>
+                <div class="tab-content active" id="recentSearches"></div>
+                <div class="tab-content" id="recentTests"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Profile &amp; Settings</h3>
+                <button class="close-btn" onclick="closeModal('profileModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle" style="font-size: 4rem; color: var(--primary);"></i>
+                    </div>
+                    <h4 style="text-align: center; margin: 1rem 0;">Test User</h4>
+                </div>
                 
-                <!-- --- 1. TEST SELECTION UI (Default View) --- -->
-                <div id="test-selection-card">
-                    <div class="input-group mb-4">
-                        <span class="input-group-text test-search"><i class="fas fa-search"></i></span>
-                        <input type="text" id="test-search-input" class="form-control test-search" 
-                               onkeyup="filterTests()" placeholder="टेस्ट नाम से खोजें...">
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <strong id="testsAttempted">0</strong>
+                            <span>Tests Attempted</span>
+                        </div>
                     </div>
-                    
-                    <div id="test-list-container" class="mt-4">
-                        <!-- Test items will be injected here -->
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong id="studyTime">0h</strong>
+                            <span>Study Time</span>
+                        </div>
                     </div>
-                    
-                    <div id="selection-loading-message" class="loading-spinner text-center p-5" style="display: none;">
-                        <i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i>
-                        <p>टेस्ट लोड हो रहा है...</p>
+                    <div class="stat-card">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <strong id="totalFavorites">0</strong>
+                            <span>Favorites</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- --- 2. QUIZ RUNNING UI (Hidden by default) --- -->
-                <div id="quiz-running-card" style="display:none;">
-                    
-                    <!-- Question Navigation Dots (Scrollable) -->
-                    <div id="question-dots" class="mb-4 d-flex question-dots-container">
-                        <!-- Dots will be injected here -->
-                    </div>
-
-                    <!-- Question and Options -->
-                    <div id="quiz-content">
-                        <div id="loading-message" class="loading-spinner text-center p-5" style="display: none;">
-                            <i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i>
-                            <p>Questions लोड हो रहे हैं...</p>
-                        </div>
-
-                        <div id="question-container" class="mb-5" style="display:none;">
-                            <p class="mb-2 text-muted fw-bold" id="question-number"></p>
-                            <div id="question-text">
-                                <!-- Question content and options will be injected here -->
-                            </div>
-                        </div>
-
-                        <!-- Navigation and Submit Buttons -->
-                        <div class="d-flex justify-content-between align-items-center" id="navigation-controls" style="display:none;">
-                            <button class="btn navigation-btn" id="prev-btn" onclick="prevQuestion()" disabled>
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            
-                            <!-- SUBMIT BUTTON CHANGE: Changed btn-lg px-4 to btn-md px-3 -->
-                            <button class="btn btn-md btn-primary-custom px-3 shadow-lg" id="submit-btn" onclick="submitTest()">
-                                <i class="fas fa-paper-plane me-2"></i> टेस्ट सबमिट करें
-                            </button>
-
-                            <button class="btn navigation-btn" id="next-btn" onclick="nextQuestion()">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div> <!-- End of quiz-content -->
-                </div> <!-- End of quiz-running-card -->
-
+                
+                <div class="profile-actions">
+                    <button class="profile-btn" onclick="app.clearAllData()">
+                        <i class="fas fa-trash"></i>
+                        Clear All Data
+                    </button>
+                    <button class="profile-btn" onclick="app.exportData()">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                    <button class="profile-btn" onclick="app.showStats()">
+                        <i class="fas fa-chart-bar"></i>
+                        Detailed Stats
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Results Modal -->
-    <div id="results-modal" class="modal-custom">
-        <div class="modal-content-custom">
-            <!-- Close button only works in modals, not alerts -->
-            <h4 class="text-center mb-4" style="color: var(--primary-dark);" id="results-title">टेस्ट परिणाम</h4>
-            
-            <table class="table table-bordered rounded-lg shadow-sm">
-                <tr>
-                    <td class="fw-bold" id="score-label">अंतिम स्कोर:</td>
-                    <td id="score-value" class="text-end fw-bold" style="color: var(--primary-dark);"></td>
-                </tr>
-                <tr>
-                    <td id="correct-label">सही उत्तर:</td>
-                    <td id="correct-value" class="text-end" style="color: var(--success);"></td>
-                </tr>
-                <tr>
-                    <td id="incorrect-label">गलत उत्तर:</td>
-                    <td id="incorrect-value" class="text-end" style="color: var(--danger);"></td>
-                </tr>
-                <tr>
-                    <td id="unattempted-label">प्रयास नहीं किए गए:</td>
-                    <td id="unattempted-value" class="text-end"></td>
-                </tr>
-            </table>
-
-            <div class="d-grid mt-4">
-                <button class="btn btn-primary-custom btn-lg" id="review-btn" onclick="reviewTest()">
-                    <i class="fas fa-search me-2"></i> समाधान देखें
-                </button>
+    
+    <div class="modal" id="favoritesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Favorites</h3>
+                <button class="close-btn" onclick="closeModal('favoritesModal')">×</button>
             </div>
-            <div class="d-grid mt-2">
-                 <button class="btn btn-secondary btn-lg" onclick="backToSelection(true)">
-                    <i class="fas fa-home me-2"></i> टेस्ट मेनू
-                </button>
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('favorites','series')">Series</button>
+                    <button class="tab" onclick="switchTab('favorites','sections')">Sections</button>
+                    <button class="tab" onclick="switchTab('favorites','tests')">Tests</button>
+                </div>
+                <div class="tab-content active" id="favSeries"></div>
+                <div class="tab-content" id="favSections"></div>
+                <div class="tab-content" id="favTests"></div>
             </div>
         </div>
     </div>
-
-<script>
-    // --- Configuration and Data ---
-    // UPDATED TIMER: 2 hours 30 minutes (9000s) - 10 minutes (600s) = 8400 seconds (2 hours 20 minutes)
-    const TIME_LIMIT_SECONDS = 8400; // 2 hours 20 minutes
     
-    // Test Manifest (Hardcoded mock list for demonstration based on GitHub structure)
-    // NOTE: For a real application, this list would ideally come from a small, static JSON file or an API.
-    const TEST_MANIFEST = [
-    { id: 'test-1', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 1', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 1', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-1.json' },
-    { id: 'test-2', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 2', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 2', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-2.json' },
-    { id: 'test-3', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 3', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 3', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-3.json' },
-    { id: 'test-4', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 4', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 4', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-4.json' },
-    { id: 'test-5', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 5', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 5', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-5.json' },
-    { id: 'test-6', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 6', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 6', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-6.json' },
-    { id: 'test-7', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 7', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 7', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-7.json' },
-    { id: 'test-8', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 8', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 8', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-8.json' },
-    { id: 'test-9', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 9', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 9', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-9.json' },
-    { id: 'test-10', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 10', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 10', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-10.json' },
-    { id: 'test-11', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 11', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 11', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-11.json' },
-    { id: 'test-12', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 12', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 12', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-12.json' },
-    { id: 'test-13', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 13', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 13', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-13.json' },
-    { id: 'test-14', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 14', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 14', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-14.json' },
-    { id: 'test-15', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 15', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 15', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-15.json' },
-    { id: 'test-16', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 16', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 16', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-16.json' },
-    { id: 'test-17', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 17', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 17', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-17.json' },
-    { id: 'test-18', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 18', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 18', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-18.json' },
-    { id: 'test-19', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 19', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 19', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-19.json' },
-    { id: 'test-20', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 20', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 20', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-20.json' },
-    { id: 'test-21', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 21', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 21', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-21.json' },
-    { id: 'test-22', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 22', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 22', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-22.json' },
-    { id: 'test-23', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 23', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 23', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-23.json' },
-    { id: 'test-24', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 24', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 24', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-24.json' },
-    { id: 'test-25', title_hi: '3rd Grade Mains Test Series 1.0 - Minor Test 25', title_en: '3rd Grade Mains Test Series 1.0 - Minor Test 25', url: 'https://raw.githubusercontent.com/kd2929/test-series-platform/main/data/tests/test-25.json' },
-];
-  
-     // Localization Text
-    const TEXT = {
-        hindi: {
-            app_title: 'टेस्ट प्लेटफॉर्म 👑',
-            select_test: 'टेस्ट चुनें',
-            search_placeholder: 'टेस्ट नाम से खोजें...',
-            loading_test: 'टेस्ट लोड हो रहा है...',
-            loading_questions: 'Questions लोड हो रहे हैं...',
-            submit: 'टेस्ट सबमिट करें',
-            submitted: 'सबमिट किया गया',
-            results: 'टेस्ट परिणाम',
-            score: 'अंतिम स्कोर:',
-            correct: 'सही उत्तर:',
-            incorrect: 'गलत उत्तर:',
-            unattempted: 'प्रयास नहीं किए गए:',
-            review: 'समाधान देखें',
-            explanation: 'व्याख्या:',
-            error: 'टेस्ट लोड करने में त्रुटि',
-            no_test_found: 'कोई टेस्ट नहीं मिला।',
-            start_test: 'शुरू करें',
-            back_to_menu: 'टेस्ट मेनू',
-            no_questions_in_file: 'JSON में कोई प्रश्न नहीं मिला (या डेटा संरचना गलत है)!'
-        },
-        english: {
-            app_title: 'Test Platform 👑',
-            select_test: 'Select Test',
-            search_placeholder: 'Search by Test Name...',
-            loading_test: 'Loading test...',
-            loading_questions: 'Loading Questions...',
-            submit: 'Submit Test',
-            submitted: 'Submitted',
-            results: 'Test Results',
-            score: 'Final Score:',
-            correct: 'Correct Answers:',
-            incorrect: 'Incorrect Answers:',
-            unattempted: 'Unattempted:',
-            review: 'Review Solutions',
-            explanation: 'Explanation:',
-            error: 'Error loading test',
-            no_test_found: 'No tests found.',
-            start_test: 'Start',
-            back_to_menu: 'Test Menu',
-            no_questions_in_file: 'No questions found in JSON (or incorrect data structure)!'
-        }
-    };
+    <div class="notification" id="notification"></div>
 
-    // Global state variables
-    let questions = []; 
-    let currentQuestion = 0;
-    let userSelections = []; 
-    let timerInterval;
-    let timeRemaining = TIME_LIMIT_SECONDS;
-    let currentLanguage = 'hindi'; // Default language is Hindi
-    let isDarkMode = false; // Dark Mode state
-    let isTestRunning = false; // New state for UI management
-
-    // --- State Management ---
-
-    function setUIState(running) {
-        isTestRunning = running;
-        const langText = TEXT[currentLanguage];
-        
-        document.getElementById('test-selection-card').style.display = running ? 'none' : 'block';
-        document.getElementById('quiz-running-card').style.display = running ? 'block' : 'none';
-        
-        document.getElementById('back-to-selection-btn').style.display = running ? 'block' : 'none';
-        document.getElementById('timer').style.display = running ? 'flex' : 'none';
-
-        if (!running) {
-            document.getElementById('test-title').innerHTML = `<i class="fas fa-list me-2"></i> ${langText.select_test}`;
-            renderTestSelection(TEST_MANIFEST); // Re-render test list
-        }
-    }
-
-    function backToSelection(fromModal = false) {
-        // Clear quiz state
-        questions = [];
-        userSelections = [];
-        currentQuestion = 0;
-        clearInterval(timerInterval);
-        
-        if (fromModal) {
-            document.getElementById('results-modal').classList.remove('show');
-        }
-        
-        // Reset timer display
-        timeRemaining = TIME_LIMIT_SECONDS;
-        // Initial timer display logic needs to be updated for longer time
-        const initialMinutes = String(Math.floor(TIME_LIMIT_SECONDS / 60)).padStart(2, '0');
-        const initialSeconds = String(TIME_LIMIT_SECONDS % 60).padStart(2, '0');
-        document.getElementById('timer').textContent = `${initialMinutes}:${initialSeconds}`;
-
-        document.getElementById('timer').style.backgroundColor = ''; 
-        document.getElementById('timer').style.color = '';
-        
-        // Reset submit button state
-        const submitBtn = document.getElementById('submit-btn');
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${TEXT[currentLanguage].submit}`;
-        submitBtn.style.backgroundColor = 'var(--primary)';
-
-        setUIState(false);
-    }
-    
-    // --- Test Selection Functions ---
-
-    function renderTestSelection(tests) {
-        const container = document.getElementById('test-list-container');
-        container.innerHTML = '';
-        const lang = currentLanguage;
-        const langText = TEXT[lang];
-
-        if (tests.length === 0) {
-            container.innerHTML = `<p class="text-center text-muted p-5">${langText.no_test_found}</p>`;
-            return;
-        }
-
-        tests.forEach(test => {
-            const title = lang === 'hindi' ? test.title_hi : test.title_en;
-            
-            const item = document.createElement('div');
-            item.className = 'test-item shadow-sm';
-            item.onclick = () => selectTest(test.url, title);
-            item.innerHTML = `
-                <div class="d-flex flex-column">
-                    <span class="test-title">${title}</span>
-                    <small class="text-muted">${test.id}</small>
-                </div>
-                <button class="btn btn-sm btn-primary-custom px-3">
-                    <i class="fas fa-play me-1"></i> ${langText.start_test}
-                </button>
-            `;
-            container.appendChild(item);
-        });
-    }
-
-    function filterTests() {
-        const input = document.getElementById('test-search-input').value.toLowerCase();
-        const filteredTests = TEST_MANIFEST.filter(test => {
-            const title = currentLanguage === 'hindi' ? test.title_hi : test.title_en;
-            return title.toLowerCase().includes(input);
-        });
-        renderTestSelection(filteredTests);
-    }
-
-    function selectTest(url, title) {
-        document.getElementById('test-title').innerHTML = `<i class="fas fa-crown me-2"></i> ${title}`;
-        document.getElementById('test-search-input').value = ''; // Clear search bar
-        setUIState(true); // Switch to quiz running state
-        loadQuestions(url);
-    }
-    
-    // --- Utility and Toggle Functions ---
-
-    function processData(rawData) {
-        const data = rawData.data && Array.isArray(rawData.data) ? rawData.data : [];
-
-        return data.map(item => {
-            const optionsHindi = [];
-            const optionsEnglish = [];
-            const optionKeysMap = {}; 
-            
-            const optionKeys = ['a', 'b', 'c', 'd', 'e'].filter(key => item.options && item.options[key] !== null && item.options[key] !== undefined);
-
-            optionKeys.forEach((key, index) => {
-                optionsHindi.push(item.options[key]);
-                optionsEnglish.push(item.options_eng && item.options_eng[key] ? item.options_eng[key] : item.options[key]);
-                optionKeysMap[index] = key;
-            });
-
-            return {
-                id: item.id,
-                question_hindi: item.question || TEXT.hindi.title,
-                question_english: item.question_eng || TEXT.english.title,
-                options_hindi: optionsHindi,
-                options_english: optionsEnglish,
-                correct_key: item.answer, 
-                option_keys_map: optionKeysMap,
-                note: item.solution || '' 
-            };
-        }).filter(q => q.options_hindi.length > 0); 
-    }
-
-    function toggleLanguage() {
-        currentLanguage = (currentLanguage === 'hindi') ? 'english' : 'hindi';
-        updateUIForLanguage();
-        if (isTestRunning && questions.length > 0) {
-            showQuestion(currentQuestion);
-        } else {
-            renderTestSelection(TEST_MANIFEST);
-        }
-    }
-    
-    function toggleDarkMode() {
-        const body = document.body;
-        const icon = document.querySelector('#dark-mode-toggle i');
-        
-        isDarkMode = !isDarkMode;
-        
-        if (isDarkMode) {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun'); 
-        } else {
-            body.classList.remove('dark-mode');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon'); 
-        }
-        
-        if (questions.length > 0) {
-            showQuestion(currentQuestion); // Re-render quiz
-        }
-        if (!isTestRunning) {
-             renderTestSelection(TEST_MANIFEST); // Re-render selection
-        }
-    }
-
-    function updateUIForLanguage() {
-        const langText = TEXT[currentLanguage];
-        
-        // App title in header
-        document.getElementById('main-title').textContent = langText.app_title.replace('👑', '').trim();
-        
-        // Test Selection Screen
-        if (!isTestRunning) {
-             document.getElementById('test-title').innerHTML = `<i class="fas fa-list me-2"></i> ${langText.select_test}`;
-             document.getElementById('test-search-input').placeholder = langText.search_placeholder;
-             renderTestSelection(TEST_MANIFEST); 
-        } else {
-            // Quiz Running Screen
-            const currentTitle = document.getElementById('test-title').textContent.trim();
-            document.getElementById('test-title').innerHTML = `<i class="fas fa-crown me-2"></i> ${currentTitle}`;
-        }
-        
-        // Common UI Texts
-        const submitBtn = document.getElementById('submit-btn');
-        const submitText = submitBtn.disabled ? langText.submitted : langText.submit;
-        submitBtn.innerHTML = `<i class="fas fa-paper-plane me-2"></i> ${submitText}`;
-        
-        const loadingMessage = document.getElementById('loading-message');
-        if(loadingMessage.style.display !== 'none') {
-             loadingMessage.querySelector('p').textContent = langText.loading_questions;
-        }
-
-        document.getElementById('results-title').textContent = langText.results;
-        document.getElementById('score-label').textContent = langText.score;
-        document.getElementById('correct-label').textContent = langText.correct;
-        document.getElementById('incorrect-label').textContent = langText.incorrect;
-        document.getElementById('unattempted-label').textContent = langText.unattempted;
-        document.getElementById('review-btn').innerHTML = `<i class="fas fa-search me-2"></i> ${langText.review}`;
-        document.querySelector('.modal-content-custom .btn-secondary').innerHTML = `<i class="fas fa-home me-2"></i> ${langText.back_to_menu}`;
-    }
-
-    // --- Core Quiz Functions ---
-
-    function startTimer() {
-        clearInterval(timerInterval);
-        const timerElement = document.getElementById('timer');
-        timeRemaining = TIME_LIMIT_SECONDS; // Reset timer for new test
-
-        timerInterval = setInterval(() => {
-            timeRemaining--;
-
-            // Calculate hours, minutes, and seconds
-            const hours = String(Math.floor(timeRemaining / 3600)).padStart(2, '0');
-            const minutes = String(Math.floor((timeRemaining % 3600) / 60)).padStart(2, '0');
-            const seconds = String(timeRemaining % 60).padStart(2, '0');
-
-            // Format timer display (H:MM:SS if hours > 0, otherwise MM:SS)
-            const timeDisplay = (hours > 0 || timeRemaining >= 3600) ? `${hours}:${minutes}:${seconds}` : `${minutes}:${seconds}`;
-
-            timerElement.innerHTML = `<i class="fas fa-clock me-1"></i> ${timeDisplay}`;
-
-
-            if (timeRemaining <= 0) {
-                clearInterval(timerInterval);
-                submitTest();
-            } else if (timeRemaining <= 60) {
-                timerElement.style.backgroundColor = 'var(--danger)'; 
-                timerElement.style.color = 'white';
-            } else {
-                // Reset to default timer styles
-                timerElement.style.backgroundColor = ''; 
-                timerElement.style.color = '';
-            }
-        }, 1000);
-    }
-
-    function updateQuestionDots() {
-        const dotsContainer = document.getElementById('question-dots');
-        dotsContainer.innerHTML = '';
-        const isSubmitted = document.getElementById('submit-btn').disabled;
-
-        questions.forEach((q, index) => {
-            let className = 'dot-unattempted';
-            const userSelectedKey = userSelections[index];
-            
-            if (isSubmitted) {
-                const isCorrect = userSelectedKey === q.correct_key;
-                const isAttempted = userSelectedKey !== null;
-                if (isAttempted) {
-                    className = isCorrect ? 'dot-correct' : 'dot-incorrect';
-                } 
-            } else {
-                className = userSelectedKey !== null ? 'dot-attempted' : 'dot-unattempted';
+    <script>
+        class Cache {
+            constructor() {
+                this.keys = {
+                    SEARCHES: 'tb_searches',
+                    RECENT_TESTS: 'tb_recent_tests',
+                    FAVORITES: 'tb_favorites',
+                    LAST_SEARCH: 'tb_last_search'
+                };
             }
             
-            if (index === currentQuestion) {
-                className += ' dot-current';
+            set(key, data, ttl = 3600000) {
+                const item = { data, timestamp: Date.now(), ttl };
+                localStorage.setItem(key, JSON.stringify(item));
             }
-
-            const dot = document.createElement('span');
-            dot.className = `question-dot ${className}`;
-            dot.title = `Question ${index + 1}`;
-            dot.onclick = () => showQuestion(index);
             
-            dot.textContent = index + 1;
-            dotsContainer.appendChild(dot);
-        });
-    }
-
-    function showQuestion(index) {
-        if (questions.length === 0 || index < 0 || index >= questions.length) return;
-        currentQuestion = index;
-
-        const q = questions[index];
-        const langText = TEXT[currentLanguage];
-        const questionNumberElement = document.getElementById('question-number');
-        const questionTextElement = document.getElementById('question-text');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const submitBtn = document.getElementById('submit-btn');
-        
-        const isSubmitted = submitBtn.disabled;
-        const isAnswer = isSubmitted; 
-
-        // Dynamic Content Selection
-        const questionText = currentLanguage === 'hindi' ? q.question_hindi : q.question_english;
-        const options = currentLanguage === 'hindi' ? q.options_hindi : q.options_english;
-
-        // Update Question Number
-        questionNumberElement.textContent = `Question ${index + 1} of ${questions.length}`;
-
-        // Navigation button states
-        prevBtn.disabled = index === 0 || isSubmitted;
-        nextBtn.disabled = index === questions.length - 1 || isSubmitted;
-
-        // Option Change Handler 
-        const handleOptionChange = (e) => {
-            if (!isSubmitted) {
-                userSelections[index] = e.target.value;
-                updateQuestionDots();
+            get(key) {
+                try {
+                    const item = localStorage.getItem(key);
+                    if (!item) return null;
+                    const parsed = JSON.parse(item);
+                    if (parsed.ttl && (Date.now() - parsed.timestamp) > parsed.ttl) {
+                        localStorage.removeItem(key);
+                        return null;
+                    }
+                    return parsed.data;
+                } catch { return null; }
             }
-        };
+            
+            addSearch(term, results) {
+                let searches = this.get(this.keys.SEARCHES) || [];
+                const newSearch = { id: Date.now(), term, results: results.length, timestamp: Date.now() };
+                searches = searches.filter(s => s.term.toLowerCase() !== term.toLowerCase());
+                searches.unshift(newSearch);
+                this.set(this.keys.SEARCHES, searches.slice(0, 20), 7 * 86400000);
+                this.set(this.keys.LAST_SEARCH, { term, results }, 86400000);
+            }
+            
+            addTest(test, series, section) {
+                let tests = this.get(this.keys.RECENT_TESTS) || [];
+                const newTest = { id: Date.now(), test, series, section, timestamp: Date.now() };
+                tests = tests.filter(t => t.test.id !== test.id);
+                tests.unshift(newTest);
+                this.set(this.keys.RECENT_TESTS, tests.slice(0, 30), 30 * 86400000);
+            }
+            
+            addFavorite(type, item) {
+                let favorites = this.get(this.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                const id = item.id || Date.now();
+                if (!favorites[type].find(f => f.id === id)) {
+                    favorites[type].unshift({ ...item, favoriteTime: Date.now() });
+                    favorites[type] = favorites[type].slice(0, 50);
+                    this.set(this.keys.FAVORITES, favorites, 365 * 86400000);
+                    return true;
+                }
+                return false;
+            }
+            
+            removeFavorite(type, id) {
+                let favorites = this.get(this.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                favorites[type] = favorites[type].filter(f => f.id !== id);
+                this.set(this.keys.FAVORITES, favorites, 365 * 86400000);
+            }
+            
+            getFavorites(type) {
+                const favorites = this.get(this.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                return favorites[type] || [];
+            }
+            
+            isFavorite(type, id) {
+                const favorites = this.get(this.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                return favorites[type].some(f => f.id === id);
+            }
+        }
+        
+        class TestBookApp {
+            constructor() {
+                this.cache = new Cache();
+                this.currentView = 'search';
+                this.searchResults = [];
+                this.currentSeries = null;
+                this.currentSection = null;
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.loadLastSearch();
+            }
+            
+            bindEvents() {
+                document.getElementById('searchSubmit').addEventListener('click', () => this.handleSearch());
+                document.getElementById('searchInput').addEventListener('keypress', e => {
+                    if (e.key === 'Enter') this.handleSearch();
+                });
+                document.getElementById('gkQuizBtn').addEventListener('click', () => {
+                    window.open('https://testnookapp-f602da876a9b.herokuapp.com/', '_blank');
+                });
+                document.getElementById('homeBtn').addEventListener('click', () => this.goHome());
+                document.getElementById('recentBtn').addEventListener('click', () => this.showRecent());
+                document.getElementById('favoritesBtn').addEventListener('click', () => this.showFavorites());
+                document.getElementById('profileBtn').addEventListener('click', () => this.showProfile());
+                document.getElementById('testsBtn').addEventListener('click', () => window.open('https://conservative-bab-gagan-7e583f25.koyeb.app/', '_blank'));
+                document.addEventListener('click', e => {
+                    if (e.target.classList.contains('modal')) {
+                        e.target.classList.remove('show');
+                    }
+                });
+            }
+            
+            loadLastSearch() {
+                const lastSearch = this.cache.get(this.cache.keys.LAST_SEARCH);
+                if (lastSearch?.results?.length) {
+                    this.searchResults = lastSearch.results;
+                    document.getElementById('searchInput').value = lastSearch.term;
+                }
+            }
+            
+            async handleSearch() {
+                const term = document.getElementById('searchInput').value.trim();
+                if (!term) return this.showNotification('Enter search term', 'warning');
+                
+                const cached = this.cache.get(`search_${term.toLowerCase()}`);
+                if (cached) {
+                    this.searchResults = cached;
+                    this.cache.addSearch(term, cached);
+                    this.displaySearchResults();
+                    return;
+                }
+                
+                this.showLoader('Searching...');
+                try {
+                    const response = await fetch(`/search?term=${encodeURIComponent(term)}`);
+                    const data = await response.json();
+                    if (response.ok) {
+                        this.searchResults = data.results || [];
+                        this.cache.set(`search_${term.toLowerCase()}`, this.searchResults, 3600000);
+                        this.cache.addSearch(term, this.searchResults);
+                        await this.saveSearchResults();
+                        this.displaySearchResults();
+                    } else {
+                        throw new Error(data.error || 'Search failed');
+                    }
+                } catch (error) {
+                    this.showNotification(error.message, 'error');
+                } finally {
+                    this.hideLoader();
+                }
+            }
+            
+            async saveSearchResults() {
+                try {
+                    await fetch('/set_search_results', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ results: this.searchResults })
+                    });
+                } catch (error) {
+                    console.error('Failed to save search results:', error);
+                }
+            }
+            
+            displaySearchResults() {
+                if (!this.searchResults.length) {
+                    this.showEmptyState();
+                    return;
+                }
+                
+                const content = document.getElementById('content');
+                content.innerHTML = '';
+                
+                this.searchResults.forEach(series => {
+                    const card = this.createSeriesCard(series);
+                    content.appendChild(card);
+                });
+                
+                this.updateBreadcrumb([{ text: 'Results', active: true }]);
+                this.showContent();
+            }
+            
+            createSeriesCard(series) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const isFavorite = this.cache.isFavorite('series', series.id);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="card-title">${series.name || 'Unnamed Series'}</h3>
+                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-type="series" data-id="${series.id}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-primary">
+                            <i class="fas fa-layer-group"></i>
+                            ${(series.sections || []).length} sections
+                        </span>
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            ${series.freeTestCount || 0} free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            ${series.paidTestCount || 0} paid
+                        </span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', e => {
+                    if (!e.target.closest('.favorite-btn')) {
+                        this.selectSeries(series);
+                    }
+                });
+                
+                const favBtn = card.querySelector('.favorite-btn');
+                favBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.toggleFavorite('series', series, favBtn);
+                });
+                
+                return card;
+            }
+            
+            selectSeries(series) {
+                this.currentSeries = series;
+                this.displaySections(series.sections || []);
+                this.updateBreadcrumb([
+                    { text: 'Results', onClick: () => this.displaySearchResults() },
+                    { text: series.name, active: true }
+                ]);
+                history.pushState({ view: 'sections', series, searchResults: this.searchResults }, series.name, `?series=${series.id}`);
+            }
+            
+            displaySections(sections) {
+                if (!sections.length) {
+                    this.showEmptyState('No sections found');
+                    return;
+                }
+                
+                const content = document.getElementById('content');
+                content.innerHTML = '';
+                
+                sections.forEach(section => {
+                    const card = this.createSectionCard(section);
+                    content.appendChild(card);
+                });
+                
+                this.showContent();
+            }
+            
+            createSectionCard(section) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const isFavorite = this.cache.isFavorite('sections', section.id);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="card-title">${section.name || 'Unnamed Section'}</h3>
+                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-type="sections" data-id="${section.id}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-primary">
+                            <i class="fas fa-folder"></i>
+                            ${(section.subsections || []).length} subsections
+                        </span>
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            ${section.freeTestCount || 0} free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            ${section.paidTestCount || 0} paid
+                        </span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', e => {
+                    if (!e.target.closest('.favorite-btn')) {
+                        this.selectSection(section);
+                    }
+                });
+                
+                const favBtn = card.querySelector('.favorite-btn');
+                favBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.toggleFavorite('sections', { ...section, series: this.currentSeries }, favBtn);
+                });
+                
+                return card;
+            }
+            
+            selectSection(section) {
+                this.currentSection = section;
+                this.displaySubsections(section.subsections || []);
+                this.updateBreadcrumb([
+                    { text: 'Results', onClick: () => this.displaySearchResults() },
+                    { text: this.currentSeries.name, onClick: () => this.selectSeries(this.currentSeries) },
+                    { text: section.name, active: true }
+                ]);
+            }
+            
+            displaySubsections(subsections) {
+                if (!subsections.length) {
+                    this.showEmptyState('No subsections found');
+                    return;
+                }
+                
+                const content = document.getElementById('content');
+                content.innerHTML = '';
+                
+                subsections.forEach(subsection => {
+                    const card = this.createSubsectionCard(subsection);
+                    content.appendChild(card);
+                });
+                
+                this.showContent();
+            }
+            
+            createSubsectionCard(subsection) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="card-title">${subsection.name || 'Unnamed Subsection'}</h3>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge badge-success">
+                            <i class="fas fa-unlock"></i>
+                            ${subsection.freeTestCount || 0} free
+                        </span>
+                        <span class="badge badge-warning">
+                            <i class="fas fa-lock"></i>
+                            ${subsection.paidTestCount || 0} paid
+                        </span>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    this.selectSubsection(subsection);
+                });
+                
+                return card;
+            }
+            
+            async selectSubsection(subsection) {
+                const cacheKey = `tests_${this.currentSeries.id}_${this.currentSection.id}_${subsection.id}`;
+                const cachedTests = this.cache.get(cacheKey);
+                
+                if (cachedTests) {
+                    this.displayTests(cachedTests);
+                    this.updateBreadcrumb([
+                        { text: 'Results', onClick: () => this.displaySearchResults() },
+                        { text: this.currentSeries.name, onClick: () => this.selectSeries(this.currentSeries) },
+                        { text: this.currentSection.name, onClick: () => this.selectSection(this.currentSection) },
+                        { text: subsection.name, active: true }
+                    ]);
+                    return;
+                }
+                
+                this.showLoader('Loading tests...');
+                try {
+                    const response = await fetch(`/series/${this.currentSeries.id}/section/${this.currentSection.id}/subsection/${subsection.id}/tests`);
+                    const data = await response.json();
+                    if (response.ok) {
+                        const tests = data.tests || [];
+                        this.cache.set(cacheKey, tests, 1800000);
+                        this.displayTests(tests);
+                        this.updateBreadcrumb([
+                            { text: 'Results', onClick: () => this.displaySearchResults() },
+                            { text: this.currentSeries.name, onClick: () => this.selectSeries(this.currentSeries) },
+                            { text: this.currentSection.name, onClick: () => this.selectSection(this.currentSection) },
+                            { text: subsection.name, active: true }
+                        ]);
+                    } else {
+                        throw new Error(data.error || 'Failed to load tests');
+                    }
+                } catch (error) {
+                    this.showNotification(error.message, 'error');
+                } finally {
+                    this.hideLoader();
+                }
+            }
+            
+            displayTests(tests) {
+                if (!tests.length) {
+                    this.showEmptyState('No tests found');
+                    return;
+                }
+                
+                const content = document.getElementById('content');
+                content.innerHTML = '';
+                
+                tests.forEach(test => {
+                    const card = this.createTestCard(test);
+                    content.appendChild(card);
+                });
+                
+                this.showContent();
+            }
+            
+            createTestCard(test) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const isFavorite = this.cache.isFavorite('tests', test.id);
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="card-title">${test.title || 'Unnamed Test'}</h3>
+                        <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-type="tests" data-id="${test.id}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge ${test.isFree ? 'badge-success' : 'badge-warning'}">
+                            <i class="fas fa-${test.isFree ? 'unlock' : 'lock'}"></i>
+                            ${test.isFree ? 'Free' : 'Paid'}
+                        </span>
+                        <span class="badge badge-primary">
+                            <i class="fas fa-clock"></i>
+                            ${test.duration || 'N/A'} min
+                        </span>
+                        <span class="badge badge-primary">
+                            <i class="fas fa-question"></i>
+                            ${test.questionCount || 'N/A'}
+                        </span>
+                        <span class="badge badge-primary">
+                            <i class="fas fa-star"></i>
+                            ${test.totalMark || 'N/A'}
+                        </span>
+                    </div>
+                    <button class="test-btn">
+                        <i class="fas fa-play"></i>
+                        Start Test
+                    </button>
+                `;
+                
+                const testBtn = card.querySelector('.test-btn');
+                testBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.startTest(test);
+                });
+                
+                const favBtn = card.querySelector('.favorite-btn');
+                favBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.toggleFavorite('tests', { ...test, series: this.currentSeries, section: this.currentSection }, favBtn);
+                });
+                
+                return card;
+            }
+            
+    startTest(test) {
+    this.cache.addTest(test, this.currentSeries, this.currentSection);
+    const testDataKey = `test_data_${test.id}`;
+    this.cache.set(testDataKey, {
+        test, series: this.currentSeries, section: this.currentSection, timestamp: Date.now()
+    }, 3600000);
 
-        // Build Question HTML
-        const questionHtml = `
-            <p class="question-text">${questionText}</p>
-            <div id="options-container" class="options-container mt-4">
-                ${options.map((option, i) => {
-                    const optionKey = q.option_keys_map[i];
-                    const isCorrectOption = optionKey === q.correct_key;
-                    const isUserSelected = userSelections[index] === optionKey;
-
-                    let reviewClass = '';
-                    if (isAnswer) {
-                        if (isCorrectOption) {
-                            reviewClass = 'correct-answer';
-                        } else if (isUserSelected) {
-                            reviewClass = 'incorrect-selected';
+    // ✅ GitHub JSON से टेस्ट लोड करने के लिए नया सिस्टम
+    if (test.encrypted_link) {
+        // अगर पुराना लिंक है तो वही खोलो
+        window.open(test.encrypted_link, '_self');
+    } else if (test.id) {
+        // GitHub से JSON लोड करो
+        loadTestFromGitHub(test.id);
+    } else {
+        this.showNotification('Test link unavailable', 'error');
+    }
+}
+        
+            toggleFavorite(type, item, button) {
+                const isActive = button.classList.contains('active');
+                if (isActive) {
+                    this.cache.removeFavorite(type, item.id);
+                    button.classList.remove('active');
+                    this.showNotification('Removed from favorites', 'success');
+                } else {
+                    if (this.cache.addFavorite(type, item)) {
+                        button.classList.add('active');
+                        this.showNotification('Added to favorites', 'success');
+                    }
+                }
+                this.updateFavorites();
+            }
+            
+            showRecent() {
+                const modal = document.getElementById('recentModal');
+                modal.classList.add('show');
+                this.loadRecentData('searches');
+            }
+            
+            showFavorites() {
+                const modal = document.getElementById('favoritesModal');
+                modal.classList.add('show');
+                this.loadFavoritesData('series');
+            }
+            
+            showProfile() {
+                const modal = document.getElementById('profileModal');
+                modal.classList.add('show');
+                this.updateProfileStats();
+            }
+            
+            updateProfileStats() {
+                // Calculate stats from cached data
+                const recentTests = this.cache.get(this.cache.keys.RECENT_TESTS) || [];
+                const allFavorites = this.cache.get(this.cache.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                const searches = this.cache.get(this.cache.keys.SEARCHES) || [];
+                
+                // Update display
+                document.getElementById('testsAttempted').textContent = recentTests.length;
+                document.getElementById('studyTime').textContent = `${Math.floor(recentTests.length * 1.5)}h`; // Estimate
+                document.getElementById('totalFavorites').textContent = 
+                    allFavorites.series.length + allFavorites.sections.length + allFavorites.tests.length;
+            }
+            
+            clearAllData() {
+                if (confirm('Are you sure you want to clear all data? This cannot be undone.')) {
+                    // Clear all localStorage data
+                    Object.values(this.cache.keys).forEach(key => localStorage.removeItem(key));
+                    
+                    // Clear all cached search results
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                        const key = localStorage.key(i);
+                        if (key && (key.startsWith('search_') || key.startsWith('tests_') || key.startsWith('test_data_'))) {
+                            localStorage.removeItem(key);
                         }
                     }
-
-                    let reviewIcon = '';
-                    if (isAnswer) {
-                        const iconClass = isCorrectOption ? 'fa-check-circle correct-icon' : (isUserSelected ? 'fa-times-circle incorrect-icon' : '');
-                        reviewIcon = iconClass ? `<i class="fas ${iconClass} ms-2" style="font-size: 1.1rem;"></i>` : '';
-                    }
-
-                    return `
-                        <div class="form-check option-item ${reviewClass}" tabindex="${isAnswer ? '-1' : '0'}">
-                            <input class="form-check-input" type="radio" name="question-${q.id}" id="option-${q.id}-${i}" value="${optionKey}" 
-                                ${isUserSelected ? 'checked' : ''} ${isAnswer ? 'disabled' : ''}>
-                            <label class="form-check-label d-flex justify-content-between align-items-center" for="option-${q.id}-${i}">
-                                <span>${option}</span>
-                                ${reviewIcon}
-                            </label>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
+                    
+                    this.showNotification('All data cleared successfully', 'success');
+                    closeModal('profileModal');
+                    this.goHome();
+                }
+            }
             
-            <!-- Note Section (Only shown after submission) -->
-            ${isAnswer && q.note ? `
-                <div class="note-block shadow-sm">
-                    <strong style="color: var(--primary-dark);"><i class="fas fa-lightbulb me-2"></i> ${langText.explanation}</strong> ${q.note}
-                </div>
-            ` : ''}
-        `;
-
-        // Inject HTML and attach listeners
-        questionTextElement.innerHTML = questionHtml;
-        const radioButtons = questionTextElement.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach(radio => {
-            radio.addEventListener('change', handleOptionChange);
-        });
-
-        // MathJax processing
-        MathJax.typesetPromise([questionTextElement]).then(() => {});
-        
-        // Scroll current dot into view
-        const currentDot = document.querySelector('.dot-current');
-        if (currentDot) {
-            currentDot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            exportData() {
+                try {
+                    const exportData = {
+                        searches: this.cache.get(this.cache.keys.SEARCHES) || [],
+                        recentTests: this.cache.get(this.cache.keys.RECENT_TESTS) || [],
+                        favorites: this.cache.get(this.cache.keys.FAVORITES) || { series: [], sections: [], tests: [] },
+                        exportDate: new Date().toISOString(),
+                        version: '1.0'
+                    };
+                    
+                    const dataStr = JSON.stringify(exportData, null, 2);
+                    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                    const url = URL.createObjectURL(dataBlob);
+                    
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `testbook-data-${new Date().toISOString().split('T')[0]}.json`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    
+                    this.showNotification('Data exported successfully', 'success');
+                } catch (error) {
+                    this.showNotification('Export failed', 'error');
+                }
+            }
+            
+            showStats() {
+                const recentTests = this.cache.get(this.cache.keys.RECENT_TESTS) || [];
+                const searches = this.cache.get(this.cache.keys.SEARCHES) || [];
+                const favorites = this.cache.get(this.cache.keys.FAVORITES) || { series: [], sections: [], tests: [] };
+                
+                let statsHTML = `
+                    <div style="padding: 1rem;">
+                        <h4 style="margin-bottom: 1rem;">Detailed Statistics</h4>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: var(--primary); margin-bottom: 0.5rem;">Activity Summary</h5>
+                            <p>• Total Searches: ${searches.length}</p>
+                            <p>• Tests Attempted: ${recentTests.length}</p>
+                            <p>• Total Favorites: ${favorites.series.length + favorites.sections.length + favorites.tests.length}</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: var(--primary); margin-bottom: 0.5rem;">Recent Activity</h5>
+                            <p>• Last Search: ${searches.length > 0 ? searches[0].term : 'None'}</p>
+                            <p>• Last Test: ${recentTests.length > 0 ? recentTests[0].test.title : 'None'}</p>
+                        </div>
+                        
+                        <div>
+                            <h5 style="color: var(--primary); margin-bottom: 0.5rem;">Favorites Breakdown</h5>
+                            <p>• Series: ${favorites.series.length}</p>
+                            <p>• Sections: ${favorites.sections.length}</p>
+                            <p>• Tests: ${favorites.tests.length}</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Create a temporary modal for stats
+                const existingStatsModal = document.getElementById('statsModal');
+                if (existingStatsModal) {
+                    existingStatsModal.remove();
+                }
+                
+                const statsModal = document.createElement('div');
+                statsModal.id = 'statsModal';
+                statsModal.className = 'modal show';
+                statsModal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Statistics</h3>
+                            <button class="close-btn" onclick="document.getElementById('statsModal').remove()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            ${statsHTML}
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(statsModal);
+                
+                // Close stats modal when clicking outside
+                statsModal.addEventListener('click', (e) => {
+                    if (e.target === statsModal) {
+                        statsModal.remove();
+                    }
+                });
+            }
+            
+            loadRecentData(type) {
+                const searches = this.cache.get(this.cache.keys.SEARCHES) || [];
+                const tests = this.cache.get(this.cache.keys.RECENT_TESTS) || [];
+                
+                if (type === 'searches') {
+                    const container = document.getElementById('recentSearches');
+                    container.innerHTML = '';
+                    if (!searches.length) {
+                        container.innerHTML = '<div class="empty"><p>No recent searches</p></div>';
+                        return;
+                    }
+                    searches.forEach(search => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.innerHTML = `
+                            <h3 class="card-title">Search: ${search.term}</h3>
+                            <div class="card-meta">
+                                <span class="badge badge-primary">${search.results} results</span>
+                                <span class="badge badge-primary">${this.timeAgo(search.timestamp)}</span>
+                            </div>
+                        `;
+                        card.addEventListener('click', () => {
+                            document.getElementById('searchInput').value = search.term;
+                            closeModal('recentModal');
+                            this.handleSearch();
+                        });
+                        container.appendChild(card);
+                    });
+                } else {
+                    const container = document.getElementById('recentTests');
+                    container.innerHTML = '';
+                    if (!tests.length) {
+                        container.innerHTML = '<div class="empty"><p>No recent tests</p></div>';
+                        return;
+                    }
+                    tests.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.innerHTML = `
+                            <h3 class="card-title">${item.test.title}</h3>
+                            <div class="card-meta">
+                                <span class="badge badge-primary">${item.series.name}</span>
+                                <span class="badge badge-primary">${this.timeAgo(item.timestamp)}</span>
+                            </div>
+                        `;
+                        card.addEventListener('click', () => {
+                            closeModal('recentModal');
+                            if (item.test.encrypted_link) {
+                                window.open(item.test.encrypted_link, '_blank');
+                            }
+                        });
+                        container.appendChild(card);
+                    });
+                }
+            }
+            
+            loadFavoritesData(type) {
+                const favorites = this.cache.getFavorites(type);
+                const containerId = type === 'series' ? 'favSeries' : type === 'sections' ? 'favSections' : 'favTests';
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                
+                if (!favorites.length) {
+                    container.innerHTML = '<div class="empty"><p>No favorites yet</p></div>';
+                    return;
+                }
+                
+                favorites.forEach(fav => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    
+                    if (type === 'series') {
+                        card.innerHTML = `
+                            <div class="card-header">
+                                <h3 class="card-title">${fav.name}</h3>
+                                <button class="favorite-btn active" onclick="app.removeFavoriteFromModal('${type}', '${fav.id}', this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-meta">
+                                <span class="badge badge-primary">${(fav.sections || []).length} sections</span>
+                                <span class="badge badge-success">${fav.freeTestCount || 0} free</span>
+                                <span class="badge badge-warning">${fav.paidTestCount || 0} paid</span>
+                            </div>
+                        `;
+                        card.addEventListener('click', e => {
+                            if (!e.target.closest('.favorite-btn')) {
+                                closeModal('favoritesModal');
+                                this.searchResults = [fav];
+                                this.selectSeries(fav);
+                            }
+                        });
+                    } else if (type === 'sections') {
+                        card.innerHTML = `
+                            <div class="card-header">
+                                <h3 class="card-title">${fav.name}</h3>
+                                <button class="favorite-btn active" onclick="app.removeFavoriteFromModal('${type}', '${fav.id}', this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-meta">
+                                <span class="badge badge-primary">${fav.series?.name || 'Unknown'}</span>
+                                <span class="badge badge-success">${fav.freeTestCount || 0} free</span>
+                                <span class="badge badge-warning">${fav.paidTestCount || 0} paid</span>
+                            </div>
+                        `;
+                    } else {
+                        card.innerHTML = `
+                            <div class="card-header">
+                                <h3 class="card-title">${fav.title}</h3>
+                                <button class="favorite-btn active" onclick="app.removeFavoriteFromModal('${type}', '${fav.id}', this)">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-meta">
+                                <span class="badge badge-primary">${fav.series?.name || 'Unknown'}</span>
+                                <span class="badge ${fav.isFree ? 'badge-success' : 'badge-warning'}">${fav.isFree ? 'Free' : 'Paid'}</span>
+                            </div>
+                            <button class="test-btn" onclick="app.startTestFromFavorite('${fav.id}')">
+                                <i class="fas fa-play"></i> Start Test
+                            </button>
+                        `;
+                    }
+                    
+                    container.appendChild(card);
+                });
+            }
+            
+            removeFavoriteFromModal(type, id, button) {
+                this.cache.removeFavorite(type, id);
+                button.closest('.card').remove();
+                this.showNotification('Removed from favorites', 'success');
+            }
+            
+            startTestFromFavorite(testId) {
+                const favorites = this.cache.getFavorites('tests');
+                const test = favorites.find(t => t.id == testId);
+                if (test) {
+                    closeModal('favoritesModal');
+                    this.startTest(test);
+                }
+            }
+            
+            updateFavorites() {
+                // Update favorites display if modal is open
+                const favModal = document.getElementById('favoritesModal');
+                if (favModal.classList.contains('show')) {
+                    const activeTab = favModal.querySelector('.tab.active').textContent.toLowerCase();
+                    this.loadFavoritesData(activeTab);
+                }
+            }
+            
+            timeAgo(timestamp) {
+                const now = Date.now();
+                const diff = now - timestamp;
+                const minutes = Math.floor(diff / 60000);
+                const hours = Math.floor(diff / 3600000);
+                const days = Math.floor(diff / 86400000);
+                
+                if (days > 0) return `${days}d ago`;
+                if (hours > 0) return `${hours}h ago`;
+                if (minutes > 0) return `${minutes}m ago`;
+                return 'Just now';
+            }
+            
+            updateBreadcrumb(items) {
+                const breadcrumb = document.getElementById('breadcrumb');
+                breadcrumb.innerHTML = '';
+                
+                items.forEach((item, index) => {
+                    if (index > 0) {
+                        const separator = document.createElement('span');
+                        separator.className = 'breadcrumb-separator';
+                        separator.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                        breadcrumb.appendChild(separator);
+                    }
+                    
+                    const link = document.createElement('a');
+                    link.className = `breadcrumb-item ${item.active ? 'active' : ''}`;
+                    link.href = '#';
+                    link.textContent = item.text;
+                    
+                    if (item.onClick && !item.active) {
+                        link.addEventListener('click', e => {
+                            e.preventDefault();
+                            item.onClick();
+                        });
+                    } else if (item.active) {
+                        link.addEventListener('click', e => e.preventDefault());
+                    }
+                    
+                    breadcrumb.appendChild(link);
+                });
+                
+                breadcrumb.style.display = 'flex';
+            }
+            
+            showLoader(message = 'Loading...') {
+                const loader = document.getElementById('loader');
+                loader.querySelector('p').textContent = message;
+                loader.style.display = 'block';
+                this.hideContent();
+            }
+            
+            hideLoader() {
+                document.getElementById('loader').style.display = 'none';
+            }
+            
+            showContent() {
+                document.getElementById('content').style.display = 'grid';
+                document.getElementById('emptyState').style.display = 'none';
+            }
+            
+            hideContent() {
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('emptyState').style.display = 'none';
+            }
+            
+            showEmptyState(message = 'No results found') {
+                document.getElementById('emptyState').style.display = 'block';
+                document.getElementById('emptyState').querySelector('.empty-text').textContent = message;
+                document.getElementById('content').style.display = 'none';
+            }
+            
+            showNotification(message, type = 'success') {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.className = `notification ${type}`;
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 3000);
+            }
+            
+            goHome() {
+                this.currentView = 'search';
+                this.currentSeries = null;
+                this.currentSection = null;
+                document.getElementById('breadcrumb').style.display = 'none';
+                this.hideContent();
+                document.getElementById('searchInput').value = '';
+                document.getElementById('searchInput').focus();
+                history.pushState({ view: 'search' }, 'Search', '/');
+            }
         }
         
-        updateQuestionDots();
-    }
-
-    function nextQuestion() {
-        showQuestion(currentQuestion + 1);
-    }
-
-    function prevQuestion() {
-        showQuestion(currentQuestion - 1);
-    }
-
-    function calculateResults() {
-        let correctCount = 0;
-        let incorrectCount = 0;
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
         
-        questions.forEach((q, index) => {
-            const userSelectedKey = userSelections[index];
-            if (userSelectedKey !== null) {
-                if (userSelectedKey === q.correct_key) {
-                    correctCount++;
-                } else {
-                    incorrectCount++;
+        function switchTab(modalType, tabName) {
+            const modal = document.getElementById(modalType + 'Modal');
+            modal.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            modal.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            modal.querySelector(`[onclick*="${tabName}"]`).classList.add('active');
+            
+            if (modalType === 'recent') {
+                document.getElementById(tabName === 'searches' ? 'recentSearches' : 'recentTests').classList.add('active');
+                app.loadRecentData(tabName);
+            } else {
+                const contentId = tabName === 'series' ? 'favSeries' : tabName === 'sections' ? 'favSections' : 'favTests';
+                document.getElementById(contentId).classList.add('active');
+                app.loadFavoritesData(tabName);
+            }
+        }
+        
+        const app = new TestBookApp();
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('searchInput').focus();
+        });
+        
+        window.addEventListener('popstate', e => {
+            if (e.state) {
+                switch (e.state.view) {
+                    case 'results':
+                        if (e.state.searchResults) {
+                            app.searchResults = e.state.searchResults;
+                            app.displaySearchResults();
+                        }
+                        break;
+                    case 'sections':
+                        if (e.state.series) {
+                            app.selectSeries(e.state.series);
+                        }
+                        break;
+                    default:
+                        app.goHome();
                 }
             }
         });
 
-        const unattemptedCount = questions.length - correctCount - incorrectCount;
-        const totalScore = (questions.length > 0) ? (correctCount / questions.length) * 100 : 0;
-
-        return { correctCount, incorrectCount, unattemptedCount, totalScore };
-    }
-
-    function submitTest() {
-        clearInterval(timerInterval);
-        const { correctCount, incorrectCount, unattemptedCount, totalScore } = calculateResults();
-        
-        const score = totalScore.toFixed(2);
-
-        document.getElementById('score-value').textContent = score;
-        document.getElementById('correct-value').textContent = correctCount;
-        document.getElementById('incorrect-value').textContent = incorrectCount;
-        document.getElementById('unattempted-value').textContent = unattemptedCount;
-        
-        document.getElementById('results-modal').classList.add('show');
-        
-        const submitBtn = document.getElementById('submit-btn');
-        submitBtn.disabled = true;
-        
-        const langText = TEXT[currentLanguage];
-        submitBtn.innerHTML = `<i class="fas fa-check me-2"></i> ${langText.submitted}`; 
-        submitBtn.style.backgroundColor = 'var(--success)';
-        
-        showQuestion(currentQuestion); // Re-render current question to show solution
-    }
-    
-    function reviewTest() {
-        document.getElementById('results-modal').classList.remove('show');
-        showQuestion(0);
-    }
-    
-    // --- Initialization and Data Loading ---
-
-    async function loadQuestions(testUrl) {
-        const loadingMessage = document.getElementById('loading-message');
-        const questionContainer = document.getElementById('question-container');
-        const navigationControls = document.getElementById('navigation-controls');
-        
-        loadingMessage.innerHTML = `<i class="fas fa-sync fa-spin fa-2x mb-3 text-primary"></i><p>${TEXT[currentLanguage].loading_questions}</p>`;
-        loadingMessage.style.display = 'block';
-        questionContainer.style.display = 'none';
-        navigationControls.style.display = 'none';
-        
-        try {
-            const response = await fetch(testUrl);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP Error: ${response.status} ${response.statusText}. JSON फ़ाइल उपलब्ध नहीं है।`);
-            }
-            
-            const data = await response.json();
-            
-            questions = processData(data); 
-            
-            if (questions.length === 0) {
-                 loadingMessage.innerHTML = `<i class="fas fa-exclamation-triangle fa-2x mb-3 text-danger"></i><p>${TEXT[currentLanguage].no_questions_in_file}</p>`;
-                 clearInterval(timerInterval);
-                 return;
-            }
-
-            userSelections = new Array(questions.length).fill(null);
-            currentQuestion = 0; // Start at the first question
-
-            loadingMessage.style.display = 'none';
-            questionContainer.style.display = 'block';
-            navigationControls.style.display = 'flex';
-            
-            startTimer();
-            showQuestion(0);
-
-        } catch (error) {
-            console.error("Error loading questions:", error);
-            clearInterval(timerInterval); 
-            
-            const langText = TEXT[currentLanguage];
-            loadingMessage.innerHTML = `
-                <i class="fas fa-exclamation-circle fa-2x mb-3 text-danger"></i>
-                <p class="fw-bold">${langText.error}:</p>
-                <p style="font-size: 0.9rem;">${error.message}</p>
-                <p class="mt-3 text-muted">कृपया JSON URL की जाँच करें।</p>
-            `;
-            loadingMessage.style.display = 'block';
-            questionContainer.style.display = 'none';
-            navigationControls.style.display = 'none';
-        }
-    }
-
-    // --- Initial Setup and Event Listeners ---
-    
-    window.onload = function() {
-        updateUIForLanguage(); // Set initial language texts
-        setUIState(false); // Start at test selection screen
-    };
-
-    window.addEventListener('click', function(event) {
-        if (event.target === document.getElementById('results-modal')) {
-            document.getElementById('results-modal').classList.remove('show');
-        }
-    });
-    
-    document.addEventListener('keydown', function(e) {
-        if (isTestRunning && !document.getElementById('submit-btn').disabled) {
-            if (e.key === 'ArrowLeft') prevQuestion();
-            if (e.key === 'ArrowRight') nextQuestion();
-        }
-    });
 </script>
-</body>
-</html>
+
+<script>
+async function loadTestFromGitHub(testId) {
+    try {
+        // ✅ यहाँ अपना GitHub username और repo name डालना मत भूलना
+        const url = `https://raw.githubusercontent.com/kd2929/test-series-platform/data/tests/${testId}.json`;
+
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Failed to load test');
+
+        const testData = await response.json();
+        console.log('✅ Test Loaded:', testData);
+
+        // इसे localStorage में save करो ताकि player page access कर सके
+        localStorage.setItem('current_test', JSON.stringify(testData));
+
+        // अब नया test-player.html पेज खोलो
+        window.location.href = '/test-player.html?test=' + encodeURIComponent(testId);
+    } catch (error) {
+        console.error('❌ Error loading test:', error);
+        alert('Test load failed! कृपया बाद में फिर कोशिश करें।');
+    }
+}
+</script>
+
+</body></html>
